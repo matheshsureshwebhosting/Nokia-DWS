@@ -1,0 +1,19 @@
+.h-100vh {
+  height: 100vh;
+}
+.h-20px {
+  height: 15px;
+}
+.input-label {
+  font-weight: 500;
+  color: black;
+  font-size: 01rem;
+}
+.glassCard {
+  background: rgba(255, 255, 255, 0.185);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
