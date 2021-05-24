@@ -4,7 +4,7 @@ function NavbarTwo(props) {
     return (
         <>
             <div className='container-fluid white d-flex justify-content-center flex-column align-items-center' style={{ background: "#124191", height: "10vh" }}>
-                <div className='nokia-logo'>{props.logo}</div>
+                <Link to="/"><div className='nokia-logo'>{props.logo}</div></Link>
             </div>
         </>
     )
@@ -15,7 +15,7 @@ function Navbar(props) {
             <div className='container-fluid white' style={{ background: "#124191", height: "10vh" }}>
                 <div className='d-flex justify-content-center flex-column h-100 px-4'>
                     <div className='d-flex justify-content-between'>
-                        <div className='nokia-logo'>{props.logo}</div>
+                        <Link to="/"><div className='nokia-logo'>{props.logo}</div></Link>
                         <div className='nav-title my-auto'>{props.title}</div>
                         <Link to="/dashboard"><img src={props.src} alt={props.alt} /></Link>
                     </div>
