@@ -47,7 +47,7 @@ export default class Solderings extends Component {
         })
 
         document.getElementById("mercury").style.height = "160px";
-        document.getElementById("mercury").style.bottom = "100%";
+        document.getElementById("mercury").style.bottom = "90%";
     }
 
     sttc162 = () => {
@@ -109,7 +109,7 @@ export default class Solderings extends Component {
             tempValid: 412
         })
         document.getElementById("mercury").style.height = "100px";
-        document.getElementById("mercury").style.bottom = "30%";
+        document.getElementById("mercury").style.bottom = "25%";
     }
     setSelectTemp = (temp) => {
         this.setState({
@@ -200,9 +200,9 @@ export default class Solderings extends Component {
     render() {
         const { temp } = this.state
         const radiobtn = {
-            width: "15px",
-            marginTop: "5px",
-            height: "15px"
+            width: "20px",
+            marginTop: "10px",
+            height: "20px"
         }
 
         //-----------------tooltips-----------------//
@@ -352,7 +352,7 @@ export default class Solderings extends Component {
                         </div>
                         <div className='col-4'>
                             <div className='d-flex justify-content-around w-100 h-100'>
-                                <div className='formCard glassCard bt-blue bt-bottom w-100 my-auto h-100' style={{ height: "max-content" }}>
+                                <div className='formCard flcc glassCard bt-blue bt-bottom w-100 my-auto h-100' style={{ height: "max-content" }}>
                                     <h5 className='text-center my-4 text-capitalize heading white fa-2x'>Soldering Catridge Type</h5>
                                     <div className="d-flex justify-content-center align-items-center ">
 

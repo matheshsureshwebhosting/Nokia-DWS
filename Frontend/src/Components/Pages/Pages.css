@@ -10,3 +10,10 @@
   animation: glowing 1500ms infinite;
   border-radius: 28px;
 }
+.master-checklist-btn {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+}

@@ -62,12 +62,17 @@ label {
   opacity: 1;
   width: 350px;
   height: 175px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+}
+.flcc {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+  align-content: center;
 }
-
 .animation {
   animation-name: slideinleft;
   animation-duration: 1s;
@@ -76,7 +81,19 @@ label {
 .condition {
   color: #124191;
 }
-
+.vacuum-menu-col {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  height: 79vh;
+}
+.content {
+  max-height: 90vh;
+}
+.steps-video-div {
+  height: 75vh;
+  width: 100%;
+}
 @keyframes slideinright {
   0% {
     left: 200px;

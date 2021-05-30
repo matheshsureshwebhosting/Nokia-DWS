@@ -54,8 +54,7 @@ export class VacuumForm extends Component {
             this.setState({ nameError: true, machineError: false })
         } else {
             // window.location.replace("/vaccume")
-            this.props.history.push("/vaccume");
-
+            this.props.history.push("/step1");
             localStorage.setItem("date", date)
             localStorage.setItem("machine_Sl_No", machine_Sl_No)
             localStorage.setItem("shift", shift)

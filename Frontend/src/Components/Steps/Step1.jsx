@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import "./step.css"
 import video1 from "../../assets/videos/vacclift/1.mp4"
-import SubmitButton from "../Utilities/Buttons/SubmitButton";
 import SweetAlert from "sweetalert2";
 import { Slidercontext } from "../Context/Slidercontext"
+import Steps from './Steps';
 export default class Step1 extends Component {
     static contextType = Slidercontext
     constructor(props) {
@@ -68,31 +68,19 @@ export default class Step1 extends Component {
                     localStorage.setItem("prosses1_result", results)
                     localStorage.setItem("step1", "okay")
                     sliderenable(this, "step2")
+                    this.props.history.push("/step2")
                 }
             })
         }
 
         return (
             <>
-                <div className='bg-primary d-flex justify-content-center flex-column h-100vh container-fluid px-5 position-fixed'>
-                    <div>
-                        <div className="content d-flex">
-                            <div className="col-9 animation mr-3">
-                                <h2 className="text-center heading step-title">Lifting Handle and Pad Cleaning</h2>
-                                <video muted autoPlay={true} loop src={video1} type="video/mp4" width="100%" height="100%" />
-                            </div>
-                            <div className="col-md-3  py-4 glassCard formCard my-auto ml-3">
-                                <div className="card-body">
-                                    <h4 className="process text-uppercase white">Complete ?</h4>
-                                    <div className="text-center  mt-4">
-                                        <SubmitButton  name="alertSuccess" buttonName="Submit"
-                                            onClick={(e) => Displayalert(e.target.name, "Yes")}></SubmitButton>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Steps
+                stepTitle="Lifting Handle and Pad Cleaning"
+                videoSrc={video1}
+                onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
+                onClickIssue={(e)=>Displayalert(e.target.name,"No")}
+                />
             </>
         )
     }

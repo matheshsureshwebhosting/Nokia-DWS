@@ -24,3 +24,7 @@
   font-size: 1.1rem;
   letter-spacing: 1px;
 }
+.vacuum-menu-grid {
+  height: 250px !important;
+  width: 300px !important;
+}

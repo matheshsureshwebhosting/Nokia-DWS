@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import { Slidercontext } from "../Context/Slidercontext"
 import video2 from "../../assets/videos/vacclift/2.mp4"
-import SubmitButton from "../Utilities/Buttons/SubmitButton";
 import "./step.css"
 import SweetAlert from "sweetalert2";
+import Steps from './Steps';
 export default class Step2 extends Component {
     static contextType = Slidercontext
     constructor(props) {
@@ -34,8 +34,10 @@ export default class Step2 extends Component {
                     if (result.isConfirmed) {
                         // localStorage.setItem("prosses2_status", paymentType)
                         localStorage.setItem("prosses2_result", results)
+                    localStorage.setItem("step1", "okay")
                         localStorage.setItem("step2", "okay")
                         sliderenable(this, "step3")
+                        this.props.history.push("/step3")
                     }
                 })
 
@@ -43,27 +45,33 @@ export default class Step2 extends Component {
         }
         return (
             <>
-                <div className='bg-primary h-100vh d-flex justify-content-center flex-column container-fluid px-5'>
+                {/* <div className='bg-primary h-100vh d-flex justify-content-center flex-column container-fluid px-5'>
                     <div>
-                        {/* <h5 className="text-center heading"><span className="condition">Standard Conditions:</span>No Dirt and Damages, Leakages or tear on the Hose</h5> */}
+                        <h5 className="text-center heading"><span className="condition">Standard Conditions:</span>No Dirt and Damages, Leakages or tear on the Hose</h5>
                         <div className="content justify-content-between d-flex">
                             <div className="col-md-9">
-                                <h2 className="text-center step-title ">Clean And Inspect The Vacuum Hose</h2>
+                                <div className="text-center step-title  ">Clean And Inspect The Vacuum Hose</div>
                                 <video muted autoPlay={true} loop src={video2} type="video/mp4" width="100%" height="100%" />
                             </div>
-                            <div className="col-md-3  py-4 glassCard formCard my-auto ml-3">
-                                <div className="card-body">
+                            <div className="col-md-3">
+                                <div className='vacuum-menu-col'><Vacuum /></div>
+                                <div className="card-body formCard w-100">
                                     <h4 className="process text-uppercase white">Complete ?</h4>
                                     <div className="text-center  mt-4">
                                         <SubmitButton  name="alertSuccess" buttonName="Submit"
-                                            onClick={(e) => Displayalert(e.target.name, "Yes")}></SubmitButton>
-                                        
+                                            onClick={(e) => Displayalert(e.target.name, "Yes")}/>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
+                <Steps
+                stepTitle="Clean And Inspect The Vacuum Hose"
+                videoSrc={video2}
+                onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
+                onClickIssue={(e)=>Displayalert(e.target.name,"No")}
+                />
             </>
         )
     }

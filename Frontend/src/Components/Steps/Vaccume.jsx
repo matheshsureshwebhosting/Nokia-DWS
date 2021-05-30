@@ -13,53 +13,51 @@ import { Link } from 'react-router-dom'
 import { Slidercontext } from "../Context/Slidercontext"
 import '../Home/Homes.css'
 import "./vaccume.css"
-import {NavbarTwo} from '../Navbar/Navbar';
-import TitleButton from "../Utilities/Buttons/TitleButton"
 const images = [
     {
         image: Step1,
         title: "Lifting Handle and Pad Cleaning",
-        Animation: "fade-up-left",
+        // Animation: "fade-up-left",
     },
     {
         image: Step2,
         title: "Clean And Inspect The Vaccum Hose",
-        Animation: "zoom-in-up",
+        // Animation: "zoom-in-up",
     },
     {
         image: Step3,
         title: "Vacuum Barrel and Joints Cleaning And Inspection",
-        Animation: "fade-up-right",
+        // Animation: "fade-up-right",
     },
     {
         image: Step4,
         title: "Vacuum Pump Cleaning And Inspection",
-        Animation: "fade-left",
+        // Animation: "fade-left",
     },
     {
         image: Step5,
         title: "Lifter Handle Switch Inspection",
-        Animation: "zoom-in",
+        // Animation: "zoom-in",
     },
     {
         image: Step6,
         title: "Horizontal Arm Inspection",
-        Animation: "fade-right",
+        // Animation: "fade-right",
     },
     {
         image: Step7,
         title: "Power on Switch Inspection",
-        Animation: "fade-down-left",
+        // Animation: "fade-down-left",
     },
     {
         image: Step8,
         title: "Vacuum hose- from pump to barrel ( Big hose)",
-        Animation: "fade-down",
+        // Animation: "fade-down",
     },
     {
         image: Step9,
         title: "Vacuum Pressure Gauge",
-        Animation: "fade-down-right",
+        // Animation: "fade-down-right",
     },
 ]
 export default class Vacuum extends Component {
@@ -82,25 +80,23 @@ export default class Vacuum extends Component {
         }
         return (
             <>
-                <NavbarTwo logo="NOKIA" />
-                <div className='d-flex justify-content-center flex-column align-items-center bg-primary'>
-                    <TitleButton>Vacuum Lifter Maintenance</TitleButton>
-                    <div className='container-fluid' style={{maxWidth:"1200px"}}>
-                        <div className="d-flex flex-wrap" style={{height:"max-content"}} >
+                {/* <NavbarTwo logo="NOKIA" /> */}
+                <div className='d-flex justify-content-center flex-column align-items-center align-content-center'>
+                    {/* <TitleButton>Vacuum Lifter Maintenance</TitleButton> */}
+                    <div className=''>
                             {
                                 images.map((data, index) => (
-                                    <div data-aos-easing="ease-in-sine" data-aos-duration="1500" data-aos={data.Animation} className={stepsArray.includes(`step${index + 1}`) ? "m-3 active_div " : "m-3 inactive_div"}>
-                                           <div className=' grid-card d-flex flex-column justify-content-center align-items-center text-center zoom bg-card' >
+                                    <div data-aos-easing="ease-in-sine" data-aos-duration="1500" data-aos={data.Animation} className={stepsArray.includes(`step${index + 1}`) ? "m-3 active_div" : "m-3 inactive_div"}>
+                                           <div className='grid-card vacuum-menu-grid d-flex flex-column justify-content-center align-items-center text-center zoom bg-card position-relative' >
                                             <Link to={stepsArray.includes(`step${index + 1}`) ? `/step${index + 1}` : "#"}>
                                                 <span className={localStorage.getItem(`step${index + 1}`) === "okay" ? "checked_steps" : "notchecked_steps"}><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                <img src={stepsArray.includes(`step${index + 1}`) ? data.image : lockedImg} alt='Step1' loading="lazy" className={stepsArray.includes(`step${index + 1}`) && "w-100 h-100 p-5"} />
+                                                <img src={stepsArray.includes(`step${index + 1}`) ? data.image : lockedImg} alt='Step1' loading="lazy" className={stepsArray.includes(`step${index + 1}`) ? "w-75 h-75 pt-5 " :"w-100 h-100 "} />
                                             </Link>
                                             {stepsArray.includes(`step${index + 1}`) &&<span className="vacuum-grid-tag">{data.title}</span>}
                                         </div>
                                     </div>
                                 ))
                             }
-                        </div>
                     </div>
                 </div>
             </>
