@@ -33,60 +33,58 @@ export default class App extends Component {
     AOS.init();
     return (
       <>
-        <div className="App">
-          <Router>
-            <SlidercontextProvider>
-              <Suspense fallback={<div className="center"><Spinner animation="border" variant="primary" /></div>}>
-                <Switch>
-                  {/* pages */}
-                  <Route exact path="/" component={Home} />
-                  <Route path='/Dashboard' render={() => (<Dashboard />)} />
-                  <Route exact path="/sliders" component={Sliders} />
-                  <Route path='/Soldering' render={() => (<Soldering />)} />
-                  {/* ----------form--------- */}
-                  <Route path='/SolderForm' component={SolderForm} />
-                  <Route path='/VacuumForm' component={VacuumForm} />
-                  {/* vacuum checklist Steps */}
-                  <Route exact path="/test/step1" component={Step} />
-                  <Route exact path="/Step1" component={Step1} />
-                  <Route exact path="/Step2" component={Step2} />
-                  <Route exact path="/Step3" component={Step3} />
-                  <Route exact path="/Step4" component={Step4} />
-                  <Route exact path="/Step5" component={Step5} />
-                  <Route exact path="/Step6" component={Step6} />
-                  <Route exact path="/Step7" component={Step7} />
-                  <Route exact path="/Step8" component={Step8} />
-                  <Route exact path="/Step9" component={Step9} />
-                  <Route path="/vaccume" component={Vaccume} />
-                  <Route path="/Testers" component={Testers} />
-                  {/* OTA checklist */}
-                  <Route path="/OTA" component={Ota} />
-                  <Route path="/Ota2" component={Ota2} />
-                  <Route path="/Ota3" component={Ota3} />
-                  <Route path="/Ota4" component={Ota4} />
-                  <Route path="/Ota5" component={Ota5} />
-                  <Route path="/Ota6" component={Ota6} />
-                  <Route path="/Ota7" component={Ota7} />
-                  <Route path="/Ota8" component={Ota8} />
-                  <Route path="/Ota9" component={Ota9} />
-                  <Route path="/Ota10" component={Ota10} />
-                  {/* UWS Checklist */}
-                  <Route path="/UWA" component={Uwa} />
-                  <Route path="/Uwa2" component={Uwa2} />
-                  <Route path="/Uwa3" component={Uwa3} />
-                  <Route path="/Uwa4" component={Uwa4} />
-                  <Route path="/Uwa5" component={Uwa5} />
-                  <Route path="/Uwa6" component={Uwa6} />
-                  <Route path="/Uwa7" component={Uwa7} />
-                  <Route path="/Uwa8" component={Uwa8} />
-                  <Route path="/Uwa9" component={Uwa9} />
-                  <Route path="/Uwa10" component={Uwa10} />
-                  <Route path="*"><Error /></Route>
-                </Switch>
-              </Suspense>
-            </SlidercontextProvider>
-          </Router>
-        </div>
+        <Router>
+          <SlidercontextProvider>
+            <Suspense fallback={<div className="center"><Spinner animation="border" variant="primary" /></div>}>
+              <Switch>
+                {/* pages */}
+                <Route exact path="/" component={Home} />
+                <Route path='/Dashboard' render={() => (<Dashboard />)} />
+                <Route exact path="/sliders" component={Sliders} />
+                <Route path='/Soldering' render={() => (<Soldering />)} />
+                {/* ----------form--------- */}
+                <Route path='/SolderForm' component={SolderForm} />
+                <Route path='/VacuumForm' component={VacuumForm} />
+                {/* vacuum checklist Steps */}
+                <Route exact path="/test/step1" component={Step} />
+                <Route exact path="/Step1" component={Step1} />
+                <Route exact path="/Step2" component={Step2} />
+                <Route exact path="/Step3" component={Step3} />
+                <Route exact path="/Step4" component={Step4} />
+                <Route exact path="/Step5" component={Step5} />
+                <Route exact path="/Step6" component={Step6} />
+                <Route exact path="/Step7" component={Step7} />
+                <Route exact path="/Step8" component={Step8} />
+                <Route exact path="/Step9" component={Step9} />
+                <Route path="/vaccume" component={Vaccume} />
+                <Route path="/Testers" component={Testers} />
+                {/* OTA checklist */}
+                <Route path="/OTA" component={Ota} />
+                <Route path="/Ota2" component={Ota2} />
+                <Route path="/Ota3" component={Ota3} />
+                <Route path="/Ota4" component={Ota4} />
+                <Route path="/Ota5" component={Ota5} />
+                <Route path="/Ota6" component={Ota6} />
+                <Route path="/Ota7" component={Ota7} />
+                <Route path="/Ota8" component={Ota8} />
+                <Route path="/Ota9" component={Ota9} />
+                <Route path="/Ota10" component={Ota10} />
+                {/* UWS Checklist */}
+                <Route path="/UWA" component={Uwa} />
+                <Route path="/Uwa2" component={Uwa2} />
+                <Route path="/Uwa3" component={Uwa3} />
+                <Route path="/Uwa4" component={Uwa4} />
+                <Route path="/Uwa5" component={Uwa5} />
+                <Route path="/Uwa6" component={Uwa6} />
+                <Route path="/Uwa7" component={Uwa7} />
+                <Route path="/Uwa8" component={Uwa8} />
+                <Route path="/Uwa9" component={Uwa9} />
+                <Route path="/Uwa10" component={Uwa10} />
+                <Route path="*"><Error /></Route>
+              </Switch>
+            </Suspense>
+          </SlidercontextProvider>
+        </Router>
       </>
     )
   }
