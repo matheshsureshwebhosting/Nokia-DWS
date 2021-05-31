@@ -179,6 +179,23 @@
   padding: 0.5rem 1rem;
   width: 40%;
 }
+
+.tempcounter::after {
+  content: 'Adjust Your Attained Temperature value';
+  font-family: roboto;
+  font-weight: 500;
+  width: 120px;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  position: absolute;
+  right: 10px;
+  bottom: 75px;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 1rem;
+}
+/* -----------KEY FRAMES---------- */
 @keyframes bulb {
   from {
     background-color: #a53215;

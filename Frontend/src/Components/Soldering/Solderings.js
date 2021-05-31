@@ -301,11 +301,6 @@ export default class Solderings extends Component {
             </Tooltip>
         );
 
-        const adjustTemp = (props) => (
-            <Tooltip id='button-tooltip' {...props}>
-                Adjust Your <br />Attained <br />Temperature<br /> Here
-            </Tooltip>
-        );
 
         function MyVerticallyCenteredModal(props) {
             return (
@@ -474,18 +469,11 @@ export default class Solderings extends Component {
                                                 </OverlayTrigger>
                                             </div>
 
-                                            <OverlayTrigger
-                                                placement="right"
-                                                delay={{ show: 250, hide: 400 }}
-                                                overlay={adjustTemp}
-                                            >
-                                                <div autoFocus className='tempcounter d-flex w-50 justify-content-center rounded-pill bg-danger border border-warning p-1'>
-
-                                                    <button className='w-25 border-0 bg-transparent white' onClick={this.decrement}><i class="fa fa-minus"></i></button>
-                                                    <input value={temp} name="temperature" onChange={(e) => this.handlechange(e)} className='selected-temp-inp w-50 white bg-transparent border-0' />
-                                                    <button className='w-25 border-0 fw-bold bg-transparent white' onClick={this.increment} ><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </OverlayTrigger>
+                                            <div autoFocus className='tempcounter d-flex w-50 justify-content-center rounded-pill bg-danger border border-warning p-1'>
+                                                <button className='w-25 border-0 bg-transparent white' onClick={this.decrement}><i class="fa fa-minus"></i></button>
+                                                <input value={temp} name="temperature" onChange={(e) => this.handlechange(e)} className='selected-temp-inp w-50 white bg-transparent border-0' />
+                                                <button className='w-25 border-0 fw-bold bg-transparent white' onClick={this.increment} ><i class="fa fa-plus"></i></button>
+                                            </div>
                                         </div>
                                     </div>
                                     {/* -----------Submit Buttons----------- */}

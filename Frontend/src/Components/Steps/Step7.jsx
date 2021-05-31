@@ -51,6 +51,7 @@ export default class Step7 extends Component {
                 videoSrc={video1}
                 onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
                 onClickIssue={(e)=>Displayalert(e.target.name,"No")}
+                doNotTouch="true"
                 />
             </Fragment >
         )

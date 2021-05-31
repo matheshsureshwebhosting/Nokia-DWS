@@ -158,3 +158,11 @@ label {
     border-right-color: transparent;
   }
 }
+.dnt-sign-img {
+  position: absolute;
+  bottom: 5px;
+  width: 100px;
+  height: 130px;
+  right: 15px;
+  border-radius: 1rem 0 0 0;
+}
