@@ -18,11 +18,11 @@ import SolderForm from './Components/Soldering/SolderForm'
 import VacuumForm from './Components/Steps/VacuumForm';
 import AOS from 'aos'
 import 'aos/dist/aos.css';
-import Testers from './Components/Pages/Testers';
+import Testers from './Pages/Testers';
 import { Ota, Ota2, Ota3, Ota4, Ota5, Ota6, Ota7, Ota8, Ota9, Ota10 } from './Components/Testers/Ota';
 import { Uwa, Uwa2, Uwa3, Uwa4, Uwa5, Uwa6, Uwa7, Uwa8, Uwa9, Uwa10 } from './Components/Testers/Uwa';
 import { Spinner } from 'react-bootstrap';
-import Error from './Components/Pages/Error';
+import Error from './Pages/Error';
 
 const Home = React.lazy(() => import('./Components/Home/Home.jsx'));
 const Dashboard = React.lazy(() => import('./Components/Dashboard/Dashboard'));

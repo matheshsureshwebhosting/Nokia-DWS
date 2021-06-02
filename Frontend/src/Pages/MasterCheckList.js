@@ -10,7 +10,7 @@ function MasterCheckList(props) {
                 <Link to={props.link}>
                     <div className="d-flex justify-content-center master-checklist-btn">
                         <button className="step-continue-btn" name={props.name} onClick={props.onClick} > Ok To Continue <i className='fa fa-thumbs-up fa-2x mx-2' /></button>
-                        <button className="raise-issue-btn" name={props.name} onClick={props.onClick} >Raise Issue<i className='fa fa-thumbs-up fa-2x mx-2' /></button>
+                        <button className="raise-issue-btn" name={props.name} onClick={props.onClick} >Raise Issue<i className='fa fa-thumbs-down fa-2x mx-2' /></button>
                     </div>
                 </Link>
             </div>

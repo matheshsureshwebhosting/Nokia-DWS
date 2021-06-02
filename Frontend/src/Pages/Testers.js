@@ -1,6 +1,6 @@
 import React from 'react'
 import './Pages.css'
-import TitleButton from "../Utilities/Buttons/TitleButton"
+import TitleButton from "../Components/Utilities/Buttons/TitleButton"
 import { FcPrint, FcFinePrint } from 'react-icons/fc'
 import { IconContext } from "react-icons"
 import { Link } from 'react-router-dom'

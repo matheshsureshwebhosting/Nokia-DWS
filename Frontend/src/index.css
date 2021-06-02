@@ -16,6 +16,9 @@ html {
     0% no-repeat padding-box;
   background-size: cover;
 }
+a {
+  color: white !important;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -175,7 +178,7 @@ code {
   letter-spacing: 1px;
   margin: 10px;
   font-weight: 600;
-  padding: 15px 45px;
+  padding: 15px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -206,7 +209,7 @@ code {
   margin: 10px;
   font: 1em arial;
   letter-spacing: 1px;
-  padding: 15px 45px;
+  padding: 15px 30px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;

@@ -1,5 +1,5 @@
 import React from 'react'
-import MasterCheckList from '../Pages/MasterCheckList'
+import MasterCheckList from '../../Pages/MasterCheckList'
 
 function Ota() {
     return (
