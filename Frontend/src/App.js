@@ -23,7 +23,7 @@ import { Ota, Ota2, Ota3, Ota4, Ota5, Ota6, Ota7, Ota8, Ota9, Ota10 } from './Co
 import { Uwa, Uwa2, Uwa3, Uwa4, Uwa5, Uwa6, Uwa7, Uwa8, Uwa9, Uwa10 } from './Components/Testers/Uwa';
 import { Spinner } from 'react-bootstrap';
 import Error from './Pages/Error';
-
+import { Thermal, step10, step11, step12, step13, step2, step3, step4, step5, step6, step7, step8, step9 } from './Components/ThermalGel/Thermal';
 const Home = React.lazy(() => import('./Components/Home/Home.jsx'));
 const Dashboard = React.lazy(() => import('./Components/Dashboard/Dashboard'));
 const Vaccume = React.lazy(() => import('./Components/Steps/Vaccume'))
@@ -80,6 +80,20 @@ export default class App extends Component {
                 <Route path="/Uwa8" component={Uwa8} />
                 <Route path="/Uwa9" component={Uwa9} />
                 <Route path="/Uwa10" component={Uwa10} />
+                {/* Thermal Gel */}
+                <Route path="/thermalgel" render={() => (<Thermal />)} />
+                <Route path="/thermal/step2" component={step2} />
+                <Route path="/thermal/step3" component={step3} />
+                <Route path="/thermal/step4" component={step4} />
+                <Route path="/thermal/step5" component={step5} />
+                <Route path="/thermal/step6" component={step6} />
+                <Route path="/thermal/step7" component={step7} />
+                <Route path="/thermal/step8" component={step8} />
+                <Route path="/thermal/step9" component={step9} />
+                <Route path="/thermal/step10" component={step10} />
+                <Route path="/thermal/step11" component={step11} />
+                <Route path="/thermal/step12" component={step12} />
+                <Route path="/thermal/step13" component={step13} />
                 <Route path="*"><Error /></Route>
               </Switch>
             </Suspense>

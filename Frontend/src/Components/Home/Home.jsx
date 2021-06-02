@@ -37,7 +37,8 @@ function Home(props) {
     {
       img: gel,
       alt: "gel-img",
-      animation:"fade-up"
+      animation:"fade-up",
+      link:"/Thermalgel"
     },
     {
       img: testers,
