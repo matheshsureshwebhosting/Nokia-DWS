@@ -19,11 +19,12 @@ import VacuumForm from './Components/Steps/VacuumForm';
 import AOS from 'aos'
 import 'aos/dist/aos.css';
 import Testers from './Pages/Testers';
-import { Ota, Ota2, Ota3, Ota4, Ota5, Ota6, Ota7, Ota8, Ota9, Ota10 } from './Components/Testers/Ota';
+import { Ota, Ota2, Ota3, Ota4, Ota5, Ota6, Ota7, Ota8, Ota9, Ota10 } from './Components/Testers/OTA/Ota';
 import { Uwa, Uwa2, Uwa3, Uwa4, Uwa5, Uwa6, Uwa7, Uwa8, Uwa9, Uwa10 } from './Components/Testers/Uwa';
 import { Spinner } from 'react-bootstrap';
 import Error from './Pages/Error';
 import { Thermal, step10, step11, step12, step13, step2, step3, step4, step5, step6, step7, step8, step9 } from './Components/ThermalGel/Thermal';
+import OtaForm from './Components/Testers/OTA/OtaForm';
 const Home = React.lazy(() => import('./Components/Home/Home.jsx'));
 const Dashboard = React.lazy(() => import('./Components/Dashboard/Dashboard'));
 const Vaccume = React.lazy(() => import('./Components/Steps/Vaccume'))
@@ -45,6 +46,7 @@ export default class App extends Component {
                 {/* ----------form--------- */}
                 <Route path='/SolderForm' component={SolderForm} />
                 <Route path='/VacuumForm' component={VacuumForm} />
+                <Route path='/OTAform' component={OtaForm} />
                 {/* vacuum checklist Steps */}
                 <Route exact path="/test/step1" component={Step} />
                 <Route exact path="/Step1" component={Step1} />

@@ -49,11 +49,19 @@ export default class Step1 extends Component {
         const { sliderenable, updateVaccume } = this.context
         const Displayalert = (name, results) => {
             console.log(results, name)
+            if (name === "alertSuccess"){ 
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
                 icon: "success",
-            }).then((result) => {
+            })}
+            if(name==="alertWarning")
+            SweetAlert.fire({
+                title: "OK NOTED",
+                text: "Please Inform Technician",
+                icon: "info",
+            })
+            .then((result) => {
                 const { machine_name, machine_Sl_No, operator_name, shift } = this.state
                 if (result.isConfirmed) {
                     updateVaccume({
@@ -71,7 +79,7 @@ export default class Step1 extends Component {
                     this.props.history.push("/step2")
                 }
             })
-        }
+    }
 
         return (
             <>

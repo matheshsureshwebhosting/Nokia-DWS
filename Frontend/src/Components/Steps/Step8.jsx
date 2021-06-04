@@ -27,12 +27,19 @@ export default class Step8 extends Component {
         const { sliderenable } = this.context
         const Displayalert = (name, results) => {
             console.log(results)
-            if (name === "alertSuccess") {
+            if (name === "alertSuccess"){ 
                 SweetAlert.fire({
                     title: "Good job!",
                     text: "Thank You!",
                     icon: "success",
-                }).then((result) => {
+                })}
+                if(name==="alertWarning")
+                SweetAlert.fire({
+                    title: "OK NOTED",
+                    text: "Please Inform Technician",
+                    icon: "info",
+                })
+                .then((result) => {
                     if (result.isConfirmed) {
                         // localStorage.setItem("prosses8_status", paymentType)
                         localStorage.setItem("prosses8_result", results)
@@ -41,8 +48,6 @@ export default class Step8 extends Component {
                         this.props.history.push("/step9")
                     }
                 })
-
-            }
         }
         return (
             <Fragment>

@@ -62,6 +62,7 @@ const images = [
 ]
 export default class Vacuum extends Component {
     static contextType = Slidercontext
+   
     render() {
         const { enabled } = this.context
         var stepsArray = Object.keys(enabled).map(function (stepsindex) {
@@ -78,6 +79,7 @@ export default class Vacuum extends Component {
             localStorage.removeItem("step7")
             localStorage.removeItem("step8")
         }
+    
         return (
             <>
                 {/* <NavbarTwo logo="NOKIA" /> */}

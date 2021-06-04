@@ -25,23 +25,27 @@ export default class Step2 extends Component {
         const { sliderenable } = this.context
         const Displayalert = (name, results) => {
             console.log(results)
-            if (name === "alertSuccess") {
+            if (name === "alertSuccess"){ 
                 SweetAlert.fire({
                     title: "Good job!",
                     text: "Thank You!",
                     icon: "success",
-                }).then((result) => {
+                })}
+                if(name==="alertWarning")
+                SweetAlert.fire({
+                    title: "OK NOTED",
+                    text: "Please Inform Technician",
+                    icon: "info",
+                })
+                .then((result) => {
                     if (result.isConfirmed) {
                         // localStorage.setItem("prosses2_status", paymentType)
                         localStorage.setItem("prosses2_result", results)
-                    localStorage.setItem("step1", "okay")
                         localStorage.setItem("step2", "okay")
                         sliderenable(this, "step3")
                         this.props.history.push("/step3")
                     }
                 })
-
-            }
         }
         return (
             <>

@@ -10,7 +10,7 @@ function Testers() {
             <div className="d-flex justify-content-center align-items-center bg-primary flex-column h-100vh">
                 <TitleButton ><span className='fa-2x'>Testers Checklist</span></TitleButton>
                 <div className="d-flex justify-content-center my-5">
-                    <Link to="/OTA">
+                    <Link to="/OTAform">
                         <div className='grid-card bg-card mr-5 white fa-2x d-flex justify-content-center flex-column align-items-center'>
                             <IconContext.Provider value={{ className: "fa-5x green" }}>
                                 <FcPrint />

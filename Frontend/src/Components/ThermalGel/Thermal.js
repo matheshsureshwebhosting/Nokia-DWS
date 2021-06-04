@@ -16,91 +16,91 @@ import video13 from '../../assets/videos/Thermalgel/13.mp4'
 function Thermal() {
     return (
         <>
-            <MasterCheckList videosrc={video1} link='/thermal/step2' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video1} link='/thermal/step2' />
         </>
     )
 }
 function step2() {
     return (
         <>
-            <MasterCheckList videosrc={video2} link='/thermal/step3' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video2} link='/thermal/step3' />
         </>
     )
 }
 function step3() {
     return (
         <>
-            <MasterCheckList videosrc={video3} link='/thermal/step4' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video3} link='/thermal/step4' />
         </>
     )
 }
 function step4() {
     return (
         <>
-            <MasterCheckList videosrc={video4} link='/thermal/step5' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video4} link='/thermal/step5' />
         </>
     )
 }
 function step5() {
     return (
         <>
-            <MasterCheckList videosrc={video5} link='/thermal/step6' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video5} link='/thermal/step6' />
         </>
     )
 }
 function step6() {
     return (
         <>
-            <MasterCheckList videosrc={video6} link='/thermal/step7' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video6} link='/thermal/step7' />
         </>
     )
 }
 function step7() {
     return (
         <>
-            <MasterCheckList videosrc={video7} link='/thermal/step8' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video7} link='/thermal/step8' />
         </>
     )
 }
 function step8() {
     return (
         <>
-            <MasterCheckList videosrc={video8} link='/thermal/step9' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video8} link='/thermal/step9' />
         </>
     )
 }
 function step9() {
     return (
         <>
-            <MasterCheckList videosrc={video9} link='/thermal/step10' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video9} link='/thermal/step10' />
         </>
     )
 }
 function step10() {
     return (
         <>
-            <MasterCheckList videosrc={video10} link='/thermal/step11' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video10} link='/thermal/step11' />
         </>
     )
 }
 function step11() {
     return (
         <>
-            <MasterCheckList videosrc={video11} link='/thermal/step12' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video11} link='/thermal/step12' />
         </>
     )
 }
 function step12() {
     return (
         <>
-            <MasterCheckList videosrc={video12} link='/thermal/step13' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video12} link='/thermal/step13' />
         </>
     )
 }
 function step13() {
     return (
         <>
-            <MasterCheckList videosrc={video13} link='/' />
+            <MasterCheckList TypeOfMedia="video" videosrc={video13} link='/' />
         </>
     )
 }
