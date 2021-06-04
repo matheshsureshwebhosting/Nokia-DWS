@@ -22,7 +22,6 @@ export default class Step1 extends Component {
     componentDidMount = () => {
         var today = new Date();
         const hours = today.getHours() + ":" + today.getMinutes()
-        console.log(hours)
         if (hours < "14:30") {
             this.setState({
                 shifta: true
@@ -41,53 +40,42 @@ export default class Step1 extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    render() {
-        var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date + ' ' + time;
-        const { sliderenable, updateVaccume } = this.context
+    render() {    
+        const { sliderenable } = this.context
         const Displayalert = (name, results) => {
-            console.log(results, name)
-            if (name === "alertSuccess"){ 
-            SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
-                icon: "success",
-            })}
-            if(name==="alertWarning")
-            SweetAlert.fire({
-                title: "OK NOTED",
-                text: "Please Inform Technician",
-                icon: "info",
-            })
-            .then((result) => {
-                const { machine_name, machine_Sl_No, operator_name, shift } = this.state
-                if (result.isConfirmed) {
-                    updateVaccume({
-                        date: dateTime,
-                        machine_name: machine_name,
-                        machine_Sl_No: machine_Sl_No,
-                        operator_name: operator_name,
-                        shift: shift
-                    })
-                    console.log('Setting Local Storage')
-                    // localStorage.setItem("prosses1_status", paymentType)
-                    localStorage.setItem("prosses1_result", results)
+            if (name === "alertSuccess")
+                SweetAlert.fire({
+                    title: "Good job!",
+                    text: "Thank You!",
+                    icon: "success",
+                })
+                else if(name==="alert")
+                SweetAlert.fire({
+                    title: "OK Noted",
+                    text: "Please Inform Technician!",
+                    icon: "info",
+                }).then((result) => {                
+                if (result.isConfirmed) {                   
+                    const { updatestaus } = this.context
+                    updatestaus("prosses1_result", results)
                     localStorage.setItem("step1", "okay")
                     sliderenable(this, "step2")
                     this.props.history.push("/step2")
                 }
             })
-    }
+        }
 
         return (
             <>
                 <Steps
-                stepTitle="Lifting Handle and Pad Cleaning"
-                videoSrc={video1}
-                onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
-                onClickIssue={(e)=>Displayalert(e.target.name,"No")}
+                    ContinueBtnName="OK To continue"
+                    IssueBtnName="RAISE ISSUE"
+                    stepTitle="Lifting Handle and Pad Cleaning"
+                    videoSrc={video1}
+                    nameContinue="alertSuccess"
+                    nameIssue="alert"
+                    onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
+                    onClickIssue={(e) => Displayalert(e.target.name, "No")}
                 />
             </>
         )

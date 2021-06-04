@@ -18,8 +18,8 @@ function Steps(props) {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center mt-4">
-                        <button className="step-continue-btn" name="alertSuccess" onClick={props.onClickContinue}>Ok To Continue <i className='fa fa-thumbs-up fa-2x mx-2' /></button>
-                        <button className="raise-issue-btn" name="alertWarning" onClick={props.onClickIssue}>Raise Issue<i className='fa fa-thumbs-down fa-2x mx-2' /></button>
+                        <button className="step-continue-btn" name={props.nameContinue} onClick={props.onClickContinue}>{props.ContinueBtnName}<i className='fa fa-thumbs-up fa-2x mx-2' /></button>
+                        <button className="raise-issue-btn" name={props.nameIssue} onClick={props.onClickIssue}>{props.IssueBtnName}<i className='fa fa-thumbs-down fa-2x mx-2' /></button>
                     </div>
                 </div>
             </div>

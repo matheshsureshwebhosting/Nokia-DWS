@@ -25,27 +25,28 @@ export default class Step2 extends Component {
         const { sliderenable } = this.context
         const Displayalert = (name, results) => {
             console.log(results)
-            if (name === "alertSuccess"){ 
+            if (name === "alertSuccess")
                 SweetAlert.fire({
                     title: "Good job!",
                     text: "Thank You!",
                     icon: "success",
-                })}
-                if(name==="alertWarning")
+                })
+                else if(name==="alert")
                 SweetAlert.fire({
-                    title: "OK NOTED",
-                    text: "Please Inform Technician",
+                    title: "OK Noted",
+                    text: "Please Inform Technician!",
                     icon: "info",
                 })
                 .then((result) => {
-                    if (result.isConfirmed) {
-                        // localStorage.setItem("prosses2_status", paymentType)
-                        localStorage.setItem("prosses2_result", results)
+                    if (result.isConfirmed) {                        
+                        const { updatestaus } = this.context
+                        updatestaus("prosses2_result", results)                        
                         localStorage.setItem("step2", "okay")
                         sliderenable(this, "step3")
                         this.props.history.push("/step3")
                     }
                 })
+
         }
         return (
             <>
@@ -71,10 +72,14 @@ export default class Step2 extends Component {
                     </div>
                 </div> */}
                 <Steps
-                stepTitle="Clean And Inspect The Vacuum Hose"
-                videoSrc={video2}
-                onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
-                onClickIssue={(e)=>Displayalert(e.target.name,"No")}
+                    ContinueBtnName="OK To continue"
+                    IssueBtnName="RAISE ISSUE"
+                    stepTitle="Clean And Inspect The Vacuum Hose"
+                    videoSrc={video2}
+                    nameContinue="alertSuccess"
+                    nameIssue="alert"
+                    onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
+                    onClickIssue={(e) => Displayalert(e.target.name, "No")}
                 />
             </>
         )

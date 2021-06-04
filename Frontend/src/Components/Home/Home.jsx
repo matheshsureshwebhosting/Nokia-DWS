@@ -38,12 +38,12 @@ function Home(props) {
       img: gel,
       alt: "gel-img",
       animation:"fade-up",
-      link:"/Thermalgel"
+      link:"/thermalform"
     },
     {
       img: testers,
       alt: "testers-img",
-      link: "/Testers",
+      link: "/testerform",
       animation:"fade-up-left"
     }
   ]
@@ -72,7 +72,7 @@ function Home(props) {
 export default Home
 //  <div className='d-flex justify-content-center flex-column align-items-center w-100 bg-primary overflow-hidden' style={{ height: "100vh" }}>
 //         <h2 data-aos-duration="2000" data-aos="zoom-in" className="white p-3 heading">Digital WorkStation</h2>
-//         <Link to='/dashboard'><i class="fa fa-database dashboard-icon"></i></Link>
+//         <Link to='/dashboard'><i className="fa fa-database dashboard-icon"></i></Link>
 //         <div style={{ height: "80vh", width: "75%" }}>
 //           <div className='h-50 d-flex justify-content-around py-2'>
 

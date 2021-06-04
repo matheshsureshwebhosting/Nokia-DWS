@@ -11,17 +11,18 @@ html {
   background: transparent linear-gradient(180deg, #e6eaf2 0%, #ced2d9 100%) 0%
     0% no-repeat padding-box;
 }
+a {
+  color: white !important;
+}
 .bg-primary {
   background: transparent linear-gradient(180deg, #e6eaf2 0%, #ced2d9 100%) 0%
     0% no-repeat padding-box;
   background-size: cover;
 }
-a {
-  color: white !important;
-}
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 /* Track */
@@ -178,7 +179,7 @@ code {
   letter-spacing: 1px;
   margin: 10px;
   font-weight: 600;
-  padding: 15px;
+  padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -209,7 +210,7 @@ code {
   margin: 10px;
   font: 1em arial;
   letter-spacing: 1px;
-  padding: 15px 30px;
+  padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
