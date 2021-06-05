@@ -10,7 +10,7 @@ import SubmitButton from '../Utilities/Buttons/SubmitButton';
 import TitleButton from '../Utilities/Buttons/TitleButton';
 export default class Solderings extends Component {
     constructor(props) {
-        super()
+        super(props)
         this.state = {
             temp: 316,
             selectTemp: "",
@@ -124,7 +124,6 @@ export default class Solderings extends Component {
     }
     submitbtn = (e, status) => {
         const { solder_model, temp } = this.state
-        console.log(this.state, status)
         SweetAlert.fire({
             title: 'Provide Following Details',
             html: "<textarea style='margin-top:10px;border-radius: 0px !important;width: 100%; ' id='des' type='text' className='form-control' placeholder='Remarks... if you changed the cartridge please leave the message'></textarea>",
@@ -133,29 +132,27 @@ export default class Solderings extends Component {
             confirmButtonText: `Save`,
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location = "/";
                 const description = document.getElementById("des").value
                 if (description.length === 0) {
                     SweetAlert.fire('Enter description', '', 'error')
                     return false
                 }
                 else {
-                    axios.post("http://localhost:4000/soldertablesend", {
-                        date: localStorage.getItem("s_date"),
-                        shift: localStorage.getItem("s_shift"),
-                        station: localStorage.getItem("s_station"),
+                    const { Solderform } = this.props
+                    const datas = {
+                        date: Solderform.date,
+                        shift: Solderform.shift,
+                        station: Solderform.Station,
                         catridge_used: solder_model,
                         temperature: temp,
-                        checked_by: localStorage.getItem("s_operator_name"),
-                        status: status
-                    }).then((res) => {
+                        checked_by: Solderform.operator_name,
+                        status: "Complete",
+                        description: description
+                    }
+                    axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/soldering/send`, datas).then((res) => {
                         SweetAlert.fire('Saved!', '', 'success').then((result) => {
                             if (result.isConfirmed) {
-                                localStorage.removeItem("s_date")
-                                localStorage.removeItem("s_shift")
-                                localStorage.removeItem("s_station")
-                                localStorage.removeItem("s_operator_name")
-                                window.location.replace("/")
+                                this.props.history.push("/")
                             }
                         })
                     })
@@ -470,9 +467,9 @@ export default class Solderings extends Component {
                                             </div>
 
                                             <div autoFocus className='tempcounter d-flex w-50 justify-content-center rounded-pill bg-danger border border-warning p-1'>
-                                                <button className='w-25 border-0 bg-transparent white' onClick={this.decrement}><i class="fa fa-minus"></i></button>
+                                                <button className='w-25 border-0 bg-transparent white' onClick={this.decrement}><i className="fa fa-minus"></i></button>
                                                 <input value={temp} name="temperature" onChange={(e) => this.handlechange(e)} className='selected-temp-inp w-50 white bg-transparent border-0' />
-                                                <button className='w-25 border-0 fw-bold bg-transparent white' onClick={this.increment} ><i class="fa fa-plus"></i></button>
+                                                <button className='w-25 border-0 fw-bold bg-transparent white' onClick={this.increment} ><i className="fa fa-plus"></i></button>
                                             </div>
                                         </div>
                                     </div>

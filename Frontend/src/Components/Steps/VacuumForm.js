@@ -44,25 +44,21 @@ export class VacuumForm extends Component {
         }
     }
     handleChange = (e) => {
+        const { handleChange } = this.context
+        handleChange(e)
         this.setState({ [e.target.name]: e.target.value })
     }
     submitbtn = (props) => {
-        const { machine_Sl_No, date, shift, operator_name } = this.state
-        if (this.state.machine_Sl_No.trim() === '') {
+        const { machine_Sl_No, operator_name } = this.state
+        if (machine_Sl_No.trim() === '') {
             this.setState({ machineError: true })
-        } else if (this.state.operator_name.trim() === '') {
+        } else if (operator_name.trim() === '') {
             this.setState({ nameError: true, machineError: false })
         } else {
-            // window.location.replace("/vaccume")
             this.props.history.push("/step1");
-            localStorage.setItem("date", date)
-            localStorage.setItem("machine_Sl_No", machine_Sl_No)
-            localStorage.setItem("shift", shift)
-            localStorage.setItem("operator_name", operator_name)
         }
     }
     render() {
-
         //ToolTips 
         const serialTooltip = (props) => (
             <Tooltip id="button-tooltip" {...props}>

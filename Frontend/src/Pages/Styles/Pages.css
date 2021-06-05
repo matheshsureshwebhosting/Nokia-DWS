@@ -1,0 +1,7 @@
+.master-checklist-btn {
+  position: absolute;
+  right: 10%;
+  /* right: 50%; */
+  bottom: 0px;
+  /* transform: translateX(-50%); */
+}

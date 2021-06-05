@@ -27,26 +27,36 @@ export default class Step4 extends Component {
         const { sliderenable } = this.context
         const Displayalert = (name, results) => {
             console.log(results)
-            if (name === "alertSuccess") {
+            if (name === "alertSuccess")
                 SweetAlert.fire({
                     title: "Good job!",
                     text: "Thank You!",
                     icon: "success",
+                })
+                else if(name==="alert")
+                SweetAlert.fire({
+                    title: "OK Noted",
+                    text: "Please Inform Technician!",
+                    icon: "info",
                 }).then((result) => {
-                    if (result.isConfirmed) {
-                        // localStorage.setItem("prosses4_status", paymentType)
-                        localStorage.setItem("prosses4_result", results)
+                    if (result.isConfirmed) {                        
+                        const { updatestaus } = this.context
+                        updatestaus("prosses4_result", results)                        
                         localStorage.setItem("step4", "okay")
                         sliderenable(this, "step5")
                         this.props.history.push("/step5")
                     }
                 })
 
-            }
+             
         }
         return (
             <Fragment>
                 <Steps
+                ContinueBtnName="OK To continue"
+                IssueBtnName="RAISE ISSUE"
+                nameContinue="alertSuccess"
+                nameIssue="alert"
                 stepTitle="Vacuum Pump Cleaning And Inspection"
                 videoSrc={video1}
                 onClickContinue={(e) => Displayalert(e.target.name, "Yes")}

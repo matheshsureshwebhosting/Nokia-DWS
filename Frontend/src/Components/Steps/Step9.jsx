@@ -26,68 +26,60 @@ export default class Step9 extends Component {
     }
     render() {
         const Displayalert = (name, results) => {
-            if (name === "alertSuccess") {
+            if(name==="alert")
                 SweetAlert.fire({
-                    title: 'Provide Following Details',
+                    // text: "Please Inform Technician!",
+                    icon: "info",
+                    title: 'OK Noted! Provide Following Details',
                     html: "<textarea style='margin-top:10px;border-radius: 0px !important;width: 100%; ' id='des' type='text' className='form-control' placeholder='Remarks'></textarea>",
                     showDenyButton: false,
                     showCancelButton: false,
                     confirmButtonText: `Save`,
-                }).then((result) => {
-                    if (result.isConfirmed) {  
-                window.location = "/";
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
                         const description = document.getElementById("des").value
                         if (description.length === 0) {
                             SweetAlert.fire('Enter description', '', 'error')
                             return false
                         } else {
-                            SweetAlert.fire('Saved!', '', 'success')                                               
-                            axios.post("http://localhost:4000/send", {
-                                date: localStorage.getItem("date"),
-                                shift: localStorage.getItem("shift"),
-                                machine_Sl_No: localStorage.getItem("machine_Sl_No"),
-                                checked_by: localStorage.getItem("operator_name"),
-                                process1_result: localStorage.getItem("prosses1_result"),
-                                // process2_status: localStorage.getItem("prosses2_status"),
-                                process2_result: localStorage.getItem("prosses2_result"),
-                                // process3_status: localStorage.getItem("prosses3_status"),
-                                process3_result: localStorage.getItem("prosses3_result"),
-                                // process4_status: localStorage.getItem("prosses4_status"),
-                                process4_result: localStorage.getItem("prosses4_result"),
-                                // process5_status: localStorage.getItem("prosses5_status"),
-                                process5_result: localStorage.getItem("prosses5_result"),
-                                // process6_status: localStorage.getItem("prosses6_status"),
-                                process6_result: localStorage.getItem("prosses6_result"),
-                                // process7_status: localStorage.getItem("prosses7_status"),
-                                process7_result: localStorage.getItem("prosses7_result"),
-                                // process8_status: localStorage.getItem("prosses8_status"),
-                                process8_result: localStorage.getItem("prosses8_result"),
+                            SweetAlert.fire('Saved!', '', 'success')
+                            const { date, machine_Sl_No, shift, operator_name, prosses1_result, prosses2_result, prosses3_result, prosses4_result, prosses5_result, prosses6_result, prosses7_result, prosses8_result } = this.context
+                            const vaccumestatus = [prosses1_result, prosses2_result, prosses3_result, prosses4_result, prosses5_result, prosses6_result, prosses7_result, prosses8_result, results]
+                            var finalstatus;
+                            if (vaccumestatus.includes("No")) {
+                                finalstatus = "In Complete"
+                            } else {
+                                finalstatus = "Complete"
+                            }
+                            const datas = {
+                                date: date,
+                                shift: shift,
+                                machine_Sl_No: machine_Sl_No,
+                                checked_by: operator_name,
+                                process1_result: prosses1_result,
+                                process2_result: prosses2_result,
+                                process3_result: prosses3_result,
+                                process4_result: prosses4_result,
+                                process5_result: prosses5_result,
+                                process6_result: prosses6_result,
+                                process7_result: prosses7_result,
+                                process8_result: prosses8_result,
                                 process9_result: results,
-                                // process9_status:paymentType,
-                                description: description
-                            }).then((res) => {
-                                localStorage.removeItem("date")
-                                localStorage.removeItem("shift")
-                                localStorage.removeItem("machine_Sl_No")
-                                localStorage.removeItem("machine_name")
-                                localStorage.removeItem("operator_name")
-                                localStorage.removeItem("prosses1_result")
-                                localStorage.removeItem("prosses2_result")
-                                localStorage.removeItem("prosses3_result")
-                                localStorage.removeItem("prosses4_result")
-                                localStorage.removeItem("prosses5_result")
-                                localStorage.removeItem("prosses6_result")
-                                localStorage.removeItem("prosses7_result")
-                                localStorage.removeItem("prosses8_result")
-                                localStorage.removeItem("step1")
-                                localStorage.removeItem("step2")
-                                localStorage.removeItem("step3")
-                                localStorage.removeItem("step4")
-                                localStorage.removeItem("step5")
-                                localStorage.removeItem("step6")
-                                localStorage.removeItem("step7")
-                                localStorage.removeItem("step8")
-                                // window.location.replace("/")
+                                description: description,
+                                status: finalstatus
+                            }                            
+                            axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/vaccume/send`, datas).then((res) => {
+                                if (res.data === true) {                                   
+                                    localStorage.removeItem("step1")
+                                    localStorage.removeItem("step2")
+                                    localStorage.removeItem("step3")
+                                    localStorage.removeItem("step4")
+                                    localStorage.removeItem("step5")
+                                    localStorage.removeItem("step6")
+                                    localStorage.removeItem("step7")
+                                    localStorage.removeItem("step8")                                    
+                                }
                                 this.props.history.push("/")
                             })
                         }
@@ -95,15 +87,78 @@ export default class Step9 extends Component {
                         SweetAlert.fire('Changes are not saved', '', 'info')
                     }
                 })
-            }
+            if (name === "alertSuccess") 
+                SweetAlert.fire({
+                    title: 'Provide Following Details',
+                    html: "<textarea style='margin-top:10px;border-radius: 0px !important;width: 100%; ' id='des' type='text' className='form-control' placeholder='Remarks'></textarea>",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: `Save`,
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        const description = document.getElementById("des").value
+                        if (description.length === 0) {
+                            SweetAlert.fire('Enter description', '', 'error')
+                            return false
+                        } else {
+                            SweetAlert.fire('Saved!', '', 'success')
+                            const { date, machine_Sl_No, shift, operator_name, prosses1_result, prosses2_result, prosses3_result, prosses4_result, prosses5_result, prosses6_result, prosses7_result, prosses8_result } = this.context
+                            const vaccumestatus = [prosses1_result, prosses2_result, prosses3_result, prosses4_result, prosses5_result, prosses6_result, prosses7_result, prosses8_result, results]
+                            var finalstatus;
+                            if (vaccumestatus.includes("No")) {
+                                finalstatus = "In Complete"
+                            } else {
+                                finalstatus = "Complete"
+                            }
+                            const datas = {
+                                date: date,
+                                shift: shift,
+                                machine_Sl_No: machine_Sl_No,
+                                checked_by: operator_name,
+                                process1_result: prosses1_result,
+                                process2_result: prosses2_result,
+                                process3_result: prosses3_result,
+                                process4_result: prosses4_result,
+                                process5_result: prosses5_result,
+                                process6_result: prosses6_result,
+                                process7_result: prosses7_result,
+                                process8_result: prosses8_result,
+                                process9_result: results,
+                                description: description,
+                                status: finalstatus
+                            }                            
+                            axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/vaccume/send`, datas).then((res) => {
+                                if (res.data === true) {                                   
+                                    localStorage.removeItem("step1")
+                                    localStorage.removeItem("step2")
+                                    localStorage.removeItem("step3")
+                                    localStorage.removeItem("step4")
+                                    localStorage.removeItem("step5")
+                                    localStorage.removeItem("step6")
+                                    localStorage.removeItem("step7")
+                                    localStorage.removeItem("step8")                                    
+                                }
+                                this.props.history.push("/")
+                            })
+                        }
+                    } else if (result.isDenied) {
+                        SweetAlert.fire('Changes are not saved', '', 'info')
+                    }
+                })
+           
         }
         return (
             <>
-              <Steps
-                stepTitle="Vacuum Pressure Gauge"
-                videoSrc={video1}
-                onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
-                onClickIssue={(e)=>Displayalert(e.target.name,"No")}
+                <Steps
+                    nameContinue="alertSuccess"
+                    ContinueBtnName="OK To complete"
+                    IssueBtnName="RAISE ISSUE"
+                    nameIssue="alert"
+                    stepTitle="Vacuum Pressure Gauge"
+                    videoSrc={video1}
+                    onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
+                    onClickIssue={(e) => Displayalert(e.target.name, "No")}
                 />
             </>
         )

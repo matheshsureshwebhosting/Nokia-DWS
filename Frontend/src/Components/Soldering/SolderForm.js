@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Form, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import formImg from '../../assets/img/formImg.gif'
 import SubmitButton from '../Utilities/Buttons/SubmitButton'
+import Solderings from "./Solderings"
 export class SolderForm extends Component {
     constructor(props) {
         super()
@@ -11,7 +12,8 @@ export class SolderForm extends Component {
             Station: '',
             stationError: false,
             nameError: false,
-            operator_name: ''
+            operator_name: '',
+            issoldering: false
         }
     }
 
@@ -47,22 +49,22 @@ export class SolderForm extends Component {
 
 
     submitbtn = () => {
-        const { Station, date, shift, operator_name } = this.state
-        if (this.state.Station.trim() === '') {
+        const { Station, operator_name } = this.state
+        if (Station.trim() === '') {
             this.setState({ stationError: true })
-        } else if (this.state.operator_name.trim() === '') {
+        } else if (operator_name.trim() === '') {
             this.setState({ nameError: true, stationError: false })
         } else {
-            localStorage.setItem("s_date", date)
-            localStorage.setItem("s_shift", shift)
-            localStorage.setItem("s_station", Station)
-            localStorage.setItem("s_operator_name", operator_name)
-            this.props.history.push("/Soldering");
+            this.setState({ issoldering: true })
+            // this.props.history.push("/Soldering");
         }
     }
 
     render() {
-
+        const { shift, date, nameError, stationError, issoldering } = this.state
+        if (issoldering ===true) {
+           return <Solderings Solderform={this.state} />
+        }
         //ToolTips 
         const serialTooltip = (props) => (
             <Tooltip id="button-tooltip" {...props}>
@@ -75,7 +77,7 @@ export class SolderForm extends Component {
                 Enter Your Name
             </Tooltip>
         );
-        const { shift, date, nameError, stationError } = this.state
+
         const stationClass = stationError ? 'w-50 text-uppercase border border-danger error-bg' : 'w-50 text-uppercase';
         const nameClass = nameError ? 'w-50 text-uppercase border border-danger error-bg' : 'w-50 text-uppercase';
         return (
@@ -139,3 +141,4 @@ export class SolderForm extends Component {
 }
 
 export default SolderForm
+

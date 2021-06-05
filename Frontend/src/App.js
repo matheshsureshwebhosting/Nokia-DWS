@@ -18,14 +18,17 @@ import SolderForm from './Components/Soldering/SolderForm'
 import VacuumForm from './Components/Steps/VacuumForm';
 import AOS from 'aos'
 import 'aos/dist/aos.css';
-import Testers from './Pages/Testers';
-import { Ota, Ota2, Ota3, Ota4, Ota5, Ota6, Ota7, Ota8, Ota9, Ota10 } from './Components/Testers/Ota';
-import { Uwa, Uwa2, Uwa3, Uwa4, Uwa5, Uwa6, Uwa7, Uwa8, Uwa9, Uwa10 } from './Components/Testers/Uwa';
+import Testers from './Pages/TestersMainPage/Testers';
+import { Ota, Ota2, Ota3, Ota4, Ota5, Ota6, Ota7, Ota8, Ota9, Ota10 } from './Components/Testers/OtaTester/Ota';
+import { Uwa, Uwa2, Uwa3, Uwa4, Uwa5, Uwa6, Uwa7, Uwa8, Uwa9, Uwa10 } from './Components/Testers/UwaTester/Uwa';
 import { Spinner } from 'react-bootstrap';
-import Error from './Pages/Error';
-import { Thermal, step10, step11, step12, step13, step2, step3, step4, step5, step6, step7, step8, step9 } from './Components/ThermalGel/Thermal';
+import Error from './Pages/ErrorPage/Error';
+import Testerform from './Components/Testers/Testerform';
+import { Thermal, Thermal2, Thermal3, Thermal4, Thermal5, Thermal6, Thermal7, Thermal8, Thermal9, Thermal10, Thermal11, Thermal12, Thermal13 } from './Components/Testers/ThermalGelTester/Thermal';
+import Thermalform from './Components/Testers/ThermalGelTester/Thermalform';
 const Home = React.lazy(() => import('./Components/Home/Home.jsx'));
-const Dashboard = React.lazy(() => import('./Components/Dashboard/Dashboard'));
+// const Dashboard = React.lazy(() => import('./Components/Dashboard/Dashboard'));
+const NewDashboard = React.lazy(() => import('./Components/DashboardNew/Dashboard'));
 const Vaccume = React.lazy(() => import('./Components/Steps/Vaccume'))
 
 export default class App extends Component {
@@ -39,7 +42,10 @@ export default class App extends Component {
               <Switch>
                 {/* pages */}
                 <Route exact path="/" component={Home} />
-                <Route path='/Dashboard' render={() => (<Dashboard />)} />
+
+                {/* <Route path='/Dashboard' render={() => (<Dashboard />)} /> */}
+                <Route path="/Dashboard" component={NewDashboard} />
+
                 <Route exact path="/sliders" component={Sliders} />
                 <Route path='/Soldering' render={() => (<Soldering />)} />
                 {/* ----------form--------- */}
@@ -57,6 +63,7 @@ export default class App extends Component {
                 <Route exact path="/Step8" component={Step8} />
                 <Route exact path="/Step9" component={Step9} />
                 <Route path="/vaccume" component={Vaccume} />
+                <Route path="/testerform" component={Testerform} />
                 <Route path="/Testers" component={Testers} />
                 {/* OTA checklist */}
                 <Route path="/OTA" component={Ota} />
@@ -81,19 +88,21 @@ export default class App extends Component {
                 <Route path="/Uwa9" component={Uwa9} />
                 <Route path="/Uwa10" component={Uwa10} />
                 {/* Thermal Gel */}
-                <Route path="/thermalgel" render={() => (<Thermal />)} />
-                <Route path="/thermal/step2" component={step2} />
-                <Route path="/thermal/step3" component={step3} />
-                <Route path="/thermal/step4" component={step4} />
-                <Route path="/thermal/step5" component={step5} />
-                <Route path="/thermal/step6" component={step6} />
-                <Route path="/thermal/step7" component={step7} />
-                <Route path="/thermal/step8" component={step8} />
-                <Route path="/thermal/step9" component={step9} />
-                <Route path="/thermal/step10" component={step10} />
-                <Route path="/thermal/step11" component={step11} />
-                <Route path="/thermal/step12" component={step12} />
-                <Route path="/thermal/step13" component={step13} />
+                <Route path="/thermalform" component={Thermalform} />
+                <Route path="/thermalgel" component={Thermal} />
+                <Route path="/thermal/step2" component={Thermal2} />
+                <Route path="/thermal/step3" component={Thermal3} />
+                <Route path="/thermal/step4" component={Thermal4} />
+                <Route path="/thermal/step5" component={Thermal5} />
+                <Route path="/thermal/step6" component={Thermal6} />
+                <Route path="/thermal/step7" component={Thermal7} />
+                <Route path="/thermal/step8" component={Thermal8} />
+                <Route path="/thermal/step9" component={Thermal9} />
+                <Route path="/thermal/step10" component={Thermal10} />
+                <Route path="/thermal/step11" component={Thermal11} />
+                <Route path="/thermal/step12" component={Thermal12} />
+                <Route path="/thermal/step13" component={Thermal13} />
+
                 <Route path="*"><Error /></Route>
               </Switch>
             </Suspense>
