@@ -40,7 +40,7 @@ function Ota(props) {
     }
     return (
         <>
-            <MasterCheckList src="./Images/OTA/1.webp" onClick={onClick} alt="Ota" buttonName="Next" link="/Ota2" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/1.mp4" onClick={onClick} alt="Ota" buttonName="Next" link="/Ota2" />
         </>
     )
 }
@@ -77,7 +77,7 @@ function Ota2() {
     return (
 
         <>
-            <MasterCheckList src="./Images/OTA/2.webp" onClick={onClick} alt="Ota2" buttonName="Next" link="/Ota3" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/2.mp4" onClick={onClick} alt="Ota2" buttonName="Next" link="/Ota3" />
         </>
     )
 
@@ -114,7 +114,7 @@ function Ota3() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/OTA/3.webp" onClick={onClick} alt="Ota3" buttonName="Next" link="/Ota4" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/3.mp4" onClick={onClick} alt="Ota3" buttonName="Next" link="/Ota4" />
         </>
     )
 }
@@ -150,7 +150,7 @@ function Ota4() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/OTA/4.webp" onClick={onClick} alt="Ota4" buttonName="Next" link="/Ota5" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/4.mp4" onClick={onClick} alt="Ota4" buttonName="Next" link="/Ota5" />
         </>
     )
 
@@ -187,7 +187,7 @@ function Ota5() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/OTA/5.webp" onClick={onClick} alt="Ota5" buttonName="Next" link="/Ota6" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/5.mp4" onClick={onClick} alt="Ota5" buttonName="Next" link="/Ota6" />
         </>
     )
 }
@@ -223,7 +223,7 @@ function Ota6() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/OTA/6.webp" onClick={onClick} alt="Ota6" buttonName="Next" link="/Ota7" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/6.mp4" onClick={onClick} alt="Ota6" buttonName="Next" link="/Ota7" />
         </>
     )
 }
@@ -260,7 +260,7 @@ function Ota7() {
     return (
 
         <>
-            <MasterCheckList src="./Images/OTA/7.webp" onClick={onClick} alt="Ota7" buttonName="Next" link="/Ota8" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/7.mp4" onClick={onClick} alt="Ota7" buttonName="Next" link="/Ota8" />
         </>
     )
 }
@@ -296,7 +296,7 @@ function Ota8() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/OTA/8.webp" onClick={onClick} alt="Ota8" buttonName="Next" link="/Ota9" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/8.mp4" onClick={onClick} alt="Ota8" buttonName="Next" link="/Ota9" />
         </>
     )
 }
@@ -332,7 +332,7 @@ function Ota9() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/OTA/9.webp" onClick={onClick} alt="Ota9" buttonName="Next" link="/Ota10" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/9.mp4" onClick={onClick} alt="Ota9" buttonName="Next" link="/Ota10" />
         </>
     )
 }
@@ -394,7 +394,7 @@ function Ota10() {
     return (
 
         <>
-            <MasterCheckList okToComplete="true" src="./Images/OTA/10.webp" onClick={onClick} alt="Ota10" buttonName="Done" link="/" />
+            <MasterCheckList okToComplete="true" TypeOfMedia="Video" videosrc="./Images/OTA/10.mp4" onClick={onClick} alt="Ota10" buttonName="Done" link="/" />
         </>
     )
 }

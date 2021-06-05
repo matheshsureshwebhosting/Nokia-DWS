@@ -13,17 +13,19 @@ function Uwa(props) {
         if (uwaform === undefined) {
             return history.push("/testerform")
         }
-        if (status === "yes")
+        if (status === "Yes")
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
                 icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    uwastatus[form] = status
-                    history.push(nextPath)
-                }
             })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        uwastatus[form] = status
+                        history.push(nextPath)
+                    }
+                })
+
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -38,7 +40,7 @@ function Uwa(props) {
     }
     return (
         <>
-            <MasterCheckList src="./Images/Uwa/1.webp" alt="Uwa" onClick={onClick} buttonName="Next" link="/Uwa2" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/1.mp4" alt="Uwa" onClick={onClick} buttonName="Next" link="/Uwa2" />
         </>
     )
 }
@@ -48,7 +50,7 @@ function Uwa2() {
         if (uwaform === undefined) {
             return history.push("/testerform")
         }
-        if (status === "yes")
+        if (status === "Yes")
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
@@ -74,7 +76,7 @@ function Uwa2() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/Uwa/2.webp" onClick={onClick} alt="Uwa2" buttonName="Next" link="/Uwa3" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/2.mp4" onClick={onClick} alt="Uwa2" buttonName="Next" link="/Uwa3" />
         </>
     )
 
@@ -85,7 +87,7 @@ function Uwa3() {
         if (uwaform === undefined) {
             return history.push("/testerform")
         }
-        if (status === "yes")
+        if (status === "Yes")
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
@@ -112,7 +114,7 @@ function Uwa3() {
     return (
 
         <>
-            <MasterCheckList src="./Images/Uwa/3.webp" onClick={onClick} alt="Uwa3" buttonName="Next" link="/Uwa4" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/3.mp4" onClick={onClick} alt="Uwa3" buttonName="Next" link="/Uwa4" />
         </>
     )
 }
@@ -122,7 +124,7 @@ function Uwa4() {
         if (uwaform === undefined) {
             return history.push("/testerform")
         }
-        if (status === "yes")
+        if (status === "Yes")
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
@@ -148,7 +150,7 @@ function Uwa4() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/Uwa/4.webp" onClick={onClick} alt="Uwa4" buttonName="Next" link="/Uwa5" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/4.mp4" onClick={onClick} alt="Uwa4" buttonName="Next" link="/Uwa5" />
         </>
     )
 
@@ -159,7 +161,7 @@ function Uwa5() {
         if (uwaform === undefined) {
             return history.push("/testerform")
         }
-        if (status === "yes")
+        if (status === "Yes")
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
@@ -185,7 +187,7 @@ function Uwa5() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/Uwa/5.webp" onClick={onClick} alt="Uwa5" buttonName="Next" link="/Uwa6" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/5.mp4" onClick={onClick} alt="Uwa5" buttonName="Next" link="/Uwa6" />
         </>
     )
 }
@@ -195,7 +197,7 @@ function Uwa6() {
         if (uwaform === undefined) {
             return history.push("/testerform")
         }
-        if (status === "yes")
+        if (status === "Yes")
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
@@ -220,7 +222,7 @@ function Uwa6() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/Uwa/6.webp" onClick={onClick} alt="Uwa6" buttonName="Next" link="/Uwa7" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/6.mp4" onClick={onClick} alt="Uwa6" buttonName="Next" link="/Uwa7" />
         </>
     )
 }
@@ -230,7 +232,7 @@ function Uwa7() {
         if (uwaform === undefined) {
             return history.push("/testerform")
         }
-        if (status === "yes")
+        if (status === "Yes")
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
@@ -256,7 +258,7 @@ function Uwa7() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/Uwa/7.webp" onClick={onClick} alt="Uwa7" buttonName="Next" link="/Uwa8" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/7.mp4" onClick={onClick} alt="Uwa7" buttonName="Next" link="/Uwa8" />
         </>
     )
 }
@@ -266,7 +268,7 @@ function Uwa8() {
         if (uwaform === undefined) {
             return history.push("/testerform")
         }
-        if (status === "yes")
+        if (status === "Yes")
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
@@ -291,7 +293,7 @@ function Uwa8() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/Uwa/8.webp" onClick={onClick} alt="Uwa8" buttonName="Next" link="/Uwa9" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/8.mp4" onClick={onClick} alt="Uwa8" buttonName="Next" link="/Uwa9" />
         </>
     )
 }
@@ -301,7 +303,7 @@ function Uwa9() {
         if (uwaform === undefined) {
             return history.push("/testerform")
         }
-        if (status === "yes")
+        if (status === "Yes")
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
@@ -326,7 +328,7 @@ function Uwa9() {
     }
     return (
         <>
-            <MasterCheckList src="./Images/Uwa/9.webp" onClick={onClick} alt="Uwa9" buttonName="Next" link="/Uwa10" />
+            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/9.mp4" onClick={onClick} alt="Uwa9" buttonName="Next" link="/Uwa10" />
         </>
     )
 }
@@ -376,7 +378,7 @@ function Uwa10(props) {
                     }
                     axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/uwa/send`, datas).then((res) => {
                         if (res.data === true) {
-                            history.push(nextPath)
+                            history.push()
                         }
                     }).catch((error) => {
                         console.log(error)
@@ -388,7 +390,7 @@ function Uwa10(props) {
     }
     return (
         <>
-            <MasterCheckList okToComplete="true" src="./Images/Uwa/10.webp" onClick={onClick} alt="Uwa10" buttonName="Done" link="/" />
+            <MasterCheckList okToComplete="true" TypeOfMedia="Video" videosrc="./Images/Uwa/10.mp4" onClick={onClick} alt="Uwa10" buttonName="Done" link="/" />
         </>
     )
 }

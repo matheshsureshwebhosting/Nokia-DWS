@@ -1,19 +1,7 @@
-.test-checklist-btn {
-  position: absolute;
-  bottom: 15%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  -webkit-animation: glowing 1500ms infinite;
-  -moz-animation: glowing 1500ms infinite;
-  -o-animation: glowing 1500ms infinite;
-  animation: glowing 1500ms infinite;
-  border-radius: 28px;
-}
 .master-checklist-btn {
   position: absolute;
-  left: 50%;
-  right: 50%;
+  right: 10%;
+  /* right: 50%; */
   bottom: 0px;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
 }
