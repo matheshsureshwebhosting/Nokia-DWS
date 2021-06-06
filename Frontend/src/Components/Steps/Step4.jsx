@@ -70,6 +70,7 @@ export default class Step4 extends Component {
                     nameIssue="alert"
                     stepTitle="Vacuum Pump Cleaning And Inspection"
                     videoSrc={video1}
+                    doNotTouch="true"
                     onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
                     onClickIssue={(e) => Displayalert(e.target.name, "No")}
                 />

@@ -29,10 +29,10 @@ import { Thermal, Thermal2, Thermal3, Thermal4, Thermal5, Thermal6, Thermal7, Th
 import Thermalform from './Components/Testers/ThermalGelTester/Thermalform';
 import OtaForm from "./Components/Testers/OtaTester/OtaForm"
 import UwaForm from "./Components/Testers/UwaTester/UwaForm"
+import Dashboard from './Components/Dashboard/Dashboard';
 
 const Home = React.lazy(() => import('./Components/Home/Home.jsx'));
 // const Dashboard = React.lazy(() => import('./Components/Dashboard/Dashboard'));
-const NewDashboard = React.lazy(() => import('./Components/DashboardNew/Dashboard'));
 const Vaccume = React.lazy(() => import('./Components/Steps/Vaccume'))
 
 export default class App extends Component {
@@ -47,8 +47,7 @@ export default class App extends Component {
                 {/* pages */}
                 <Route exact path="/" component={Home} />
 
-                {/* <Route path='/Dashboard' render={() => (<Dashboard />)} /> */}
-                <Route path="/Dashboard" component={NewDashboard} />
+                <Route path='/Dashboard' render={() => (<Dashboard />)} />
 
                 <Route exact path="/sliders" component={Sliders} />
                 <Route path='/Soldering' render={() => (<Soldering />)} />

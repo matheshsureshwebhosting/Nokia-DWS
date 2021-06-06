@@ -36,17 +36,17 @@ const images = [
     },
     {
         image: Step5,
-        title: "Lifter Handle<br/> Switch Inspection",
+        title: "Lifter Handle Switch Inspection",
         // Animation: "zoom-in",
     },
     {
         image: Step6,
-        title: "Horizontal Arm <br/>Inspection",
+        title: "Horizontal Arm Inspection",
         // Animation: "fade-right",
     },
     {
         image: Step7,
-        title: "Power on Switch<br/> Inspection",
+        title: "Power on Switch Inspection",
         // Animation: "fade-down-left",
     },
     {
