@@ -381,8 +381,9 @@ function Ota10() {
                     }
                     axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/ota/send`, datas).then((res) => {
                         if (res.data === true) {
-                            history.push(nextPath)
+                            console.log('ok')
                         }
+                        history.push('/')
                     }).catch((error) => {
                         console.log(error)
                     })

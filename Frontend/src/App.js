@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component, Suspense } from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import 'react-circular-progressbar/dist/styles.css';
 import Sliders from './Components/Sliders/Sliders';
 import SlidercontextProvider from "./Components/Context/Slidercontext"
 import Step from './Components/Test/Step1';
@@ -68,7 +69,7 @@ export default class App extends Component {
                 <Route path="/vaccume" component={Vaccume} />
                 <Route path="/testerform" component={Testerform} />
                 <Route path="/Testers" component={Testers} />
-                
+
                 {/* OTA checklist */}
                 <Route path="/otaform" component={OtaForm} />
                 <Route path="/OTA" component={Ota} />

@@ -13,5 +13,15 @@
 .master-checklist-btn {
   position: absolute;
   right: 10%;
-  bottom: 0px;  
+  bottom: 0px;
+}
+.progres-circle {
+  height: 150px;
+  width: 150px !important;
+}
+.prg-div {
+  z-index: 1;
+  position: fixed;
+  right: 1%;
+  top: 5%;
 }

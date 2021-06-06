@@ -8,51 +8,55 @@ export default class Step2 extends Component {
     static contextType = Slidercontext
     constructor(props) {
         super()
+        this.step2Ref = React.createRef()   // Create a ref object 
         this.state = {
             date: "",
             machine_name: "",
             machine_Sl_No: "",
             operator_name: "",
             shift: "",
-            paymentType: ""
+            paymentType: "",
         }
     }
 
+    componentDidMount() {
+        this.step2Ref.current.scroll(0, 275);
+    }
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
     render() {
         const { sliderenable } = this.context
-        const Displayalert = (name, results) => {            
+        const Displayalert = (name, results) => {
             if (name === "alertSuccess")
                 SweetAlert.fire({
                     title: "Good job!",
                     text: "Thank You!",
                     icon: "success",
                 }).then((result) => {
-                    if (result.isConfirmed) {                        
+                    if (result.isConfirmed) {
                         const { updatestaus } = this.context
-                        updatestaus("prosses2_result", results)                        
+                        updatestaus("prosses2_result", results)
                         localStorage.setItem("step2", "okay")
                         sliderenable(this, "step3")
                         this.props.history.push("/step3")
                     }
                 })
-                else if(name==="alert")
+            else if (name === "alert")
                 SweetAlert.fire({
                     title: "OK Noted",
                     text: "Please Inform Technician!",
                     icon: "info",
                 })
-                .then((result) => {
-                    if (result.isConfirmed) {                        
-                        const { updatestaus } = this.context
-                        updatestaus("prosses2_result", results)                        
-                        localStorage.setItem("step2", "okay")
-                        sliderenable(this, "step3")
-                        this.props.history.push("/step3")
-                    }
-                })
+                    .then((result) => {
+                        if (result.isConfirmed) {
+                            const { updatestaus } = this.context
+                            updatestaus("prosses2_result", results)
+                            localStorage.setItem("step2", "okay")
+                            sliderenable(this, "step3")
+                            this.props.history.push("/step3")
+                        }
+                    })
 
         }
         return (
@@ -79,6 +83,7 @@ export default class Step2 extends Component {
                     </div>
                 </div> */}
                 <Steps
+                    vacRef={this.step2Ref}
                     ContinueBtnName="OK To continue"
                     IssueBtnName="RAISE ISSUE"
                     stepTitle="Clean And Inspect The Vacuum Hose"

@@ -152,7 +152,7 @@ export default class Solderings extends Component {
                     axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/soldering/send`, datas).then((res) => {
                         SweetAlert.fire('Saved!', '', 'success').then((result) => {
                             if (result.isConfirmed) {
-                                this.props.history.push("/")
+                                window.location.replace("/")
                             }
                         })
                     })
@@ -168,11 +168,11 @@ export default class Solderings extends Component {
         const tempA = tempValid + 9;
         const tempB = tempValid - 9;
         this.setState({ temp: this.state.temp + 1 });
-        if (temp <= tempA && temp >= tempB) {                        
+        if (temp <= tempA && temp >= tempB) {
             this.setState({ error: false, error2: false });
         }
         else {
-            this.setState({ error: true, modalShow: true });            
+            this.setState({ error: true, modalShow: true });
         }
     }
     decrement = () => {
@@ -180,11 +180,11 @@ export default class Solderings extends Component {
         const tempA = tempValid + 9;
         const tempB = tempValid - 9;
         this.setState({ temp: this.state.temp - 1 });
-        if (temp <= tempA && temp >= tempB) {                        
+        if (temp <= tempA && temp >= tempB) {
             this.setState({ error: false, error2: false });
         }
         else {
-            this.setState({ error: true, modalShow: true });            
+            this.setState({ error: true, modalShow: true });
         }
     }
 
