@@ -43,7 +43,7 @@ function Home(props) {
     {
       img: testers,
       alt: "testers-img",
-      link: "/testerform",
+      link: "/Testers",
       animation:"fade-up-left"
     }
   ]

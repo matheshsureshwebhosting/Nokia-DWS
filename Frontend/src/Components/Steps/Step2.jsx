@@ -23,13 +23,20 @@ export default class Step2 extends Component {
     }
     render() {
         const { sliderenable } = this.context
-        const Displayalert = (name, results) => {
-            console.log(results)
+        const Displayalert = (name, results) => {            
             if (name === "alertSuccess")
                 SweetAlert.fire({
                     title: "Good job!",
                     text: "Thank You!",
                     icon: "success",
+                }).then((result) => {
+                    if (result.isConfirmed) {                        
+                        const { updatestaus } = this.context
+                        updatestaus("prosses2_result", results)                        
+                        localStorage.setItem("step2", "okay")
+                        sliderenable(this, "step3")
+                        this.props.history.push("/step3")
+                    }
                 })
                 else if(name==="alert")
                 SweetAlert.fire({

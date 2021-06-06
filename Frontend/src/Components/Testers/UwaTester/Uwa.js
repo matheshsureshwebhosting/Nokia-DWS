@@ -8,25 +8,25 @@ var uwaform;
 function Uwa(props) {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
-        const { testerform } = props.location.state
-        uwaform = testerform
+        const { state } = props.location
+        uwaform = state
         if (uwaform === undefined) {
-            return history.push("/testerform")
-        }
-        if (status === "Yes")
+            return history.push("/uwaform")
+        }        
+        if (status === "Yes") {
             SweetAlert.fire({
                 title: "Good job!",
                 text: "Thank You!",
                 icon: "success",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    uwastatus[form] = status
+                    history.push(nextPath)
+                }
             })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        uwastatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
-
+        }
         if (status === "No")
+           {
             SweetAlert.fire({
                 title: "OK Noted",
                 text: "Please Inform Technician!",
@@ -37,10 +37,11 @@ function Uwa(props) {
                     history.push(nextPath)
                 }
             })
+           }
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/1.mp4" alt="Uwa" onClick={onClick} buttonName="Next" link="/Uwa2" />
+            <MasterCheckList bar="0%" TypeOfMedia="Video" videosrc="./Images/Uwa/1.mp4"  alt="Uwa" onClick={onClick} buttonName="Next" link="/Uwa2" />
         </>
     )
 }
@@ -48,7 +49,7 @@ function Uwa2() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (uwaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/uwaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -76,7 +77,7 @@ function Uwa2() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/2.mp4" onClick={onClick} alt="Uwa2" buttonName="Next" link="/Uwa3" />
+            <MasterCheckList bar="10%" TypeOfMedia="Video" videosrc="./Images/Uwa/2.mp4" onClick={onClick} alt="Uwa2" buttonName="Next" link="/Uwa3" />
         </>
     )
 
@@ -85,7 +86,7 @@ function Uwa3() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (uwaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/uwaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -114,7 +115,7 @@ function Uwa3() {
     return (
 
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/3.mp4" onClick={onClick} alt="Uwa3" buttonName="Next" link="/Uwa4" />
+            <MasterCheckList bar="20%" TypeOfMedia="Video" videosrc="./Images/Uwa/3.mp4" onClick={onClick} alt="Uwa3" buttonName="Next" link="/Uwa4" />
         </>
     )
 }
@@ -122,7 +123,7 @@ function Uwa4() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (uwaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/uwaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -150,7 +151,7 @@ function Uwa4() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/4.mp4" onClick={onClick} alt="Uwa4" buttonName="Next" link="/Uwa5" />
+            <MasterCheckList bar="30%" TypeOfMedia="Video" videosrc="./Images/Uwa/4.mp4" onClick={onClick} alt="Uwa4" buttonName="Next" link="/Uwa5" />
         </>
     )
 
@@ -159,7 +160,7 @@ function Uwa5() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (uwaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/uwaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -187,7 +188,7 @@ function Uwa5() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/5.mp4" onClick={onClick} alt="Uwa5" buttonName="Next" link="/Uwa6" />
+            <MasterCheckList bar="40%" TypeOfMedia="Video" videosrc="./Images/Uwa/5.mp4" onClick={onClick} alt="Uwa5" buttonName="Next" link="/Uwa6" />
         </>
     )
 }
@@ -195,7 +196,7 @@ function Uwa6() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (uwaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/uwaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -222,7 +223,7 @@ function Uwa6() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/6.mp4" onClick={onClick} alt="Uwa6" buttonName="Next" link="/Uwa7" />
+            <MasterCheckList bar="50%" TypeOfMedia="Video" videosrc="./Images/Uwa/6.mp4" onClick={onClick} alt="Uwa6" buttonName="Next" link="/Uwa7" />
         </>
     )
 }
@@ -230,7 +231,7 @@ function Uwa7() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (uwaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/uwaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -258,7 +259,7 @@ function Uwa7() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/7.mp4" onClick={onClick} alt="Uwa7" buttonName="Next" link="/Uwa8" />
+            <MasterCheckList bar="60%" TypeOfMedia="Video" videosrc="./Images/Uwa/7.mp4" onClick={onClick} alt="Uwa7" buttonName="Next" link="/Uwa8" />
         </>
     )
 }
@@ -266,7 +267,7 @@ function Uwa8() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (uwaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/uwaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -293,7 +294,7 @@ function Uwa8() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/8.mp4" onClick={onClick} alt="Uwa8" buttonName="Next" link="/Uwa9" />
+            <MasterCheckList bar="70%" TypeOfMedia="Video" videosrc="./Images/Uwa/8.mp4" onClick={onClick} alt="Uwa8" buttonName="Next" link="/Uwa9" />
         </>
     )
 }
@@ -301,7 +302,7 @@ function Uwa9() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (uwaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/uwaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -328,7 +329,7 @@ function Uwa9() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/Uwa/9.mp4" onClick={onClick} alt="Uwa9" buttonName="Next" link="/Uwa10" />
+            <MasterCheckList bar="80%" TypeOfMedia="Video" videosrc="./Images/Uwa/9.mp4" onClick={onClick} alt="Uwa9" buttonName="Next" link="/Uwa10" />
         </>
     )
 }
@@ -336,7 +337,7 @@ function Uwa10(props) {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (uwaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/uwaform")
         }
         SweetAlert.fire({
             title: 'Provide Following Details',
@@ -375,10 +376,10 @@ function Uwa10(props) {
                         uwa10: status,
                         description: description,
                         status: finalstatus
-                    }
+                    }                    
                     axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/uwa/send`, datas).then((res) => {
                         if (res.data === true) {
-                            history.push()
+                            history.push(nextPath)
                         }
                     }).catch((error) => {
                         console.log(error)
@@ -390,7 +391,7 @@ function Uwa10(props) {
     }
     return (
         <>
-            <MasterCheckList okToComplete="true" TypeOfMedia="Video" videosrc="./Images/Uwa/10.mp4" onClick={onClick} alt="Uwa10" buttonName="Done" link="/" />
+            <MasterCheckList bar="90%" okToComplete="true" TypeOfMedia="Video" videosrc="./Images/Uwa/10.mp4" onClick={onClick} alt="Uwa10" buttonName="Done" link="/" />
         </>
     )
 }

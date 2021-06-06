@@ -8,10 +8,10 @@ var otaform;
 function Ota(props) {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
-        const { testerform } = props.location.state
-        otaform = testerform
+        const { state } = props.location
+        otaform = state
         if (otaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/otaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -40,7 +40,7 @@ function Ota(props) {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/1.mp4" onClick={onClick} alt="Ota" buttonName="Next" link="/Ota2" />
+            <MasterCheckList bar="0%" TypeOfMedia="Video" videosrc="./Images/OTA/1.mp4" onClick={onClick} alt="Ota" buttonName="Next" link="/Ota2" />
         </>
     )
 }
@@ -48,7 +48,7 @@ function Ota2() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/otaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -77,7 +77,7 @@ function Ota2() {
     return (
 
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/2.mp4" onClick={onClick} alt="Ota2" buttonName="Next" link="/Ota3" />
+            <MasterCheckList bar="10%" TypeOfMedia="Video" videosrc="./Images/OTA/2.mp4" onClick={onClick} alt="Ota2" buttonName="Next" link="/Ota3" />
         </>
     )
 
@@ -86,7 +86,7 @@ function Ota3() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/otaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -114,7 +114,7 @@ function Ota3() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/3.mp4" onClick={onClick} alt="Ota3" buttonName="Next" link="/Ota4" />
+            <MasterCheckList bar="20%" TypeOfMedia="Video" videosrc="./Images/OTA/3.mp4" onClick={onClick} alt="Ota3" buttonName="Next" link="/Ota4" />
         </>
     )
 }
@@ -122,7 +122,7 @@ function Ota4() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/otaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -150,7 +150,7 @@ function Ota4() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/4.mp4" onClick={onClick} alt="Ota4" buttonName="Next" link="/Ota5" />
+            <MasterCheckList bar="30%" TypeOfMedia="Video" videosrc="./Images/OTA/4.mp4" onClick={onClick} alt="Ota4" buttonName="Next" link="/Ota5" />
         </>
     )
 
@@ -159,7 +159,7 @@ function Ota5() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/otaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -187,7 +187,7 @@ function Ota5() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/5.mp4" onClick={onClick} alt="Ota5" buttonName="Next" link="/Ota6" />
+            <MasterCheckList bar="40%" TypeOfMedia="Video" videosrc="./Images/OTA/5.mp4" onClick={onClick} alt="Ota5" buttonName="Next" link="/Ota6" />
         </>
     )
 }
@@ -195,7 +195,7 @@ function Ota6() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/otaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -223,7 +223,7 @@ function Ota6() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/6.mp4" onClick={onClick} alt="Ota6" buttonName="Next" link="/Ota7" />
+            <MasterCheckList bar="50%" TypeOfMedia="Video" videosrc="./Images/OTA/6.mp4" onClick={onClick} alt="Ota6" buttonName="Next" link="/Ota7" />
         </>
     )
 }
@@ -231,7 +231,7 @@ function Ota7() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/otaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -260,7 +260,7 @@ function Ota7() {
     return (
 
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/7.mp4" onClick={onClick} alt="Ota7" buttonName="Next" link="/Ota8" />
+            <MasterCheckList bar="60%" TypeOfMedia="Video" videosrc="./Images/OTA/7.mp4" onClick={onClick} alt="Ota7" buttonName="Next" link="/Ota8" />
         </>
     )
 }
@@ -268,7 +268,7 @@ function Ota8() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/otaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -296,7 +296,7 @@ function Ota8() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/8.mp4" onClick={onClick} alt="Ota8" buttonName="Next" link="/Ota9" />
+            <MasterCheckList bar="70%" TypeOfMedia="Video" videosrc="./Images/OTA/8.mp4" onClick={onClick} alt="Ota8" buttonName="Next" link="/Ota9" />
         </>
     )
 }
@@ -304,7 +304,7 @@ function Ota9() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/otaform")
         }
         if (status === "Yes")
             SweetAlert.fire({
@@ -332,7 +332,7 @@ function Ota9() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc="./Images/OTA/9.mp4" onClick={onClick} alt="Ota9" buttonName="Next" link="/Ota10" />
+            <MasterCheckList bar="80%" TypeOfMedia="Video" videosrc="./Images/OTA/9.mp4" onClick={onClick} alt="Ota9" buttonName="Next" link="/Ota10" />
         </>
     )
 }
@@ -340,7 +340,7 @@ function Ota10() {
     const history = useHistory()
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
-            return history.push("/testerform")
+            return history.push("/otaform")
         }
         SweetAlert.fire({
             title: 'Provide Following Details',
@@ -394,7 +394,7 @@ function Ota10() {
     return (
 
         <>
-            <MasterCheckList okToComplete="true" TypeOfMedia="Video" videosrc="./Images/OTA/10.mp4" onClick={onClick} alt="Ota10" buttonName="Done" link="/" />
+            <MasterCheckList bar="90%" okToComplete="true" TypeOfMedia="Video" videosrc="./Images/OTA/10.mp4" onClick={onClick} alt="Ota10" buttonName="Done" link="/" />
         </>
     )
 }

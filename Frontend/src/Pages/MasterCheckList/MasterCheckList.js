@@ -5,6 +5,9 @@ function MasterCheckList(props) {
     return (
         <>
             <div className="position-relative" style={{ height: "100vh", width: "100vw" }}>
+                <div className="progress">
+                    <div className="progress-bar" role="progressbar" style={{ width: `${props.bar}` }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{props.bar}</div>
+                </div>
                 {props.TypeOfMedia === "Video" ? <video muted autoPlay={true} src={props.videosrc} type="video/mp4" width="100%" height="100%" className="position-relative" /> :
                     <img src={props.src} alt={props.alt} style={{ height: "95vh" }} className="w-100 position-relative" />}
                 <div className="d-flex justify-content-center master-checklist-btn">

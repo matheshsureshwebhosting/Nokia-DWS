@@ -20,12 +20,10 @@ import axios from 'axios';
 
 const thermalstatus = {}
 var thermalforms;
-export function Thermal(props) {
-    console.log(props)
+export function Thermal(props) {    
     const history = useHistory()
 
-    const onClick = (form, status, nextPath) => {
-        // console.log(status)
+    const onClick = (form, status, nextPath) => {        
         const { state } = props.location
         thermalforms = {
             Station: state.Station,
@@ -63,7 +61,7 @@ export function Thermal(props) {
     }
     return (
         <>
-            <MasterCheckList nameContinue='success' nameIssue='alert' TypeOfMedia="Video" videosrc={video1} onClick={onClick} alt="thermal1" link='/thermal/step2' />
+            <MasterCheckList bar="0%" nameContinue='success' nameIssue='alert' TypeOfMedia="Video" videosrc={video1} onClick={onClick} alt="thermal1" link='/thermal/step2' />
         </>
     )
 }
@@ -99,7 +97,7 @@ export function Thermal2() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video2} onClick={onClick} alt="thermal2" link='/thermal/step3' />
+            <MasterCheckList bar="8%" TypeOfMedia="Video" videosrc={video2} onClick={onClick} alt="thermal2" link='/thermal/step3' />
         </>
     )
 }
@@ -135,7 +133,7 @@ export function Thermal3() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video3} onClick={onClick} alt="thermal3" link='/thermal/step4' />
+            <MasterCheckList bar="16%" TypeOfMedia="Video" videosrc={video3} onClick={onClick} alt="thermal3" link='/thermal/step4' />
         </>
     )
 }
@@ -171,7 +169,7 @@ export function Thermal4() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video4} onClick={onClick} alt="thermal4" link='/thermal/step5' />
+            <MasterCheckList bar="24%" TypeOfMedia="Video" videosrc={video4} onClick={onClick} alt="thermal4" link='/thermal/step5' />
         </>
     )
 }
@@ -206,7 +204,7 @@ export function Thermal5() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video5} onClick={onClick} alt="thermal5" link='/thermal/step6' />
+            <MasterCheckList bar="32%" TypeOfMedia="Video" videosrc={video5} onClick={onClick} alt="thermal5" link='/thermal/step6' />
         </>
     )
 }
@@ -241,7 +239,7 @@ export function Thermal6() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video6} onClick={onClick} alt="thermal6" link='/thermal/step7' />
+            <MasterCheckList bar="40%" TypeOfMedia="Video" videosrc={video6} onClick={onClick} alt="thermal6" link='/thermal/step7' />
         </>
     )
 }
@@ -276,7 +274,7 @@ export function Thermal7() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video7} onClick={onClick} alt="thermal7" link='/thermal/step8' />
+            <MasterCheckList bar="48%" TypeOfMedia="Video" videosrc={video7} onClick={onClick} alt="thermal7" link='/thermal/step8' />
         </>
     )
 }
@@ -311,7 +309,7 @@ export function Thermal8() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video8} onClick={onClick} alt="thermal8" link='/thermal/step9' />
+            <MasterCheckList bar="56%" TypeOfMedia="Video" videosrc={video8} onClick={onClick} alt="thermal8" link='/thermal/step9' />
         </>
     )
 }
@@ -346,7 +344,7 @@ export function Thermal9() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video9} onClick={onClick} alt="thermal9" link='/thermal/step10' />
+            <MasterCheckList bar="64%" TypeOfMedia="Video" videosrc={video9} onClick={onClick} alt="thermal9" link='/thermal/step10' />
         </>
     )
 }
@@ -381,7 +379,7 @@ export function Thermal10() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video10} onClick={onClick} alt="thermal10" link='/thermal/step11' />
+            <MasterCheckList bar="72%" TypeOfMedia="Video" videosrc={video10} onClick={onClick} alt="thermal10" link='/thermal/step11' />
         </>
     )
 }
@@ -416,7 +414,7 @@ export function Thermal11() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video11} onClick={onClick} alt="thermal11" link='/thermal/step12' />
+            <MasterCheckList bar="80%" TypeOfMedia="Video" videosrc={video11} onClick={onClick} alt="thermal11" link='/thermal/step12' />
         </>
     )
 }
@@ -453,7 +451,7 @@ export function Thermal12() {
     }
     return (
         <>
-            <MasterCheckList TypeOfMedia="Video" videosrc={video12} onClick={onClick} alt="thermal12" link='/thermal/step13' />
+            <MasterCheckList bar="88%" TypeOfMedia="Video" videosrc={video12} onClick={onClick} alt="thermal12" link='/thermal/step13' />
         </>
     )
 }
@@ -517,7 +515,7 @@ export function Thermal13() {
     }
     return (
         <>
-            <MasterCheckList okToComplete="true" TypeOfMedia="Video" videosrc={video13} onClick={onClick} alt="thermal13" link='/' />
+            <MasterCheckList bar="96%" okToComplete="true" TypeOfMedia="Video" videosrc={video13} onClick={onClick} alt="thermal13" link='/' />
         </>
     )
 }

@@ -168,14 +168,11 @@ export default class Solderings extends Component {
         const tempA = tempValid + 9;
         const tempB = tempValid - 9;
         this.setState({ temp: this.state.temp + 1 });
-        if (temp <= tempA && temp >= tempB) {
-            console.log(this.state.temp)
-            console.log(this.state.tempValid)
+        if (temp <= tempA && temp >= tempB) {                        
             this.setState({ error: false, error2: false });
         }
         else {
-            this.setState({ error: true, modalShow: true });
-            console.log("error")
+            this.setState({ error: true, modalShow: true });            
         }
     }
     decrement = () => {
@@ -183,14 +180,11 @@ export default class Solderings extends Component {
         const tempA = tempValid + 9;
         const tempB = tempValid - 9;
         this.setState({ temp: this.state.temp - 1 });
-        if (temp <= tempA && temp >= tempB) {
-            console.log(this.state.temp)
-            console.log(this.state.tempValid)
+        if (temp <= tempA && temp >= tempB) {                        
             this.setState({ error: false, error2: false });
         }
         else {
-            this.setState({ error: true, modalShow: true });
-            console.log("error")
+            this.setState({ error: true, modalShow: true });            
         }
     }
 

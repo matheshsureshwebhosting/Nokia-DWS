@@ -26,6 +26,9 @@ import Error from './Pages/ErrorPage/Error';
 import Testerform from './Components/Testers/Testerform';
 import { Thermal, Thermal2, Thermal3, Thermal4, Thermal5, Thermal6, Thermal7, Thermal8, Thermal9, Thermal10, Thermal11, Thermal12, Thermal13 } from './Components/Testers/ThermalGelTester/Thermal';
 import Thermalform from './Components/Testers/ThermalGelTester/Thermalform';
+import OtaForm from "./Components/Testers/OtaTester/OtaForm"
+import UwaForm from "./Components/Testers/UwaTester/UwaForm"
+
 const Home = React.lazy(() => import('./Components/Home/Home.jsx'));
 // const Dashboard = React.lazy(() => import('./Components/Dashboard/Dashboard'));
 const NewDashboard = React.lazy(() => import('./Components/DashboardNew/Dashboard'));
@@ -65,7 +68,9 @@ export default class App extends Component {
                 <Route path="/vaccume" component={Vaccume} />
                 <Route path="/testerform" component={Testerform} />
                 <Route path="/Testers" component={Testers} />
+                
                 {/* OTA checklist */}
+                <Route path="/otaform" component={OtaForm} />
                 <Route path="/OTA" component={Ota} />
                 <Route path="/Ota2" component={Ota2} />
                 <Route path="/Ota3" component={Ota3} />
@@ -77,6 +82,7 @@ export default class App extends Component {
                 <Route path="/Ota9" component={Ota9} />
                 <Route path="/Ota10" component={Ota10} />
                 {/* UWS Checklist */}
+                <Route path="/uwaform" component={UwaForm} />
                 <Route path="/UWA" component={Uwa} />
                 <Route path="/Uwa2" component={Uwa2} />
                 <Route path="/Uwa3" component={Uwa3} />

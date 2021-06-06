@@ -25,8 +25,7 @@ export default class OtaTable extends Component {
             return res.data
         })
         if (shift !== "none") {
-            const filtershift = await shiftdata.filter((shifts, index) => { return shifts.shift === shift })
-            console.log(filtershift)
+            const filtershift = await shiftdata.filter((shifts, index) => { return shifts.shift === shift })            
             this.setState({
                 ota: filtershift
             })
@@ -73,6 +72,22 @@ export default class OtaTable extends Component {
         })
         window.open(exportota)
     }
+    statusfilter=async(e)=>{
+        const status = e.target.value
+        const statusdata = await axios.get(`${process.env.REACT_APP_SERVER_ORIGIN}/ota`).then((res) => {
+            return res.data
+        })
+        if (status !== "none") {
+            const filterstatus = await statusdata.filter((statuss, index) => { return statuss.status === status })            
+            this.setState({
+                ota: filterstatus
+            })
+        } else {
+            this.setState({
+                ota: statusdata
+            })
+        }
+    }
     render() {
         const { ota } = this.state
         return (
@@ -102,6 +117,11 @@ export default class OtaTable extends Component {
                                 <option value="Shift A">Shift A</option>
                                 <option value="Shift B" >Shift B</option>
                                 <option value="Shift C">Shift C</option>
+                            </select>
+                            <select className="form-select mr-1" onChange={e => this.statusfilter(e)}>
+                                <option value="none">Filter By Status</option>
+                                <option value="Complete" >Complete</option>
+                                <option value="In Complete">In Complete</option>                                
                             </select>
                         </div>
                     </div>
