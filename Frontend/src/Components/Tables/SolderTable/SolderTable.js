@@ -25,7 +25,6 @@ export default class SolderTable extends Component {
         })
         if (shift !== "none") {
             const filtershift = await shiftdata.filter((shifts, index) => { return shifts.shift === shift })
-            console.log(filtershift)
             this.setState({
                 soldering: filtershift
             })
@@ -72,6 +71,22 @@ export default class SolderTable extends Component {
         })
         window.open(exportsoldering)
     }
+    statusfilter = async (e) => {
+        const status = e.target.value
+        const statusdata = await axios.get(`${process.env.REACT_APP_SERVER_ORIGIN}/soldering`).then((res) => {
+            return res.data
+        })
+        if (status !== "none") {
+            const filterstatus = await statusdata.filter((statuss, index) => { return statuss.status === status })
+            this.setState({
+                soldering: filterstatus
+            })
+        } else {
+            this.setState({
+                soldering: statusdata
+            })
+        }
+    }
     render() {
         const { soldering } = this.state
         return (
@@ -101,6 +116,11 @@ export default class SolderTable extends Component {
                                 <option value="Station 1">Station 1</option>
                                 <option value="station 2" >Station 2</option>
                                 <option value="Station 3">Station 3</option>
+                            </select>
+                            <select className="form-select mr-1" onChange={e => this.statusfilter(e)}>
+                                <option value="none">Filter By Status</option>
+                                <option value="Complete" >Complete</option>
+                                <option value="In Complete">In Complete</option>
                             </select>
                         </div>
                     </div>

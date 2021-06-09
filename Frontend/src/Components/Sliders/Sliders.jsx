@@ -49,8 +49,7 @@ export default class Sliders extends Component {
             centerPadding: 0,
             nextArrow: <NextArrow />,
             prevArrow: <PrevArrow />,
-            beforeChange: (current, next) => {
-                console.log(current,"current",next,"next");
+            beforeChange: (current, next) => {                
                 this.setState({
                     imageIndex: next
                 })                

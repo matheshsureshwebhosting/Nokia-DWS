@@ -75,6 +75,22 @@ export default class VacuumTable extends Component {
         })
         window.open(exportvaccume)
     }
+    statusfilter=async(e)=>{
+        const status = e.target.value
+        const statusdata =  await axios.get(`${process.env.REACT_APP_SERVER_ORIGIN}/vaccume`).then((res) => {
+            return res.data
+        })
+        if (status !== "none") {
+            const filterstatus = await statusdata.filter((statuss, index) => { return statuss.status === status })            
+            this.setState({
+                vaccumetable: filterstatus
+            })
+        } else {
+            this.setState({
+                vaccumetable: statusdata
+            })
+        }
+    }
     render() {
         const { vaccumetable } = this.state
         return (
@@ -105,6 +121,11 @@ export default class VacuumTable extends Component {
                                     <option value="Shift B">Shift B</option>
                                     <option value="Shift C">Shift C</option>
                                 </select>
+                                <select className="form-select mr-1" onChange={e => this.statusfilter(e)}>
+                                <option value="none">Filter By Status</option>
+                                <option value="Complete" >Complete</option>
+                                <option value="In Complete">In Complete</option>                                
+                            </select>
                             </div>
                         </div>
                         <Table striped bordered hover size="sm" responsive="sm">
