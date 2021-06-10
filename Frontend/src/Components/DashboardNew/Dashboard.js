@@ -78,8 +78,8 @@ function Dashboard() {
                         <div className="col-md-3">
                             <div className="card-counter primary position-relative">
                                 <i className="fa fa-code-fork"></i>
-                                <span className="count-numbers">12</span>
-                                <span className="count-name">Checklists</span>
+                                <span className="count-numbers">6</span>
+                                <span className="count-name">InComplete</span>
                                 <span style={cardBottom}>TODAY</span>
                             </div>
                         </div>
@@ -87,8 +87,8 @@ function Dashboard() {
                         <div className="col-md-3">
                             <div className="card-counter danger position-relative">
                                 <i className="fa fa-spin fa-cog"></i>
-                                <span className="count-numbers">599</span>
-                                <span className="count-name">Processes</span>
+                                <span className="count-numbers">3</span>
+                                <span className="count-name">Missed</span>
                                 <span style={cardBottom}>TODAY</span>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ function Dashboard() {
                             <div className="card-counter info position-relative">
                                 <i className="fa fa-bar-chart"></i>
                                 <span className="count-numbers">35</span>
-                                <span className="count-name">Completed Jobs</span>
+                                <span className="count-name">Completed</span>
                                 <span style={cardBottom}>TODAY</span>
                             </div>
                         </div>

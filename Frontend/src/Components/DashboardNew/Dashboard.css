@@ -45,7 +45,7 @@
   position: absolute;
   right: 15px;
   top: 20px;
-  font-size: 32px;
+  font-size: 40px;
   display: block;
 }
 
@@ -57,7 +57,7 @@
   text-transform: capitalize;
   opacity: 0.5;
   display: block;
-  font-size: 18px;
+  font-size: 32px;
 }
 
 .vacuumbtn,
