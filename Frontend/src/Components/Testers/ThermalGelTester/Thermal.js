@@ -38,8 +38,7 @@ export function Thermal(props) {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -51,7 +50,6 @@ export function Thermal(props) {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             })
                 .then((result) => {
@@ -64,7 +62,8 @@ export function Thermal(props) {
 
     return (
         <>
-            <MasterCheckList bar="0%" nameContinue='success' nameIssue='alert' TypeOfMedia="Video" videosrc={video1} onClick={onClick} alt="thermal1" link='/thermal/step2' />
+            <MasterCheckList progressCircle="true" progressValue="8"
+                progressText="1 0f 13" nameContinue='success' nameIssue='alert' TypeOfMedia="Video" videosrc={video1} onClick={onClick} alt="thermal1" link='/thermal/step2' />
         </>
     )
 }
@@ -76,8 +75,7 @@ export function Thermal2() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -89,7 +87,6 @@ export function Thermal2() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -100,7 +97,8 @@ export function Thermal2() {
     }
     return (
         <>
-            <MasterCheckList bar="8%" TypeOfMedia="Video" videosrc={video2} onClick={onClick} alt="thermal2" link='/thermal/step3' />
+            <MasterCheckList progressCircle="true" progressValue="16" progressText="2 0f 13" TypeOfMedia="Video" videosrc={video2} onClick={onClick} alt="thermal2" link='/thermal/step3' />
+
         </>
     )
 }
@@ -112,8 +110,7 @@ export function Thermal3() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -125,7 +122,6 @@ export function Thermal3() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -136,7 +132,7 @@ export function Thermal3() {
     }
     return (
         <>
-            <MasterCheckList bar="16%" TypeOfMedia="Video" videosrc={video3} onClick={onClick} alt="thermal3" link='/thermal/step4' />
+            <MasterCheckList progressCircle="true" progressValue="22" progressText="3 0f 13" TypeOfMedia="Video" videosrc={video3} onClick={onClick} alt="thermal3" link='/thermal/step4' />
         </>
     )
 }
@@ -148,8 +144,7 @@ export function Thermal4() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -161,7 +156,6 @@ export function Thermal4() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -172,7 +166,7 @@ export function Thermal4() {
     }
     return (
         <>
-            <MasterCheckList bar="24%" TypeOfMedia="Video" videosrc={video4} onClick={onClick} alt="thermal4" link='/thermal/step5' />
+            <MasterCheckList progressCircle="true" progressValue="30" progressText="4 0f 13" TypeOfMedia="Video" videosrc={video4} onClick={onClick} alt="thermal4" link='/thermal/step5' />
         </>
     )
 }
@@ -184,8 +178,7 @@ export function Thermal5() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -196,7 +189,6 @@ export function Thermal5() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -207,7 +199,7 @@ export function Thermal5() {
     }
     return (
         <>
-            <MasterCheckList bar="32%" TypeOfMedia="Video" videosrc={video5} onClick={onClick} alt="thermal5" link='/thermal/step6' />
+            <MasterCheckList progressCircle="true" progressValue="40" progressText="5 0f 13" TypeOfMedia="Video" videosrc={video5} onClick={onClick} alt="thermal5" link='/thermal/step6' />
         </>
     )
 }
@@ -219,8 +211,7 @@ export function Thermal6() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -231,7 +222,6 @@ export function Thermal6() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -242,7 +232,7 @@ export function Thermal6() {
     }
     return (
         <>
-            <MasterCheckList bar="40%" TypeOfMedia="Video" videosrc={video6} onClick={onClick} alt="thermal6" link='/thermal/step7' />
+            <MasterCheckList progressCircle="true" progressValue="48" progressText="6 0f 13" TypeOfMedia="Video" videosrc={video6} onClick={onClick} alt="thermal6" link='/thermal/step7' />
         </>
     )
 }
@@ -254,8 +244,7 @@ export function Thermal7() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -266,7 +255,6 @@ export function Thermal7() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -277,7 +265,7 @@ export function Thermal7() {
     }
     return (
         <>
-            <MasterCheckList bar="48%" TypeOfMedia="Video" videosrc={video7} onClick={onClick} alt="thermal7" link='/thermal/step8' />
+            <MasterCheckList progressCircle="true" progressValue="55" progressText="7 0f 13" TypeOfMedia="Video" videosrc={video7} onClick={onClick} alt="thermal7" link='/thermal/step8' />
         </>
     )
 }
@@ -289,8 +277,7 @@ export function Thermal8() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -301,7 +288,6 @@ export function Thermal8() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -312,7 +298,7 @@ export function Thermal8() {
     }
     return (
         <>
-            <MasterCheckList bar="56%" TypeOfMedia="Video" videosrc={video8} onClick={onClick} alt="thermal8" link='/thermal/step9' />
+            <MasterCheckList progressCircle="true" progressValue="62" progressText="8 0f 13" TypeOfMedia="Video" videosrc={video8} onClick={onClick} alt="thermal8" link='/thermal/step9' />
         </>
     )
 }
@@ -324,8 +310,7 @@ export function Thermal9() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -336,7 +321,6 @@ export function Thermal9() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -347,7 +331,7 @@ export function Thermal9() {
     }
     return (
         <>
-            <MasterCheckList bar="64%" TypeOfMedia="Video" videosrc={video9} onClick={onClick} alt="thermal9" link='/thermal/step10' />
+            <MasterCheckList progressCircle="true" progressValue="70" progressText="9 0f 13" TypeOfMedia="Video" videosrc={video9} onClick={onClick} alt="thermal9" link='/thermal/step10' />
         </>
     )
 }
@@ -359,8 +343,7 @@ export function Thermal10() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -371,7 +354,6 @@ export function Thermal10() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -382,7 +364,7 @@ export function Thermal10() {
     }
     return (
         <>
-            <MasterCheckList bar="72%" TypeOfMedia="Video" videosrc={video10} onClick={onClick} alt="thermal10" link='/thermal/step11' />
+            <MasterCheckList progressCircle="true" progressValue="80" progressText="10 0f 13" TypeOfMedia="Video" videosrc={video10} onClick={onClick} alt="thermal10" link='/thermal/step11' />
         </>
     )
 }
@@ -394,8 +376,7 @@ export function Thermal11() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -406,7 +387,6 @@ export function Thermal11() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -417,7 +397,7 @@ export function Thermal11() {
     }
     return (
         <>
-            <MasterCheckList bar="80%" TypeOfMedia="Video" videosrc={video11} onClick={onClick} alt="thermal11" link='/thermal/step12' />
+            <MasterCheckList progressCircle="true" progressValue="86" progressText="11 0f 13" TypeOfMedia="Video" videosrc={video11} onClick={onClick} alt="thermal11" link='/thermal/step12' />
         </>
     )
 }
@@ -429,8 +409,7 @@ export function Thermal12() {
         }
         if (status === 'Yes')
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -442,7 +421,6 @@ export function Thermal12() {
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             })
                 .then((result) => {
@@ -454,7 +432,7 @@ export function Thermal12() {
     }
     return (
         <>
-            <MasterCheckList bar="88%" TypeOfMedia="Video" videosrc={video12} onClick={onClick} alt="thermal12" link='/thermal/step13' />
+            <MasterCheckList progressCircle="true" progressValue="92" progressText="12 0f 13" TypeOfMedia="Video" videosrc={video12} onClick={onClick} alt="thermal12" link='/thermal/step13' />
         </>
     )
 }
@@ -518,7 +496,7 @@ export function Thermal13() {
     }
     return (
         <>
-            <MasterCheckList bar="96%" okToComplete="true" TypeOfMedia="Video" videosrc={video13} onClick={onClick} alt="thermal13" link='/' />
+            <MasterCheckList progressCircle="true" progressValue="100" progressText="13 0f 13" okToComplete="true" TypeOfMedia="Video" videosrc={video13} onClick={onClick} alt="thermal13" link='/' />
         </>
     )
 }

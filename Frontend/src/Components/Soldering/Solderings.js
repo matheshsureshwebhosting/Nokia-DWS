@@ -153,7 +153,7 @@ export default class Solderings extends Component {
                         SweetAlert.fire('Saved!', '', 'success').then((result) => {
                             if (result.isConfirmed) {
                             }
-                            this.props.history.push("/")
+                            window.location.replace("/")
                         })
                     })
                 }

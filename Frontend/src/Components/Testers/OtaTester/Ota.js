@@ -15,8 +15,7 @@ function Ota(props) {
         }
         if (status === "Yes")
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -28,7 +27,6 @@ function Ota(props) {
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -40,7 +38,7 @@ function Ota(props) {
     }
     return (
         <>
-            <MasterCheckList bar="0%" TypeOfMedia="Video" videosrc="./Images/OTA/1.mp4" onClick={onClick} alt="Ota" buttonName="Next" link="/Ota2" />
+            <MasterCheckList progressCircle="true" progressValue="20" progressText="1 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/1.mp4" onClick={onClick} alt="Ota" buttonName="Next" link="/Ota2" />
         </>
     )
 }
@@ -52,8 +50,7 @@ function Ota2() {
         }
         if (status === "Yes")
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -65,7 +62,6 @@ function Ota2() {
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -77,7 +73,7 @@ function Ota2() {
     return (
 
         <>
-            <MasterCheckList bar="10%" TypeOfMedia="Video" videosrc="./Images/OTA/2.mp4" onClick={onClick} alt="Ota2" buttonName="Next" link="/Ota3" />
+            <MasterCheckList progressCircle="true" progressValue="30" progressText="2 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/2.mp4" onClick={onClick} alt="Ota2" buttonName="Next" link="/Ota3" />
         </>
     )
 
@@ -90,8 +86,7 @@ function Ota3() {
         }
         if (status === "Yes")
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -103,7 +98,6 @@ function Ota3() {
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -114,7 +108,7 @@ function Ota3() {
     }
     return (
         <>
-            <MasterCheckList bar="20%" TypeOfMedia="Video" videosrc="./Images/OTA/3.mp4" onClick={onClick} alt="Ota3" buttonName="Next" link="/Ota4" />
+            <MasterCheckList progressCircle="true" progressValue="45" progressText="3 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/3.mp4" onClick={onClick} alt="Ota3" buttonName="Next" link="/Ota4" />
         </>
     )
 }
@@ -126,8 +120,7 @@ function Ota4() {
         }
         if (status === "Yes")
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -139,7 +132,6 @@ function Ota4() {
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -150,7 +142,7 @@ function Ota4() {
     }
     return (
         <>
-            <MasterCheckList bar="30%" TypeOfMedia="Video" videosrc="./Images/OTA/4.mp4" onClick={onClick} alt="Ota4" buttonName="Next" link="/Ota5" />
+            <MasterCheckList progressCircle="true" progressValue="50" progressText="4 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/4.mp4" onClick={onClick} alt="Ota4" buttonName="Next" link="/Ota5" />
         </>
     )
 
@@ -163,8 +155,7 @@ function Ota5() {
         }
         if (status === "Yes")
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -176,7 +167,6 @@ function Ota5() {
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -187,7 +177,7 @@ function Ota5() {
     }
     return (
         <>
-            <MasterCheckList bar="40%" TypeOfMedia="Video" videosrc="./Images/OTA/5.mp4" onClick={onClick} alt="Ota5" buttonName="Next" link="/Ota6" />
+            <MasterCheckList progressCircle="true" progressValue="55" progressText="5 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/5.mp4" onClick={onClick} alt="Ota5" buttonName="Next" link="/Ota6" />
         </>
     )
 }
@@ -199,8 +189,7 @@ function Ota6() {
         }
         if (status === "Yes")
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -212,7 +201,6 @@ function Ota6() {
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -223,7 +211,7 @@ function Ota6() {
     }
     return (
         <>
-            <MasterCheckList bar="50%" TypeOfMedia="Video" videosrc="./Images/OTA/6.mp4" onClick={onClick} alt="Ota6" buttonName="Next" link="/Ota7" />
+            <MasterCheckList progressCircle="true" progressValue="60" progressText="6 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/6.mp4" onClick={onClick} alt="Ota6" buttonName="Next" link="/Ota7" />
         </>
     )
 }
@@ -235,8 +223,7 @@ function Ota7() {
         }
         if (status === "Yes")
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -248,7 +235,6 @@ function Ota7() {
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -260,7 +246,7 @@ function Ota7() {
     return (
 
         <>
-            <MasterCheckList bar="60%" TypeOfMedia="Video" videosrc="./Images/OTA/7.mp4" onClick={onClick} alt="Ota7" buttonName="Next" link="/Ota8" />
+            <MasterCheckList progressCircle="true" progressValue="70" progressText="7 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/7.mp4" onClick={onClick} alt="Ota7" buttonName="Next" link="/Ota8" />
         </>
     )
 }
@@ -272,8 +258,7 @@ function Ota8() {
         }
         if (status === "Yes")
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -285,7 +270,6 @@ function Ota8() {
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -296,7 +280,7 @@ function Ota8() {
     }
     return (
         <>
-            <MasterCheckList bar="70%" TypeOfMedia="Video" videosrc="./Images/OTA/8.mp4" onClick={onClick} alt="Ota8" buttonName="Next" link="/Ota9" />
+            <MasterCheckList progressCircle="true" progressValue="80" progressText="8 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/8.mp4" onClick={onClick} alt="Ota8" buttonName="Next" link="/Ota9" />
         </>
     )
 }
@@ -308,8 +292,7 @@ function Ota9() {
         }
         if (status === "Yes")
             SweetAlert.fire({
-                title: "Good job!",
-                text: "Thank You!",
+                title: "Data Submitted",
                 icon: "success",
             })
                 .then((result) => {
@@ -321,7 +304,6 @@ function Ota9() {
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
-                text: "Please Inform Technician!",
                 icon: "info",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -332,7 +314,7 @@ function Ota9() {
     }
     return (
         <>
-            <MasterCheckList bar="80%" TypeOfMedia="Video" videosrc="./Images/OTA/9.mp4" onClick={onClick} alt="Ota9" buttonName="Next" link="/Ota10" />
+            <MasterCheckList progressCircle="true" progressValue="90" progressText="9 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/9.mp4" onClick={onClick} alt="Ota9" buttonName="Next" link="/Ota10" />
         </>
     )
 }
@@ -394,7 +376,7 @@ function Ota10() {
     return (
 
         <>
-            <MasterCheckList bar="90%" okToComplete="true" TypeOfMedia="Video" videosrc="./Images/OTA/10.mp4" onClick={onClick} alt="Ota10" buttonName="Done" link="/" />
+            <MasterCheckList progressCircle="true" progressValue="100" progressText="10 0f 10" okToComplete="true" TypeOfMedia="Video" videosrc="./Images/OTA/10.mp4" onClick={onClick} alt="Ota10" buttonName="Done" link="/" />
         </>
     )
 }

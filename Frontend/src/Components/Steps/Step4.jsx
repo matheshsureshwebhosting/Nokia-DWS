@@ -10,6 +10,7 @@ export default class Step4 extends Component {
     static contextType = Slidercontext
     constructor(props) {
         super()
+        this.step4Ref = React.createRef()   // Create a ref object 
         this.state = {
             date: "",
             machine_name: "",
@@ -19,7 +20,9 @@ export default class Step4 extends Component {
             paymentType: ""
         }
     }
-
+    componentDidMount() {
+        this.step4Ref.current.scroll(0, 810);
+    }
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
@@ -28,8 +31,7 @@ export default class Step4 extends Component {
         const Displayalert = (name, results) => {
             if (name === "alertSuccess")
                 SweetAlert.fire({
-                    title: "Good job!",
-                    text: "Thank You!",
+                    title: "Data Submitted",
                     icon: "success",
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -43,7 +45,6 @@ export default class Step4 extends Component {
             else if (name === "alert")
                 SweetAlert.fire({
                     title: "OK Noted",
-                    text: "Please Inform Technician!",
                     icon: "info",
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -60,6 +61,7 @@ export default class Step4 extends Component {
         return (
             <Fragment>
                 <Steps
+                    vacRef={this.step4Ref}
                     ContinueBtnName="OK To continue"
                     IssueBtnName="RAISE ISSUE"
                     nameContinue="alertSuccess"

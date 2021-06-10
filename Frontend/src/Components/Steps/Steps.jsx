@@ -14,7 +14,7 @@ function Steps(props) {
                             {props.doNotTouch === "true" && <img className='dnt-sign-img' src='./images/dnt.jpg' alt='do-not-touch-signBoad' />}
                         </div>
                         <div className="col-md-4 ">
-                            <div className="vacuum-menu-col"><Vacuum /></div>
+                            <div ref={props.vacRef} className="vacuum-menu-col"><Vacuum /></div>
                         </div>
                     </div>
                     <div className="d-flex justify-content-center mt-4">

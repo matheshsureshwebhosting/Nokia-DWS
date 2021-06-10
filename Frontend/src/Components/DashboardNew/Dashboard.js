@@ -11,9 +11,17 @@ import { Link } from 'react-router-dom'
 import OtaTable from '../Tables/OtaTable/OtaTable';
 import UwaTable from '../Tables/UwaTable/UwaTable';
 import ThermalTable from '../Tables/ThermalGelTable/ThermalTable';
+import ThermalTables from '../Tables/ReportTable/ThermalTable';
+import VaccumeTables from '../Tables/ReportTable/VaccumeTable';
+import UwaTables from '../Tables/ReportTable/UwaTable';
+import OtaTables from '../Tables/ReportTable/OtaTable';
+import SolderingTables from '../Tables/ReportTable/SolderingTable';
 
 function Dashboard() {
     const [showTable, setshowTable] = useState(0)
+    const [showreportTable, setshowreportTable] = useState(0)
+    const [table, settable] = useState(true)
+    const [report, setreport] = useState(false)
     const cardBottom = {
         position: "absolute",
         background: "rgba(255,255,255,0.25)",
@@ -24,7 +32,14 @@ function Dashboard() {
         textAlign: "left",
         paddingLeft: "12px", paddingTop: "3px"
     }
-
+    const tablebtn = () => {
+        settable(true)
+        setreport(false)
+    }
+    const reportbtn = () => {
+        setreport(true)
+        settable(false)
+    }
     return (
         <>
             <div className='bg-light dashboard-container'>
@@ -32,19 +47,19 @@ function Dashboard() {
                     <Link to="/"> <div className='dashboard-logo border-bottom'>NOKIA</div></Link>
                     <div className='dashboard-menu-list'><AiOutlineDashboard className='dashboard-icons' /> Dashboard</div>
                     <Accordion defaultActiveKey="0">
-                        <Accordion.Toggle as={Card.Header} eventKey="1" className='dashboard-menu-list'>
+                        <Accordion.Toggle as={Card.Header} eventKey="1" className='dashboard-menu-list' onClick={reportbtn} >
                             <AiOutlineDownload className='dashboard-icons' />Reports<FiChevronDown className='accordion-menu-down-arrow' />
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="1">
                             <ul className='dashboard-accordion-submenu'>
-                                <li >Solder tip temperature</li>
-                                <li >vacuum lifter</li>
-                                <li>OTA</li>
-                                <li>UWA</li>
-                                <li>PWA</li>
+                                <li onClick={() => setshowreportTable(0)} >Solder tip temperature</li>
+                                <li onClick={() => setshowreportTable(1)} >vacuum lifter</li>
+                                <li onClick={() => setshowreportTable(2)}>OTA</li>
+                                <li onClick={() => setshowreportTable(3)}>UWA</li>
+                                <li onClick={() => setshowreportTable(4)}>Thermal</li>
                             </ul>
                         </Accordion.Collapse>
-                        <Accordion.Toggle as={Card.Header} eventKey="0" className='dashboard-menu-list'>
+                        <Accordion.Toggle as={Card.Header} eventKey="0" className='dashboard-menu-list' onClick={tablebtn}>
                             <FcDataSheet className='dashboard-icons' />Tables  <FiChevronDown className='accordion-menu-down-arrow' />
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
@@ -54,7 +69,6 @@ function Dashboard() {
                                 <li onClick={() => setshowTable(2)}>OTA</li>
                                 <li onClick={() => setshowTable(3)}>UWA</li>
                                 <li onClick={() => setshowTable(4)}>Thermal</li>
-                                <li onClick={() => setshowTable(1)}>PWA</li>
                             </ul>
                         </Accordion.Collapse>
                     </Accordion>
@@ -79,15 +93,6 @@ function Dashboard() {
                             </div>
                         </div>
 
-                        {/* <div className="col-md-3">
-                            <div className="card-counter success position-relative">
-                                <i className="fa fa-tasks"></i>
-                                <span className="count-numbers">675</span>
-                                <span className="count-name">Assessment</span>
-                                <span style={cardBottom}>TODAY</span>
-                            </div>
-                        </div> */}
-
                         <div className="col-md-3">
                             <div className="card-counter info position-relative">
                                 <i className="fa fa-bar-chart"></i>
@@ -99,7 +104,10 @@ function Dashboard() {
                     </div>
                     <div className="mt-5">
                         {
-                            showTable === 0 ? <SolderTable /> : showTable === 1 ? <VacuumTable /> : showTable === 2 ? <OtaTable /> : showTable === 3 ? <UwaTable /> : showTable === 4 ? <ThermalTable /> : null
+                            table ? showTable === 0 ? <SolderTable /> : showTable === 1 ? <VacuumTable /> : showTable === 2 ? <OtaTable /> : showTable === 3 ? <UwaTable /> : showTable === 4 ? <ThermalTable /> : null : null
+                        }
+                        {
+                            report ? showreportTable === 0 ? <SolderingTables /> : showreportTable === 1 ? <VaccumeTables /> : showreportTable === 2 ? <OtaTables /> : showreportTable === 3 ? <UwaTables /> : showreportTable === 4 ? <ThermalTables /> : null : null
                         }
                     </div>
 
@@ -126,5 +134,3 @@ function Dashboard() {
 }
 
 export default Dashboard
-
-

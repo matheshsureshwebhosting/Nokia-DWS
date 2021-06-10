@@ -45,8 +45,7 @@ export default class Step1 extends Component {
         const Displayalert = (name, results) => {
             if (name === "alertSuccess")
                 SweetAlert.fire({
-                    title: "Good job!",
-                    text: "Thank You!",
+                    title: "Data Submitted",
                     icon: "success",
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -60,7 +59,6 @@ export default class Step1 extends Component {
             else if (name === "alert")
                 SweetAlert.fire({
                     title: "OK Noted",
-                    text: "Please Inform Technician!",
                     icon: "info",
                 }).then((result) => {
                     if (result.isConfirmed) {
