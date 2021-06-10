@@ -506,8 +506,8 @@ export function Thermal13() {
                     }
                     axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/thermal/send`, datas).then((res) => {
                         if (res.data === true) {
-                            history.push("/")
                         }
+                        history.push("/")
                     }).catch((error) => {
                         console.log(error)
                     })

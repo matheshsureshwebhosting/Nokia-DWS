@@ -40,16 +40,16 @@ export default class Step1 extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    render() {    
+    render() {
         const { sliderenable } = this.context
-        const Displayalert = (name, results) => {            
+        const Displayalert = (name, results) => {
             if (name === "alertSuccess")
                 SweetAlert.fire({
                     title: "Good job!",
                     text: "Thank You!",
                     icon: "success",
-                }).then((result) => {                
-                    if (result.isConfirmed) {                   
+                }).then((result) => {
+                    if (result.isConfirmed) {
                         const { updatestaus } = this.context
                         updatestaus("prosses1_result", results)
                         localStorage.setItem("step1", "okay")
@@ -57,20 +57,20 @@ export default class Step1 extends Component {
                         this.props.history.push("/step2")
                     }
                 })
-                else if(name==="alert")
+            else if (name === "alert")
                 SweetAlert.fire({
                     title: "OK Noted",
                     text: "Please Inform Technician!",
                     icon: "info",
-                }).then((result) => {                
-                if (result.isConfirmed) {                   
-                    const { updatestaus } = this.context
-                    updatestaus("prosses1_result", results)
-                    localStorage.setItem("step1", "okay")
-                    sliderenable(this, "step2")
-                    this.props.history.push("/step2")
-                }
-            })
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const { updatestaus } = this.context
+                        updatestaus("prosses1_result", results)
+                        localStorage.setItem("step1", "okay")
+                        sliderenable(this, "step2")
+                        this.props.history.push("/step2")
+                    }
+                })
         }
 
         return (
