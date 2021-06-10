@@ -1,10 +1,10 @@
 import React from 'react'
-import solderImg from "../../assets/img/home/solder.png"
-import vacuumImg from "../../assets/img/home/jumbo-structure.png"
-import gel from '../../assets/img/home/gel.png';
-import packing from '../../assets/img/home/packing.png';
-import robot from '../../assets/img/home/robot.png';
-import testers from '../../assets/img/home/testers.png';
+import solderImg from "../../assets/img/home/Mask Group 10.png"
+import vacuumImg from "../../assets/img/home/Mask Group 7.png"
+import gel from '../../assets/img/home/Mask Group 11.png';
+import packing from '../../assets/img/home/Mask Group 8.png';
+import robot from '../../assets/img/home/Mask Group 9.png';
+import testers from '../../assets/img/home/Mask Group 12.png';
 import { Link } from 'react-router-dom'
 import list from '../../assets/img/list.png'
 import './Homes.css'
@@ -56,12 +56,12 @@ function Home(props) {
         <h1 className="title-button1 justify-text-center">Autonomous Maintenance Check List</h1>
         <div className="row">
           <div className="col-md-6 col-sm-8">
-            <div className=" d-flex flex-wrap" style={{ maxWidth: "1000px" }}>
+            <div className=" d-flex flex-wrap" style={{ maxWidth: "1000px",marginLeft:"20px"}}>
               {
                 (data.map((value, index) => (
                   <div key={index} className='grid-card' data-aos-duration="3000" data-aos={value.animation}>
                     <Link to={value.link}>
-                      <img className='w-100 h-100' src={value.img} alt={value.alt} />
+                      <img style={{height:"94%",width:"94%"}} src={value.img} alt={value.alt} />
                     </Link>
                   </div>
                 )))
