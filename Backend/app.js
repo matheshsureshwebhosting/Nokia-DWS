@@ -18,10 +18,10 @@ app.use(cros({
 }))
 
 app.get("/", (req, res) => {
-    return res.send("Welcome !...")
+    return res.send(`Hai, Welcome Back. If You Want To Create A <a href="/createtables">Table</a>`)
 })
 
-app.use("/create", require("./routers/tables"))
+app.use("/createtables", require("./routers/tables"))
 app.use("/ota", require("./routers/ota"))
 app.use("/uwa", require("./routers/uwa"))
 app.use("/soldering",require("./routers/soldering"))

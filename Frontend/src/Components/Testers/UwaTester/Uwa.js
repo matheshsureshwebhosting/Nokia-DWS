@@ -12,7 +12,7 @@ function Uwa(props) {
         uwaform = state
         if (uwaform === undefined) {
             return history.push("/uwaform")
-        }
+        }        
         if (status === "Yes") {
             SweetAlert.fire({
                 title: "Good job!",
@@ -25,7 +25,8 @@ function Uwa(props) {
                 }
             })
         }
-        if (status === "No") {
+        if (status === "No")
+           {
             SweetAlert.fire({
                 title: "OK Noted",
                 text: "Please Inform Technician!",
@@ -36,11 +37,11 @@ function Uwa(props) {
                     history.push(nextPath)
                 }
             })
-        }
+           }
     }
     return (
         <>
-            <MasterCheckList bar="0%" TypeOfMedia="Video" videosrc="./Images/Uwa/1.mp4" alt="Uwa" onClick={onClick} buttonName="Next" link="/Uwa2" />
+            <MasterCheckList bar="0%" TypeOfMedia="Video" videosrc="./Images/Uwa/1.mp4"  alt="Uwa" onClick={onClick} buttonName="Next" link="/Uwa2" />
         </>
     )
 }
@@ -375,12 +376,11 @@ function Uwa10(props) {
                         uwa10: status,
                         description: description,
                         status: finalstatus
-                    }
+                    }                    
                     axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/uwa/send`, datas).then((res) => {
                         if (res.data === true) {
-                            console.log(res.data)
+                            history.push(nextPath)
                         }
-                        history.push(nextPath)
                     }).catch((error) => {
                         console.log(error)
                     })

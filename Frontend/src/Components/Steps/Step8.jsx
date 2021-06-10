@@ -10,7 +10,6 @@ export default class Step8 extends Component {
     static contextType = Slidercontext
     constructor(props) {
         super()
-        this.step8Ref = React.createRef()   // Create a ref object 
         this.state = {
             date: "",
             machine_name: "",
@@ -20,59 +19,56 @@ export default class Step8 extends Component {
             paymentType: ""
         }
     }
-    componentDidMount() {
-        this.step8Ref.current.scroll(0, 1700);
-    }
+
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
     render() {
         const { sliderenable } = this.context
-        const Displayalert = (name, results) => {
+        const Displayalert = (name, results) => {            
             if (name === "alertSuccess")
                 SweetAlert.fire({
                     title: "Good job!",
                     text: "Thank You!",
                     icon: "success",
                 }).then((result) => {
-                    if (result.isConfirmed) {
+                    if (result.isConfirmed) {                        
                         const { updatestaus } = this.context
-                        updatestaus("prosses8_result", results)
+                        updatestaus("prosses8_result", results)                        
                         localStorage.setItem("step8", "okay")
                         sliderenable(this, "step9")
                         this.props.history.push("/step9")
                     }
                 })
-            else if (name === "alert")
+                else if(name==="alert")
                 SweetAlert.fire({
                     title: "OK Noted",
                     text: "Please Inform Technician!",
                     icon: "info",
                 }).then((result) => {
-                    if (result.isConfirmed) {
+                    if (result.isConfirmed) {                        
                         const { updatestaus } = this.context
-                        updatestaus("prosses8_result", results)
+                        updatestaus("prosses8_result", results)                        
                         localStorage.setItem("step8", "okay")
                         sliderenable(this, "step9")
                         this.props.history.push("/step9")
                     }
                 })
 
-
+             
         }
         return (
             <Fragment>
                 <Steps
-                    vacRef={this.step8Ref}
-                    nameContinue="alertSuccess"
-                    ContinueBtnName="OK To continue"
-                    IssueBtnName="RAISE ISSUE"
-                    nameIssue="alert"
-                    stepTitle="Vacuum hose- from pump to barrel"
-                    videoSrc={video1}
-                    onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
-                    onClickIssue={(e) => Displayalert(e.target.name, "No")}
-                    doNotTouch="true"
+                nameContinue="alertSuccess"
+                ContinueBtnName="OK To continue"
+                IssueBtnName="RAISE ISSUE"
+                nameIssue="alert"
+                stepTitle="Vacuum hose- from pump to barrel"
+                videoSrc={video1}
+                onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
+                onClickIssue={(e)=>Displayalert(e.target.name,"No")}
+                doNotTouch="true"
                 />
             </Fragment >
         )

@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './step.css'
 import Vacuum from './Vaccume'
-// import { Slidercontext } from "../Context/Slidercontext"
+import { Slidercontext } from "../Context/Slidercontext"
 function Steps(props) {
-    // const sliders = useContext(Slidercontext)
-
+    const sliders = useContext(Slidercontext)    
     return (
         <>
             <div className='bg-primary d-flex justify-content-center flex-column h-100vh container-fluid px-5 position-fixed'>
-                {/* <div className="progress">
-                    <div className="progress-bar" role="progressbar" style={{ width: `${Number(sliders.enabled.length) - Number(1)}0%` }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{Number(sliders.enabled.length) - Number(1)}0%</div>
-                </div> */}
+                <div className="progress">
+                    <div className="progress-bar" role="progressbar" style={{ width: `${Number(sliders.enabled.length)-Number(1)}0%` }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{Number(sliders.enabled.length)-Number(1)}0%</div>
+                </div>
                 <div>
                     <div className=" d-flex" >
                         <div className="col-8 h-auto">
@@ -19,7 +18,7 @@ function Steps(props) {
                             {props.doNotTouch === "true" && <img className='dnt-sign-img' src='./images/dnt.jpg' alt='do-not-touch-signBoad' />}
                         </div>
                         <div className="col-md-4 ">
-                            <div ref={props.vacRef} className="vacuum-menu-col"><Vacuum /></div>
+                            <div className="vacuum-menu-col"><Vacuum /></div>
                         </div>
                     </div>
                     <div className="d-flex justify-content-center mt-4">

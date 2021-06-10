@@ -13,15 +13,19 @@
 .master-checklist-btn {
   position: absolute;
   right: 10%;
-  bottom: 0px;
+  bottom: 0px;  
 }
-.progres-circle {
-  height: 150px;
-  width: 150px !important;
+.videobtn{
+  background:darkblue;
+    color: white;
+    width: 50px;
+    border: none;
+    margin: 5px;
+    height: 50px;
+    border-radius: 5px;
 }
-.prg-div {
-  z-index: 1;
-  position: fixed;
-  right: 1%;
-  top: 5%;
+.videobtndiv{
+  margin-right: 190px;
+  margin-top: 20px;
 }
+

@@ -1,18 +1,18 @@
 import React from 'react'
 import MasterCheckList from '../../../Pages/MasterCheckList/MasterCheckList'
-import video1 from '../../../assets/videos/Thermalgel/1.mp4'
-import video2 from '../../../assets/videos/Thermalgel/2.mp4'
-import video3 from '../../../assets/videos/Thermalgel/3.mp4'
-import video4 from '../../../assets/videos/Thermalgel/4.mp4'
-import video5 from '../../../assets/videos/Thermalgel/5.mp4'
-import video6 from '../../../assets/videos/Thermalgel/6.mp4'
-import video7 from '../../../assets/videos/Thermalgel/7.mp4'
-import video8 from '../../../assets/videos/Thermalgel/8.mp4'
-import video9 from '../../../assets/videos/Thermalgel/9.mp4'
-import video10 from '../../../assets/videos/Thermalgel/10.mp4'
-import video11 from '../../../assets/videos/Thermalgel/11.mp4'
-import video12 from '../../../assets/videos/Thermalgel/12.mp4'
-import video13 from '../../../assets/videos/Thermalgel/13.mp4'
+import video1 from '../../../assets/videos/PVA/PVA 1_3_1.mp4'
+import video2 from '../../../assets/videos/PVA/PVA 2_2_1.mp4'
+import video3 from '../../../assets/videos/PVA/PVA 3_3_1.mp4'
+import video4 from '../../../assets/videos/PVA/PVA 4_2_1.mp4'
+import video5 from '../../../assets/videos/PVA/PVA 5_2_1.mp4'
+import video6 from '../../../assets/videos/PVA/PVA 6_2_1.mp4'
+import video7 from '../../../assets/videos/PVA/PVA 7_2_1.mp4'
+import video8 from '../../../assets/videos/PVA/PVA 8_2_1.mp4'
+import video9 from '../../../assets/videos/PVA/PVA 9_3_1_1.mp4'
+import video10 from '../../../assets/videos/PVA/PVA 10_3_1.mp4'
+import video11 from '../../../assets/videos/PVA/PVA 11_2_1_1.mp4'
+import video12 from '../../../assets/videos/PVA/PVA 12_3_1.mp4'
+import video13 from '../../../assets/videos/PVA/PVA 13_2_1_1.mp4'
 
 import { useHistory } from 'react-router'
 import SweetAlert from "sweetalert2";
@@ -20,10 +20,12 @@ import axios from 'axios';
 
 const thermalstatus = {}
 var thermalforms;
-export function Thermal(props) {
+export function Thermal(props) {    
+
+    
     const history = useHistory()
 
-    const onClick = (form, status, nextPath) => {
+    const onClick = (form, status, nextPath) => {        
         const { state } = props.location
         thermalforms = {
             Station: state.Station,
@@ -59,10 +61,10 @@ export function Thermal(props) {
                     }
                 })
     }
+    
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="8"
-                progressText="1 0f 13" nameContinue='success' nameIssue='alert' TypeOfMedia="Video" videosrc={video1} onClick={onClick} alt="thermal1" link='/thermal/step2' />
+            <MasterCheckList bar="0%" nameContinue='success' nameIssue='alert' TypeOfMedia="Video" videosrc={video1} onClick={onClick} alt="thermal1" link='/thermal/step2' />
         </>
     )
 }
@@ -98,7 +100,7 @@ export function Thermal2() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="16" progressText="2 0f 13" TypeOfMedia="Video" videosrc={video2} onClick={onClick} alt="thermal2" link='/thermal/step3' />
+            <MasterCheckList bar="8%" TypeOfMedia="Video" videosrc={video2} onClick={onClick} alt="thermal2" link='/thermal/step3' />
         </>
     )
 }
@@ -134,7 +136,7 @@ export function Thermal3() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="22" progressText="3 0f 13" TypeOfMedia="Video" videosrc={video3} onClick={onClick} alt="thermal3" link='/thermal/step4' />
+            <MasterCheckList bar="16%" TypeOfMedia="Video" videosrc={video3} onClick={onClick} alt="thermal3" link='/thermal/step4' />
         </>
     )
 }
@@ -170,7 +172,7 @@ export function Thermal4() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="30" progressText="4 0f 13" TypeOfMedia="Video" videosrc={video4} onClick={onClick} alt="thermal4" link='/thermal/step5' />
+            <MasterCheckList bar="24%" TypeOfMedia="Video" videosrc={video4} onClick={onClick} alt="thermal4" link='/thermal/step5' />
         </>
     )
 }
@@ -205,7 +207,7 @@ export function Thermal5() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="40" progressText="5 0f 13" TypeOfMedia="Video" videosrc={video5} onClick={onClick} alt="thermal5" link='/thermal/step6' />
+            <MasterCheckList bar="32%" TypeOfMedia="Video" videosrc={video5} onClick={onClick} alt="thermal5" link='/thermal/step6' />
         </>
     )
 }
@@ -240,7 +242,7 @@ export function Thermal6() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="48" progressText="6 0f 13" TypeOfMedia="Video" videosrc={video6} onClick={onClick} alt="thermal6" link='/thermal/step7' />
+            <MasterCheckList bar="40%" TypeOfMedia="Video" videosrc={video6} onClick={onClick} alt="thermal6" link='/thermal/step7' />
         </>
     )
 }
@@ -275,7 +277,7 @@ export function Thermal7() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="55" progressText="7 0f 13" TypeOfMedia="Video" videosrc={video7} onClick={onClick} alt="thermal7" link='/thermal/step8' />
+            <MasterCheckList bar="48%" TypeOfMedia="Video" videosrc={video7} onClick={onClick} alt="thermal7" link='/thermal/step8' />
         </>
     )
 }
@@ -310,7 +312,7 @@ export function Thermal8() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="62" progressText="8 0f 13" TypeOfMedia="Video" videosrc={video8} onClick={onClick} alt="thermal8" link='/thermal/step9' />
+            <MasterCheckList bar="56%" TypeOfMedia="Video" videosrc={video8} onClick={onClick} alt="thermal8" link='/thermal/step9' />
         </>
     )
 }
@@ -345,7 +347,7 @@ export function Thermal9() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="70" progressText="9 0f 13" TypeOfMedia="Video" videosrc={video9} onClick={onClick} alt="thermal9" link='/thermal/step10' />
+            <MasterCheckList bar="64%" TypeOfMedia="Video" videosrc={video9} onClick={onClick} alt="thermal9" link='/thermal/step10' />
         </>
     )
 }
@@ -380,7 +382,7 @@ export function Thermal10() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="80" progressText="10 0f 13" TypeOfMedia="Video" videosrc={video10} onClick={onClick} alt="thermal10" link='/thermal/step11' />
+            <MasterCheckList bar="72%" TypeOfMedia="Video" videosrc={video10} onClick={onClick} alt="thermal10" link='/thermal/step11' />
         </>
     )
 }
@@ -415,7 +417,7 @@ export function Thermal11() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="86" progressText="11 0f 13" TypeOfMedia="Video" videosrc={video11} onClick={onClick} alt="thermal11" link='/thermal/step12' />
+            <MasterCheckList bar="80%" TypeOfMedia="Video" videosrc={video11} onClick={onClick} alt="thermal11" link='/thermal/step12' />
         </>
     )
 }
@@ -452,7 +454,7 @@ export function Thermal12() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="92" progressText="12 0f 13" TypeOfMedia="Video" videosrc={video12} onClick={onClick} alt="thermal12" link='/thermal/step13' />
+            <MasterCheckList bar="88%" TypeOfMedia="Video" videosrc={video12} onClick={onClick} alt="thermal12" link='/thermal/step13' />
         </>
     )
 }
@@ -504,8 +506,8 @@ export function Thermal13() {
                     }
                     axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/thermal/send`, datas).then((res) => {
                         if (res.data === true) {
+                            history.push("/")
                         }
-                        history.push("/")
                     }).catch((error) => {
                         console.log(error)
                     })
@@ -516,7 +518,7 @@ export function Thermal13() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="100" progressText="13 0f 13" okToComplete="true" TypeOfMedia="Video" videosrc={video13} onClick={onClick} alt="thermal13" link='/' />
+            <MasterCheckList bar="96%" okToComplete="true" TypeOfMedia="Video" videosrc={video13} onClick={onClick} alt="thermal13" link='/' />
         </>
     )
 }
