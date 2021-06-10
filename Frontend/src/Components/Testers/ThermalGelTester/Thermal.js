@@ -1,18 +1,18 @@
 import React from 'react'
 import MasterCheckList from '../../../Pages/MasterCheckList/MasterCheckList'
-import video1 from '../../../assets/videos/PVA/PVA 1_3_1.mp4'
-import video2 from '../../../assets/videos/PVA/PVA 2_2_1.mp4'
-import video3 from '../../../assets/videos/PVA/PVA 3_3_1.mp4'
+import video1 from '../../../assets/videos/PVA/PVA 1_4_1_1.mp4'
+import video2 from '../../../assets/videos/PVA/PVA 2_3_1.mp4'
+import video3 from '../../../assets/videos/PVA/PVA 3_4_1.mp4'
 import video4 from '../../../assets/videos/PVA/PVA 4_2_1.mp4'
 import video5 from '../../../assets/videos/PVA/PVA 5_2_1.mp4'
 import video6 from '../../../assets/videos/PVA/PVA 6_2_1.mp4'
-import video7 from '../../../assets/videos/PVA/PVA 7_2_1.mp4'
-import video8 from '../../../assets/videos/PVA/PVA 8_2_1.mp4'
-import video9 from '../../../assets/videos/PVA/PVA 9_3_1_1.mp4'
-import video10 from '../../../assets/videos/PVA/PVA 10_3_1.mp4'
-import video11 from '../../../assets/videos/PVA/PVA 11_2_1_1.mp4'
-import video12 from '../../../assets/videos/PVA/PVA 12_3_1.mp4'
-import video13 from '../../../assets/videos/PVA/PVA 13_2_1_1.mp4'
+import video7 from '../../../assets/videos/PVA/PVA 7_3_1.mp4'
+import video8 from '../../../assets/videos/PVA/PVA 8_3_1.mp4'
+import video9 from '../../../assets/videos/PVA/PVA 9_4_1.mp4'
+import video10 from '../../../assets/videos/PVA/PVA 10_4_1.mp4'
+import video11 from '../../../assets/videos/PVA/PVA 11_3_1.mp4'
+import video12 from '../../../assets/videos/PVA/PVA 12_4_1.mp4'
+import video13 from '../../../assets/videos/PVA/PVA 13_3_1.mp4'
 
 import { useHistory } from 'react-router'
 import SweetAlert from "sweetalert2";
@@ -20,12 +20,12 @@ import axios from 'axios';
 
 const thermalstatus = {}
 var thermalforms;
-export function Thermal(props) {    
+export function Thermal(props) {
 
-    
+
     const history = useHistory()
 
-    const onClick = (form, status, nextPath) => {        
+    const onClick = (form, status, nextPath) => {
         const { state } = props.location
         thermalforms = {
             Station: state.Station,
@@ -61,7 +61,7 @@ export function Thermal(props) {
                     }
                 })
     }
-    
+
     return (
         <>
             <MasterCheckList bar="0%" nameContinue='success' nameIssue='alert' TypeOfMedia="Video" videosrc={video1} onClick={onClick} alt="thermal1" link='/thermal/step2' />
