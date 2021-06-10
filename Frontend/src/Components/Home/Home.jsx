@@ -11,42 +11,6 @@ import './Homes.css'
 import { Navbar } from '../Navbar/Navbar'
 import dashboardIcon from "../../assets/img/home/app-store.svg";
 function Home(props) {
-  const data = [
-    {
-      img: vacuumImg,
-      link: "/VacuumForm",
-      alt: "Vacuum-img",
-      // animation:"fade-down-right"
-    },
-    {
-      img: packing,
-      alt: 'packaginf-img',
-      // animation:"fade-down"
-    },
-    {
-      img: robot,
-      alt: "robot-img",
-      // animation:"fade-down-left"
-    },
-    {
-      img: solderImg,
-      alt: "solderImg",
-      link: "/SolderForm",
-      // animation:"fade-up-right"
-    },
-    {
-      img: gel,
-      alt: "gel-img",
-      // animation:"fade-up",
-      link: "/thermalmain"
-    },
-    {
-      img: testers,
-      alt: "testers-img",
-      link: "/Testers",
-      // animation:"fade-up-left"
-    }
-  ]
 
   return (
     <>
