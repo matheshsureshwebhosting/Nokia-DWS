@@ -13,17 +13,17 @@ function Uwa(props) {
         if (uwaform === undefined) {
             return history.push("/uwaform")
         }
+        // if (status === "Yes") {
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     }).then((result) => {
         if (status === "Yes") {
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    uwastatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+            uwastatus[form] = status
+            history.push(nextPath)
         }
+        //     })
+        // }
         if (status === "No") {
             SweetAlert.fire({
                 title: "OK Noted",
@@ -48,16 +48,17 @@ function Uwa2() {
         if (uwaform === undefined) {
             return history.push("/uwaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    uwastatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === "Yes") {
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     }).then((result) => {
+        if (status === "Yes") {
+            uwastatus[form] = status
+            history.push(nextPath)
+        }
+        //     })
+        // }
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -83,16 +84,17 @@ function Uwa3() {
         if (uwaform === undefined) {
             return history.push("/uwaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    uwastatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === "Yes") {
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     }).then((result) => {
+        if (status === "Yes") {
+            uwastatus[form] = status
+            history.push(nextPath)
+        }
+        //     })
+        // }
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -118,16 +120,17 @@ function Uwa4() {
         if (uwaform === undefined) {
             return history.push("/uwaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    uwastatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === "Yes") {
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     }).then((result) => {
+        if (status === "Yes") {
+            uwastatus[form] = status
+            history.push(nextPath)
+        }
+        //     })
+        // }
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -153,16 +156,17 @@ function Uwa5() {
         if (uwaform === undefined) {
             return history.push("/uwaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    uwastatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === "Yes") {
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     }).then((result) => {
+        if (status === "Yes") {
+            uwastatus[form] = status
+            history.push(nextPath)
+        }
+        //     })
+        // }
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -187,16 +191,17 @@ function Uwa6() {
         if (uwaform === undefined) {
             return history.push("/uwaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    uwastatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === "Yes") {
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     }).then((result) => {
+        if (status === "Yes") {
+            uwastatus[form] = status
+            history.push(nextPath)
+        }
+        //     })
+        // }
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -220,16 +225,17 @@ function Uwa7() {
         if (uwaform === undefined) {
             return history.push("/uwaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    uwastatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === "Yes") {
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     }).then((result) => {
+        if (status === "Yes") {
+            uwastatus[form] = status
+            history.push(nextPath)
+        }
+        //     })
+        // }
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -254,16 +260,17 @@ function Uwa8() {
         if (uwaform === undefined) {
             return history.push("/uwaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    uwastatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === "Yes") {
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     }).then((result) => {
+        if (status === "Yes") {
+            uwastatus[form] = status
+            history.push(nextPath)
+        }
+        //     })
+        // }
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -287,16 +294,17 @@ function Uwa9() {
         if (uwaform === undefined) {
             return history.push("/uwaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    uwastatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === "Yes") {
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     }).then((result) => {
+        if (status === "Yes") {
+            uwastatus[form] = status
+            history.push(nextPath)
+        }
+        //     })
+        // }
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",

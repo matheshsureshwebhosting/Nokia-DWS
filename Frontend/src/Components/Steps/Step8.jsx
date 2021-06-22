@@ -29,19 +29,19 @@ export default class Step8 extends Component {
     render() {
         const { sliderenable } = this.context
         const Displayalert = (name, results) => {
-            if (name === "alertSuccess")
-                SweetAlert.fire({
-                    title: "Data Submitted",
-                    icon: "success",
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        const { updatestaus } = this.context
-                        updatestaus("prosses8_result", results)
-                        localStorage.setItem("step8", "okay")
-                        sliderenable(this, "step9")
-                        this.props.history.push("/step9")
-                    }
-                })
+            // if (name === "alertSuccess")
+            //     SweetAlert.fire({
+            //         title: "Data Submitted",
+            //         icon: "success",
+            //     }).then((result) => {
+            if (name === "alertSuccess") {
+                const { updatestaus } = this.context
+                updatestaus("prosses8_result", results)
+                localStorage.setItem("step8", "okay")
+                sliderenable(this, "step9")
+                this.props.history.push("/step9")
+            }
+            // })
             else if (name === "alert")
                 SweetAlert.fire({
                     title: "OK Noted",

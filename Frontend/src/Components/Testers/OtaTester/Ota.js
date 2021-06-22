@@ -10,20 +10,21 @@ function Ota(props) {
     const onClick = (form, status, nextPath) => {
         const { state } = props.location
         otaform = state
+        console.log(state.operator_name)
         if (otaform === undefined) {
             return history.push("/otaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        otastatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === "Yes")
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        //         .then((result) => {
+        if (status === "Yes") {
+            otastatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -38,7 +39,7 @@ function Ota(props) {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="20" progressText="1 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/1.mp4" onClick={onClick} alt="Ota" buttonName="Next" link="/Ota2" />
+            <MasterCheckList progressCircle="true" count="10" progressValue="10" progressText="1 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/1.mp4" onClick={onClick} alt="Ota" buttonName="Next" link="/Ota2" />
         </>
     )
 }
@@ -48,17 +49,17 @@ function Ota2() {
         if (otaform === undefined) {
             return history.push("/otaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        otastatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === "Yes")
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        //         .then((result) => {
+        if (status === "Yes") {
+            otastatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -71,9 +72,8 @@ function Ota2() {
             })
     }
     return (
-
         <>
-            <MasterCheckList progressCircle="true" progressValue="30" progressText="2 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/2.mp4" onClick={onClick} alt="Ota2" buttonName="Next" link="/Ota3" />
+            <MasterCheckList progressCircle="true" count="10" progressText="2 of 10" progressValue="20" TypeOfMedia="Video" videosrc="./Images/OTA/2.mp4" onClick={onClick} alt="Ota2" buttonName="Next" link="/Ota3" />
         </>
     )
 
@@ -84,17 +84,17 @@ function Ota3() {
         if (otaform === undefined) {
             return history.push("/otaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        otastatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === "Yes")
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        //         .then((result) => {
+        if (status === "Yes") {
+            otastatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -108,7 +108,7 @@ function Ota3() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="45" progressText="3 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/3.mp4" onClick={onClick} alt="Ota3" buttonName="Next" link="/Ota4" />
+            <MasterCheckList progressCircle="true" count="10" progressValue="30" progressText="3 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/3.mp4" onClick={onClick} alt="Ota3" buttonName="Next" link="/Ota4" />
         </>
     )
 }
@@ -118,17 +118,17 @@ function Ota4() {
         if (otaform === undefined) {
             return history.push("/otaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        otastatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === "Yes")
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        //         .then((result) => {
+        if (status === "Yes") {
+            otastatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -142,7 +142,7 @@ function Ota4() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="50" progressText="4 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/4.mp4" onClick={onClick} alt="Ota4" buttonName="Next" link="/Ota5" />
+            <MasterCheckList progressCircle="true" count="10" progressValue="40" progressText="4 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/4.mp4" onClick={onClick} alt="Ota4" buttonName="Next" link="/Ota5" />
         </>
     )
 
@@ -153,17 +153,17 @@ function Ota5() {
         if (otaform === undefined) {
             return history.push("/otaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        otastatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === "Yes")
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        //         .then((result) => {
+        if (status === "Yes") {
+            otastatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -177,7 +177,7 @@ function Ota5() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="55" progressText="5 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/5.mp4" onClick={onClick} alt="Ota5" buttonName="Next" link="/Ota6" />
+            <MasterCheckList progressCircle="true" count="10" progressValue="50" progressText="5 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/5.mp4" onClick={onClick} alt="Ota5" buttonName="Next" link="/Ota6" />
         </>
     )
 }
@@ -187,17 +187,17 @@ function Ota6() {
         if (otaform === undefined) {
             return history.push("/otaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        otastatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === "Yes")
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        //         .then((result) => {
+        if (status === "Yes") {
+            otastatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -211,7 +211,7 @@ function Ota6() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="60" progressText="6 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/6.mp4" onClick={onClick} alt="Ota6" buttonName="Next" link="/Ota7" />
+            <MasterCheckList progressCircle="true" count="10" progressValue="60" progressText="6 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/6.mp4" onClick={onClick} alt="Ota6" buttonName="Next" link="/Ota7" />
         </>
     )
 }
@@ -221,17 +221,17 @@ function Ota7() {
         if (otaform === undefined) {
             return history.push("/otaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        otastatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === "Yes")
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        //         .then((result) => {
+        if (status === "Yes") {
+            otastatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -246,7 +246,7 @@ function Ota7() {
     return (
 
         <>
-            <MasterCheckList progressCircle="true" progressValue="70" progressText="7 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/7.mp4" onClick={onClick} alt="Ota7" buttonName="Next" link="/Ota8" />
+            <MasterCheckList progressCircle="true" count="10" progressValue="70" progressText="7 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/7.mp4" onClick={onClick} alt="Ota7" buttonName="Next" link="/Ota8" />
         </>
     )
 }
@@ -256,17 +256,17 @@ function Ota8() {
         if (otaform === undefined) {
             return history.push("/otaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        otastatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === "Yes")
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        //         .then((result) => {
+        if (status === "Yes") {
+            otastatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -280,7 +280,7 @@ function Ota8() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="80" progressText="8 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/8.mp4" onClick={onClick} alt="Ota8" buttonName="Next" link="/Ota9" />
+            <MasterCheckList progressCircle="true" count="10" progressValue="80" progressText="8 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/8.mp4" onClick={onClick} alt="Ota8" buttonName="Next" link="/Ota9" />
         </>
     )
 }
@@ -290,17 +290,17 @@ function Ota9() {
         if (otaform === undefined) {
             return history.push("/otaform")
         }
-        if (status === "Yes")
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        otastatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === "Yes")
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        //         .then((result) => {
+        if (status === "Yes") {
+            otastatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === "No")
             SweetAlert.fire({
                 title: "OK Noted",
@@ -314,7 +314,7 @@ function Ota9() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="90" progressText="9 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/9.mp4" onClick={onClick} alt="Ota9" buttonName="Next" link="/Ota10" />
+            <MasterCheckList progressCircle="true" count="10" progressValue="90" progressText="9 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/9.mp4" onClick={onClick} alt="Ota9" buttonName="Next" link="/Ota10" />
         </>
     )
 }
@@ -368,7 +368,6 @@ function Ota10() {
                     }).catch((error) => {
                         console.log(error)
                     })
-
                 }
             }
         })
@@ -376,7 +375,7 @@ function Ota10() {
     return (
 
         <>
-            <MasterCheckList progressCircle="true" progressValue="100" progressText="10 0f 10" okToComplete="true" TypeOfMedia="Video" videosrc="./Images/OTA/10.mp4" onClick={onClick} alt="Ota10" buttonName="Done" link="/" />
+            <MasterCheckList progressCircle="true" count="10" progressValue="100" progressText="10 0f 10" okToComplete="true" TypeOfMedia="Video" videosrc="./Images/OTA/10.mp4" onClick={onClick} alt="Ota10" buttonName="Done" link="/" />
         </>
     )
 }

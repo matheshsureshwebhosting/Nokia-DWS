@@ -7,7 +7,7 @@ function Steps(props) {
             <div className='bg-primary d-flex justify-content-center flex-column h-100vh container-fluid px-5 position-fixed'>
 
                 <div>
-                    <div className=" d-flex" >
+                    <div className="d-flex" >
                         <div className="col-8 h-auto">
                             <h2 className="text-center mb-3 heading step-title">{props.stepTitle}</h2>
                             <div className="dd"><video muted autoPlay={true} loop src={props.videoSrc} type="video/mp4" width="100%" height="100%" className="position-relative" /></div>
@@ -17,9 +17,10 @@ function Steps(props) {
                             <div ref={props.vacRef} className="vacuum-menu-col"><Vacuum /></div>
                         </div>
                     </div>
-                    <div className="d-flex justify-content-center mt-4">
+                    <div className="d-flex justify-content-center align-items-center my-4">
                         <button className="step-continue-btn" name={props.nameContinue} onClick={props.onClickContinue}>{props.ContinueBtnName}<i className='fa fa-thumbs-up fa-2x mx-2' /></button>
                         <button className="raise-issue-btn" name={props.nameIssue} onClick={props.onClickIssue}>{props.IssueBtnName}<i className='fa fa-thumbs-down fa-2x mx-2' /></button>
+                        {props.inputField && <div className="px-4" style={{ fontSize: "1.25rem", fontWeight: "600" }}>Enter Pressure Guage Value: <input type='text' onChange={props.onChange} placeholder={props.placeholder} value={props.value} /></div>}
                     </div>
                 </div>
             </div>

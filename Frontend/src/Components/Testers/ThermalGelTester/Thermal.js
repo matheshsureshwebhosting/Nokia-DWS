@@ -36,17 +36,17 @@ export function Thermal(props) {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        thermalstatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -73,17 +73,17 @@ export function Thermal2() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        thermalstatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -108,17 +108,17 @@ export function Thermal3() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        thermalstatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -142,17 +142,17 @@ export function Thermal4() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        thermalstatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -176,16 +176,17 @@ export function Thermal5() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    thermalstatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -209,16 +210,17 @@ export function Thermal6() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    thermalstatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -242,16 +244,17 @@ export function Thermal7() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    thermalstatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -265,7 +268,9 @@ export function Thermal7() {
     }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="55" progressText="7 0f 13" TypeOfMedia="Video" videosrc={video7} onClick={onClick} alt="thermal7" link='/thermal/step8' />
+            <MasterCheckList
+                inputField="true"
+                progressCircle="true" progressValue="55" progressText="7 0f 13" TypeOfMedia="Video" videosrc={video7} onClick={onClick} alt="thermal7" link='/thermal/step8' />
         </>
     )
 }
@@ -275,16 +280,17 @@ export function Thermal8() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    thermalstatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -308,16 +314,17 @@ export function Thermal9() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    thermalstatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -341,16 +348,17 @@ export function Thermal10() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    thermalstatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -374,16 +382,17 @@ export function Thermal11() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    thermalstatus[form] = status
-                    history.push(nextPath)
-                }
-            })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",
@@ -407,17 +416,17 @@ export function Thermal12() {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
-        if (status === 'Yes')
-            SweetAlert.fire({
-                title: "Data Submitted",
-                icon: "success",
-            })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        thermalstatus[form] = status
-                        history.push(nextPath)
-                    }
-                })
+        // if (status === 'Yes')
+        //     SweetAlert.fire({
+        //         title: "Data Submitted",
+        //         icon: "success",
+        //     })
+        // .then((result) => {
+        if (status === 'Yes') {
+            thermalstatus[form] = status
+            history.push(nextPath)
+        }
+        // })
         if (status === 'No')
             SweetAlert.fire({
                 title: "OK Noted",

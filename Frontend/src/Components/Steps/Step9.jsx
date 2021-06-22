@@ -154,6 +154,7 @@ export default class Step9 extends Component {
         return (
             <>
                 <Steps
+                    inputField="true"
                     vacRef={this.step9Ref}
                     nameContinue="alertSuccess"
                     ContinueBtnName="OK To complete"

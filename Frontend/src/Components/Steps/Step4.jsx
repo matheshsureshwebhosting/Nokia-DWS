@@ -29,19 +29,19 @@ export default class Step4 extends Component {
     render() {
         const { sliderenable } = this.context
         const Displayalert = (name, results) => {
-            if (name === "alertSuccess")
-                SweetAlert.fire({
-                    title: "Data Submitted",
-                    icon: "success",
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        const { updatestaus } = this.context
-                        updatestaus("prosses4_result", results)
-                        localStorage.setItem("step4", "okay")
-                        sliderenable(this, "step5")
-                        this.props.history.push("/step5")
-                    }
-                })
+            // if (name === "alertSuccess")
+            //     SweetAlert.fire({
+            //         title: "Data Submitted",
+            //         icon: "success",
+            //     }).then((result) => {
+            if (name === "alertSuccess") {
+                const { updatestaus } = this.context
+                updatestaus("prosses4_result", results)
+                localStorage.setItem("step4", "okay")
+                sliderenable(this, "step5")
+                this.props.history.push("/step5")
+            }
+            // })
             else if (name === "alert")
                 SweetAlert.fire({
                     title: "OK Noted",
