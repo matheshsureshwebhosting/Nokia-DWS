@@ -1,7 +1,12 @@
 import React from 'react'
 import './step.css'
 import Vacuum from './Vaccume'
+import Tooltip from 'react-bootstrap/Tooltip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 function Steps(props) {
+    const OperatorName = localStorage.getItem("vacName")
+    const MachineId = localStorage.getItem("vacMachineId")
+
     return (
         <>
             <div className='bg-primary d-flex justify-content-center flex-column h-100vh container-fluid px-5 position-fixed'>
@@ -18,9 +23,35 @@ function Steps(props) {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center align-items-center my-4">
-                        <button className="step-continue-btn" name={props.nameContinue} onClick={props.onClickContinue}>{props.ContinueBtnName}<i className='fa fa-thumbs-up fa-2x mx-2' /></button>
-                        <button className="raise-issue-btn" name={props.nameIssue} onClick={props.onClickIssue}>{props.IssueBtnName}<i className='fa fa-thumbs-down fa-2x mx-2' /></button>
+                        <OverlayTrigger
+                            key="top"
+                            top="top"
+                            overlay={
+                                <Tooltip id={`tooltip-top`} >
+                                    <div className='disable-btn-tooltip'>You Have To Spend Minimum <br />25seconds For Checking</div>
+                                </Tooltip>
+                            }
+                        >
+                            <div className='d-flex'>
+                                <button disabled={props.disabled} className="step-continue-btn" name={props.nameContinue} onClick={props.onClickContinue}>{props.ContinueBtnName}<i className='fa fa-thumbs-up fa-2x mx-2' /></button>
+                                <button disabled={props.disabled} className="raise-issue-btn" name={props.nameIssue} onClick={props.onClickIssue}>{props.IssueBtnName}<i className='fa fa-thumbs-down fa-2x mx-2' /></button>
+                            </div>
+                        </OverlayTrigger>
                         {props.inputField && <div className="px-4" style={{ fontSize: "1.25rem", fontWeight: "600" }}>Enter Pressure Guage Value: <input type='text' onChange={props.onChange} placeholder={props.placeholder} value={props.value} /></div>}
+                        <div className='vac-user-det'>
+                            <div className='d-flex '>
+                                <div className="data-title">Operator Name :</div>
+                                <div className="data-text text-right pl-5">{OperatorName}</div>
+                            </div>
+                            <div className='d-flex'>
+                                <div className="data-title ">Machine Serial Number :</div>
+                                <div className="data-text text-right pl-2">{MachineId}</div>
+                            </div>
+                            <div className='d-flex'>
+                                <div className='data-title'>Time :</div>
+                                <div className='data-text d-flex'>{props.timer}Sec</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

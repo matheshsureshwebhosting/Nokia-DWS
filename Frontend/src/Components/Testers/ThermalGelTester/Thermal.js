@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import MasterCheckList from '../../../Pages/MasterCheckList/MasterCheckList'
 import video1 from '../../../assets/videos/PVA/1.mp4'
 import video2 from '../../../assets/videos/PVA/2.mp4'
@@ -24,6 +24,24 @@ export function Thermal(props) {
 
 
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
 
     const onClick = (form, status, nextPath) => {
         const { state } = props.location
@@ -62,13 +80,34 @@ export function Thermal(props) {
 
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="8"
-                progressText="1 0f 13" nameContinue='success' nameIssue='alert' TypeOfMedia="Video" videosrc={video1} onClick={onClick} alt="thermal1" link='/thermal/step2' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer}
+                disabled={buttonStatus} count="13" progressValue="7.69230769231"
+                progressText="1 0f 13" nameContinue='success' nameIssue='alert'
+                TypeOfMedia="Video" videosrc={video1} onClick={onClick} alt="thermal1"
+                link='/thermal/step2' />
         </>
     )
 }
 export function Thermal2() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -95,15 +134,40 @@ export function Thermal2() {
                 }
             })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="16" progressText="2 0f 13" TypeOfMedia="Video" videosrc={video2} onClick={onClick} alt="thermal2" link='/thermal/step3' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13"
+                progressValue="15.3846153846" progressText="2 0f 13" TypeOfMedia="Video"
+                videosrc={video2} onClick={onClick} alt="thermal2" link='/thermal/step3' />
 
         </>
     )
 }
 export function Thermal3() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -130,14 +194,39 @@ export function Thermal3() {
                 }
             })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="22" progressText="3 0f 13" TypeOfMedia="Video" videosrc={video3} onClick={onClick} alt="thermal3" link='/thermal/step4' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="23.0769230769"
+                progressText="3 0f 13" TypeOfMedia="Video" videosrc={video3} onClick={onClick} alt="thermal3"
+                link='/thermal/step4' />
         </>
     )
 }
 export function Thermal4() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -164,14 +253,39 @@ export function Thermal4() {
                 }
             })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="30" progressText="4 0f 13" TypeOfMedia="Video" videosrc={video4} onClick={onClick} alt="thermal4" link='/thermal/step5' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="30.7692307692"
+                progressText="4 0f 13" TypeOfMedia="Video" videosrc={video4} onClick={onClick} alt="thermal4"
+                link='/thermal/step5' />
         </>
     )
 }
 export function Thermal5() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -198,14 +312,39 @@ export function Thermal5() {
                 }
             })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="40" progressText="5 0f 13" TypeOfMedia="Video" videosrc={video5} onClick={onClick} alt="thermal5" link='/thermal/step6' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="38.4615384615"
+                progressText="5 0f 13" TypeOfMedia="Video" videosrc={video5} onClick={onClick} alt="thermal5"
+                link='/thermal/step6' />
         </>
     )
 }
 export function Thermal6() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -232,14 +371,39 @@ export function Thermal6() {
                 }
             })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="48" progressText="6 0f 13" TypeOfMedia="Video" videosrc={video6} onClick={onClick} alt="thermal6" link='/thermal/step7' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="46.1538461539"
+                progressText="6 0f 13" TypeOfMedia="Video" videosrc={video6} onClick={onClick} alt="thermal6"
+                link='/thermal/step7' />
         </>
     )
 }
 export function Thermal7() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -265,17 +429,42 @@ export function Thermal7() {
                     history.push(nextPath)
                 }
             })
+    }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
     }
     return (
         <>
             <MasterCheckList
                 inputField="true"
-                progressCircle="true" progressValue="55" progressText="7 0f 13" TypeOfMedia="Video" videosrc={video7} onClick={onClick} alt="thermal7" link='/thermal/step8' />
+                progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="53.8461538462"
+                progressText="7 0f 13" TypeOfMedia="Video" videosrc={video7} onClick={onClick} alt="thermal7"
+                link='/thermal/step8' />
         </>
     )
 }
 export function Thermal8() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -302,14 +491,39 @@ export function Thermal8() {
                 }
             })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="62" progressText="8 0f 13" TypeOfMedia="Video" videosrc={video8} onClick={onClick} alt="thermal8" link='/thermal/step9' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="61.5384615385"
+                progressText="8 0f 13" TypeOfMedia="Video" videosrc={video8} onClick={onClick} alt="thermal8"
+                link='/thermal/step9' />
         </>
     )
 }
 export function Thermal9() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -336,14 +550,39 @@ export function Thermal9() {
                 }
             })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="70" progressText="9 0f 13" TypeOfMedia="Video" videosrc={video9} onClick={onClick} alt="thermal9" link='/thermal/step10' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="69.2307692308"
+                progressText="9 0f 13" TypeOfMedia="Video" videosrc={video9} onClick={onClick} alt="thermal9"
+                link='/thermal/step10' />
         </>
     )
 }
 export function Thermal10() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -370,14 +609,39 @@ export function Thermal10() {
                 }
             })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="80" progressText="10 0f 13" TypeOfMedia="Video" videosrc={video10} onClick={onClick} alt="thermal10" link='/thermal/step11' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="76.9230769231"
+                progressText="10 0f 13" TypeOfMedia="Video" videosrc={video10} onClick={onClick} alt="thermal10"
+                link='/thermal/step11' />
         </>
     )
 }
 export function Thermal11() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -404,14 +668,39 @@ export function Thermal11() {
                 }
             })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="86" progressText="11 0f 13" TypeOfMedia="Video" videosrc={video11} onClick={onClick} alt="thermal11" link='/thermal/step12' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="84.6153846154"
+                progressText="11 0f 13" TypeOfMedia="Video" videosrc={video11} onClick={onClick} alt="thermal11"
+                link='/thermal/step12' />
         </>
     )
 }
 export function Thermal12() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -439,14 +728,39 @@ export function Thermal12() {
                     }
                 })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="92" progressText="12 0f 13" TypeOfMedia="Video" videosrc={video12} onClick={onClick} alt="thermal12" link='/thermal/step13' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="92.3076923077"
+                progressText="12 0f 13" TypeOfMedia="Video" videosrc={video12} onClick={onClick} alt="thermal12"
+                link='/thermal/step13' />
         </>
     )
 }
 export function Thermal13() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (thermalforms === undefined) {
             return history.push("/thermalform")
@@ -503,9 +817,16 @@ export function Thermal13() {
             }
         })
     }
+    const data = thermalforms
+    if (thermalforms === undefined) {
+        return history.push("/thermalform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" progressValue="100" progressText="13 0f 13" okToComplete="true" TypeOfMedia="Video" videosrc={video13} onClick={onClick} alt="thermal13" link='/' />
+            <MasterCheckList progressCircle="true" TimeCounter={timer} disabled={buttonStatus}
+                name={data.operator_name} machineID={data.Station} count="13" progressValue="100"
+                progressText="13 0f 13" okToComplete="true" TypeOfMedia="Video" videosrc={video13}
+                onClick={onClick} alt="thermal13" link='/' />
         </>
     )
 }

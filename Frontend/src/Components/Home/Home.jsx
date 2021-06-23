@@ -40,14 +40,14 @@ function Home(props) {
                 Autonomous maintenance Check points for Key Process Stages can be accessed by operators.
                 The Check lists need to be filed and maintained at beginning of every shift to ensure
                 process quality and efficiency of these equipment.
-            </h4>
+              </h4>
             </div>
             <img src={list} alt="" style={{ height: "200px" }} />
             <Link to='/dashboard'><h4 style={{ textAlign: "center", color: "#124191", fontWeight: "600" }}>Click Here to Go <br /> Reports</h4></Link>
           </div>
         </div>
       </div>
-    </>
+    </ >
   )
 }
 

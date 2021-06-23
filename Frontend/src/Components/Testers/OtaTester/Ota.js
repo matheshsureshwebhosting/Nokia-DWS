@@ -1,16 +1,35 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useHistory } from 'react-router'
 import MasterCheckList from '../../../Pages/MasterCheckList/MasterCheckList'
 import SweetAlert from "sweetalert2";
 import axios from 'axios';
 const otastatus = {}
 var otaform;
+// const testerName = localStorage.getItem("testerName")
+// const stationId = localStorage.getItem("stationId")
 function Ota(props) {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         const { state } = props.location
         otaform = state
-        console.log(state.operator_name)
         if (otaform === undefined) {
             return history.push("/otaform")
         }
@@ -35,16 +54,38 @@ function Ota(props) {
                     history.push(nextPath)
                 }
             })
-
     }
     return (
+
         <>
-            <MasterCheckList progressCircle="true" count="10" progressValue="10" progressText="1 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/1.mp4" onClick={onClick} alt="Ota" buttonName="Next" link="/Ota2" />
-        </>
+            <MasterCheckList
+                disabled={buttonStatus} TimeCounter={timer} progressCircle="true"
+                count="10" progressValue="10" progressText="1 0f 10" TypeOfMedia="Video"
+                videosrc="./Images/OTA/1.mp4" onClick={onClick} alt="Ota"
+                uttonName="Next" link="/Ota2" />
+        </ >
     )
 }
 function Ota2() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
             return history.push("/otaform")
@@ -55,6 +96,8 @@ function Ota2() {
         //         icon: "success",
         //     })
         //         .then((result) => {
+        console.log(otaform)
+
         if (status === "Yes") {
             otastatus[form] = status
             history.push(nextPath)
@@ -71,15 +114,40 @@ function Ota2() {
                 }
             })
     }
+    const data = otaform
+    if (otaform === undefined) {
+        return history.push("/otaform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" count="10" progressText="2 of 10" progressValue="20" TypeOfMedia="Video" videosrc="./Images/OTA/2.mp4" onClick={onClick} alt="Ota2" buttonName="Next" link="/Ota3" />
+            <MasterCheckList progressCircle="true" disabled={buttonStatus}
+                TimeCounter={timer} name={data.operator_name} machineID={data.Station}
+                count="10" progressText="2 of 10" progressValue="20"
+                TypeOfMedia="Video" videosrc="./Images/OTA/2.mp4" onClick={onClick} alt="Ota2" buttonName="Next" link="/Ota3" />
         </>
     )
 
 }
 function Ota3() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
             return history.push("/otaform")
@@ -106,14 +174,39 @@ function Ota3() {
                 }
             })
     }
+    const data = otaform
+    if (otaform === undefined) {
+        return history.push("/otaform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" count="10" progressValue="30" progressText="3 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/3.mp4" onClick={onClick} alt="Ota3" buttonName="Next" link="/Ota4" />
+            <MasterCheckList progressCircle="true" disabled={buttonStatus}
+                TimeCounter={timer} name={data.operator_name} machineID={data.Station}
+                count="10" progressValue="30" progressText="3 0f 10" TypeOfMedia="Video"
+                videosrc="./Images/OTA/3.mp4" onClick={onClick} alt="Ota3" buttonName="Next" link="/Ota4" />
         </>
     )
 }
 function Ota4() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
             return history.push("/otaform")
@@ -140,15 +233,40 @@ function Ota4() {
                 }
             })
     }
+    const data = otaform
+    if (otaform === undefined) {
+        return history.push("/otaform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" count="10" progressValue="40" progressText="4 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/4.mp4" onClick={onClick} alt="Ota4" buttonName="Next" link="/Ota5" />
+            <MasterCheckList progressCircle="true" disabled={buttonStatus}
+                TimeCounter={timer} name={data.operator_name} machineID={data.Station}
+                count="10" progressValue="40" progressText="4 0f 10" TypeOfMedia="Video"
+                videosrc="./Images/OTA/4.mp4" onClick={onClick} alt="Ota4" buttonName="Next" link="/Ota5" />
         </>
     )
 
 }
 function Ota5() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
             return history.push("/otaform")
@@ -175,14 +293,39 @@ function Ota5() {
                 }
             })
     }
+    const data = otaform
+    if (otaform === undefined) {
+        return history.push("/otaform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" count="10" progressValue="50" progressText="5 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/5.mp4" onClick={onClick} alt="Ota5" buttonName="Next" link="/Ota6" />
+            <MasterCheckList progressCircle="true" disabled={buttonStatus}
+                TimeCounter={timer} name={data.operator_name} machineID={data.Station} count="10"
+                progressValue="50" progressText="5 0f 10" TypeOfMedia="Video"
+                videosrc="./Images/OTA/5.mp4" onClick={onClick} alt="Ota5" buttonName="Next" link="/Ota6" />
         </>
     )
 }
 function Ota6() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
             return history.push("/otaform")
@@ -209,14 +352,40 @@ function Ota6() {
                 }
             })
     }
+    const data = otaform
+    if (otaform === undefined) {
+        return history.push("/otaform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" count="10" progressValue="60" progressText="6 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/6.mp4" onClick={onClick} alt="Ota6" buttonName="Next" link="/Ota7" />
+            <MasterCheckList progressCircle="true" disabled={buttonStatus}
+                TimeCounter={timer} name={data.operator_name} machineID={data.Station}
+                count="10" progressValue="60" progressText="6 0f 10"
+                TypeOfMedia="Video" videosrc="./Images/OTA/6.mp4" onClick={onClick}
+                alt="Ota6" buttonName="Next" link="/Ota7" />
         </>
     )
 }
 function Ota7() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
             return history.push("/otaform")
@@ -243,15 +412,40 @@ function Ota7() {
                 }
             })
     }
+    const data = otaform
+    if (otaform === undefined) {
+        return history.push("/otaform")
+    }
     return (
 
         <>
-            <MasterCheckList progressCircle="true" count="10" progressValue="70" progressText="7 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/7.mp4" onClick={onClick} alt="Ota7" buttonName="Next" link="/Ota8" />
+            <MasterCheckList progressCircle="true" disabled={buttonStatus}
+                TimeCounter={timer} name={data.operator_name} machineID={data.Station}
+                count="10" progressValue="70" progressText="7 0f 10" TypeOfMedia="Video"
+                videosrc="./Images/OTA/7.mp4" onClick={onClick} alt="Ota7" buttonName="Next" link="/Ota8" />
         </>
     )
 }
 function Ota8() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
             return history.push("/otaform")
@@ -278,14 +472,39 @@ function Ota8() {
                 }
             })
     }
+    const data = otaform
+    if (otaform === undefined) {
+        return history.push("/otaform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" count="10" progressValue="80" progressText="8 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/8.mp4" onClick={onClick} alt="Ota8" buttonName="Next" link="/Ota9" />
+            <MasterCheckList progressCircle="true" disabled={buttonStatus}
+                TimeCounter={timer} name={data.operator_name} machineID={data.Station}
+                count="10" progressValue="80" progressText="8 0f 10" TypeOfMedia="Video"
+                videosrc="./Images/OTA/8.mp4" onClick={onClick} alt="Ota8" buttonName="Next" link="/Ota9" />
         </>
     )
 }
 function Ota9() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
             return history.push("/otaform")
@@ -312,14 +531,39 @@ function Ota9() {
                 }
             })
     }
+    const data = otaform
+    if (otaform === undefined) {
+        return history.push("/otaform")
+    }
     return (
         <>
-            <MasterCheckList progressCircle="true" count="10" progressValue="90" progressText="9 0f 10" TypeOfMedia="Video" videosrc="./Images/OTA/9.mp4" onClick={onClick} alt="Ota9" buttonName="Next" link="/Ota10" />
+            <MasterCheckList progressCircle="true" disabled={buttonStatus}
+                TimeCounter={timer} name={data.operator_name} machineID={data.Station}
+                count="10" progressValue="90" progressText="9 0f 10" TypeOfMedia="Video"
+                videosrc="./Images/OTA/9.mp4" onClick={onClick} alt="Ota9" buttonName="Next" link="/Ota10" />
         </>
     )
 }
 function Ota10() {
     const history = useHistory()
+    const [timer, setTimer] = useState(0)
+    function useInterval(callback, delay) {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        // Set up the interval.
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    useInterval(() => { setTimer(timer + 1); }, 1000);
+    const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
         if (otaform === undefined) {
             return history.push("/otaform")
@@ -372,10 +616,27 @@ function Ota10() {
             }
         })
     }
+    // useEffect(() => {
+    //     return () => {
+    //         localStorage.removeItem("data.operator_name")
+    //         localStorage.removeItem("stationId")
+    //     }
+    // }, [])
+    const data = otaform
+    if (otaform === undefined) {
+        return history.push("/otaform")
+    }
     return (
 
         <>
-            <MasterCheckList progressCircle="true" count="10" progressValue="100" progressText="10 0f 10" okToComplete="true" TypeOfMedia="Video" videosrc="./Images/OTA/10.mp4" onClick={onClick} alt="Ota10" buttonName="Done" link="/" />
+            <MasterCheckList
+                progressCircle="true"
+                disabled={buttonStatus}
+                TimeCounter={timer} name={data.operator_name} machineID={data.Station}
+                count="10" progressValue="100" progressText="10 0f 10"
+                okToComplete="true" TypeOfMedia="Video"
+                videosrc="./Images/OTA/10.mp4" onClick={onClick}
+                alt="Ota10" buttonName="Done" link="/" />
         </>
     )
 }

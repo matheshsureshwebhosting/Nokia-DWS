@@ -42,7 +42,7 @@
 }
 .data-title {
   color: #124191;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.2em;
 }
 .data-text {
@@ -52,4 +52,10 @@
 }
 .video-content {
   left: -1.5%;
+}
+.disable-btn-tooltip {
+  background-color: #124191;
+  padding: 1rem;
+  border-color: #124191 !important;
+  font-size: 1rem;
 }

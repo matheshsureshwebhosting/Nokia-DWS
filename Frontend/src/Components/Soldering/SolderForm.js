@@ -144,4 +144,3 @@ export class SolderForm extends Component {
 }
 
 export default SolderForm
-

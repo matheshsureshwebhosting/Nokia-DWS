@@ -16,7 +16,9 @@ export default class Step3 extends Component {
             machine_Sl_No: "",
             operator_name: "",
             shift: "",
-            paymentType: ""
+            paymentType: "",
+            counterTime: 0
+
         }
     }
     componentDidMount() {
@@ -25,7 +27,14 @@ export default class Step3 extends Component {
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
+    componentDidMount = () => {
+        this.interval = setInterval(() => this.setState({ counterTime: this.state.counterTime + 1 }), 1000);
+    }
+    componentWillUnmount = () => {
+        clearInterval(this.interval);
+    }
     render() {
+        const buttonStatus = this.state.counterTime > 5 ? false : true;
         const { sliderenable } = this.context
         const Displayalert = (name, results) => {
             // if (name === "alertSuccess")
@@ -80,6 +89,8 @@ export default class Step3 extends Component {
                     </div>
                 </div> */}
                 < Steps
+                    disabled={buttonStatus}
+                    timer={this.state.counterTime}
                     vacRef={this.step3Ref}
                     ContinueBtnName="OK To continue"
                     IssueBtnName="RAISE ISSUE"

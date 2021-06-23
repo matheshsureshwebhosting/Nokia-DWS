@@ -51,6 +51,9 @@ export class Testerform extends Component {
 
     submitbtn = () => {
         const { Station, operator_name } = this.state
+
+        localStorage.setItem("stationId", Station)
+        localStorage.setItem("testerName", operator_name)
         if (Station.trim() === '') {
             this.setState({ stationError: true })
         } else if (operator_name.trim() === '') {

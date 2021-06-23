@@ -17,8 +17,12 @@ export default class Step1 extends Component {
             shifta: false,
             shiftb: false,
             shiftc: false,
+            buttonStatus: false,
+            counterTime: 0
         }
     }
+
+
     componentDidMount = () => {
         var today = new Date();
         const hours = today.getHours() + ":" + today.getMinutes()
@@ -39,8 +43,17 @@ export default class Step1 extends Component {
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
+    componentDidMount = () => {
+        this.interval = setInterval(() => this.setState({ counterTime: this.state.counterTime + 1 }), 1000);
+    }
+    componentWillUnmount = () => {
+        clearInterval(this.interval);
+    }
 
     render() {
+        // Button Status Switcher
+        const buttonStatus = this.state.counterTime > 5 ? false : true;
+
         const { sliderenable } = this.context
         const Displayalert = (name, results) => {
             // if (name === "alertSuccess")
@@ -70,10 +83,13 @@ export default class Step1 extends Component {
                     }
                 })
         }
-
+        // const saveTimer = (timer) = {
+        // }
         return (
             <>
                 <Steps
+                    disabled={buttonStatus}
+                    timer={this.state.counterTime}
                     ContinueBtnName="OK To continue"
                     IssueBtnName="RAISE ISSUE"
                     stepTitle="Lifting Handle and Pad Cleaning"
@@ -83,7 +99,7 @@ export default class Step1 extends Component {
                     onClickContinue={(e) => Displayalert(e.target.name, "Yes")}
                     onClickIssue={(e) => Displayalert(e.target.name, "No")}
                 />
-            </>
+            </ >
         )
     }
 }

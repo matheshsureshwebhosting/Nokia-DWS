@@ -43,6 +43,7 @@ export class VacuumForm extends Component {
             })
         }
     }
+
     handleChange = (e) => {
         const { handleChange } = this.context
         handleChange(e)
@@ -57,6 +58,8 @@ export class VacuumForm extends Component {
         } else {
             this.props.history.push("/step1");
         }
+        localStorage.setItem("vacName", this.state.operator_name)
+        localStorage.setItem("vacMachineId", this.state.machine_Sl_No)
     }
     render() {
         //ToolTips 

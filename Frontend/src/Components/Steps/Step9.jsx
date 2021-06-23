@@ -18,7 +18,8 @@ export default class Step9 extends Component {
             machine_Sl_No: "",
             operator_name: "",
             shift: "",
-            paymentType: ""
+            paymentType: "",
+            counterTime: 0
         }
     }
     componentDidMount() {
@@ -27,7 +28,18 @@ export default class Step9 extends Component {
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
+    componentWillUnmount = () => {
+        localStorage.removeItem("vacName")
+        localStorage.removeItem("vacMachineId")
+    }
+    componentDidMount = () => {
+        this.interval = setInterval(() => this.setState({ counterTime: this.state.counterTime + 1 }), 1000);
+    }
+    componentWillUnmount = () => {
+        clearInterval(this.interval);
+    }
     render() {
+        const buttonStatus = this.state.counterTime > 5 ? false : true;
         const Displayalert = (name, results) => {
             if (name === "alert")
                 SweetAlert.fire({
@@ -154,6 +166,8 @@ export default class Step9 extends Component {
         return (
             <>
                 <Steps
+                    disabled={buttonStatus}
+                    timer={this.state.counterTime}
                     inputField="true"
                     vacRef={this.step9Ref}
                     nameContinue="alertSuccess"
