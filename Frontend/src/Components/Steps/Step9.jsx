@@ -24,6 +24,7 @@ export default class Step9 extends Component {
     }
     componentDidMount() {
         this.step9Ref.current.scroll(0, 1800);
+        this.interval = setInterval(() => this.setState({ counterTime: this.state.counterTime + 1 }), 1000);
     }
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
@@ -31,9 +32,6 @@ export default class Step9 extends Component {
     componentWillUnmount = () => {
         localStorage.removeItem("vacName")
         localStorage.removeItem("vacMachineId")
-    }
-    componentDidMount = () => {
-        this.interval = setInterval(() => this.setState({ counterTime: this.state.counterTime + 1 }), 1000);
     }
     componentWillUnmount = () => {
         clearInterval(this.interval);

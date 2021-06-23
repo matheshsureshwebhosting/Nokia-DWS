@@ -22,12 +22,10 @@ export default class Step6 extends Component {
     }
     componentDidMount() {
         this.step6Ref.current.scroll(0, 1330);
+        this.interval = setInterval(() => this.setState({ counterTime: this.state.counterTime + 1 }), 1000);
     }
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
-    }
-    componentDidMount = () => {
-        this.interval = setInterval(() => this.setState({ counterTime: this.state.counterTime + 1 }), 1000);
     }
     componentWillUnmount = () => {
         clearInterval(this.interval);

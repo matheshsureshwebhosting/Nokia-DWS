@@ -8,6 +8,7 @@ export default class Step1 extends Component {
     static contextType = Slidercontext
     constructor(props) {
         super()
+        this.stepRef = React.createRef()   // Create a ref object 
         this.state = {
             machine_name: "",
             machine_Sl_No: "",
@@ -24,6 +25,7 @@ export default class Step1 extends Component {
 
 
     componentDidMount = () => {
+        this.interval = setInterval(() => this.setState({ counterTime: this.state.counterTime + 1 }), 1000);
         var today = new Date();
         const hours = today.getHours() + ":" + today.getMinutes()
         if (hours < "14:30") {
@@ -42,9 +44,6 @@ export default class Step1 extends Component {
     }
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
-    }
-    componentDidMount = () => {
-        this.interval = setInterval(() => this.setState({ counterTime: this.state.counterTime + 1 }), 1000);
     }
     componentWillUnmount = () => {
         clearInterval(this.interval);
