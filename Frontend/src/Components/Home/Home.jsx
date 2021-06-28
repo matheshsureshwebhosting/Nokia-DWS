@@ -13,31 +13,7 @@ import dashboardIcon from "../../assets/img/home/app-store.svg";
 import SweetAlert from "sweetalert2";
 
 function Home(props) {
-  useEffect(() => {
-    window.onbeforeunload = confirmExit;
-    function confirmExit() {
-      return SweetAlert.fire({
-        title: "Testing process ...",
-        icon: "info",
-      })
-    }
-  }, [])
-
-  const triggerThis = () => {
-    window.onbeforeunload = confirmExit;
-    function confirmExit() {
-      return SweetAlert.fire({
-        title: "OK Noted",
-        icon: "info",
-      })
-    }
-  }
-
-
-
-  // The button to trigger the action
-
-  <button onClick={() => triggerThis()}> Click here</button>
+  
   return (
     <>
       <Navbar logo="NOKIA" subTitle="Digital WorkStation" title="Autonomous Maintenance" src={dashboardIcon} alt="" />

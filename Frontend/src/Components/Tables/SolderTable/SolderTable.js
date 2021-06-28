@@ -133,7 +133,6 @@ export default class SolderTable extends Component {
                                 <th>Catridge Used / Set Temperature</th>
                                 <th>Actual Temperature<br />(±10°C)</th>
                                 <th>Checked by</th>
-                                <th>Remarks</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -147,7 +146,6 @@ export default class SolderTable extends Component {
                                         <td>{solder.catridge_used}</td>
                                         <td>{solder.temperature}</td>
                                         <td>{solder.checked_by}</td>
-                                        <td>{solder.description}</td>
                                         <td>{solder.status}</td>
                                     </tr>
                                 ))
