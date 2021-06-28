@@ -17,12 +17,13 @@ import video13 from '../../../assets/videos/PVA/13.mp4'
 import { useHistory } from 'react-router'
 import SweetAlert from "sweetalert2";
 import axios from 'axios';
-
+const thermaltime = {}
 const thermalstatus = {}
 var thermalforms;
 export function Thermal(props) {
     const testerName = localStorage.getItem("testerName")
     const stationId = localStorage.getItem("stationId")
+    
 
     const history = useHistory()
     const [timer, setTimer] = useState(0)
@@ -48,12 +49,15 @@ export function Thermal(props) {
         localStorage.removeItem("testerName")
         localStorage.removeItem("stationId")
         const { state } = props.location
+        console.log(state.Station)
         thermalforms = {
             Station: state.Station,
             date: state.date,
             operator_name: state.operator_name,
             shift: state.shift,
         }
+        console.log(thermalforms.Station)
+        
         if (thermalforms === undefined) {
             return history.push("/thermalform")
         }
@@ -65,6 +69,7 @@ export function Thermal(props) {
         // .then((result) => {
         if (status === 'Yes') {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -76,9 +81,11 @@ export function Thermal(props) {
                 .then((result) => {
                     if (result.isConfirmed) {
                         thermalstatus[form] = status
+                        thermaltime[`${form}time`] = timer
                         history.push(nextPath)
                     }
                 })
+                console.log(thermaltime.thermaltime)
     }
 
     return (
@@ -124,6 +131,7 @@ export function Thermal2() {
         // .then((result) => {
         if (status === 'Yes') {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -134,6 +142,7 @@ export function Thermal2() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     thermalstatus[form] = status
+                    thermaltime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -184,6 +193,7 @@ export function Thermal3() {
         // .then((result) => {
         if (status === 'Yes') {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -194,6 +204,7 @@ export function Thermal3() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     thermalstatus[form] = status
+                    thermaltime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -243,6 +254,7 @@ export function Thermal4() {
         // .then((result) => {
         if (status === 'Yes') {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -253,6 +265,7 @@ export function Thermal4() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     thermalstatus[form] = status
+                    thermaltime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -302,6 +315,7 @@ export function Thermal5() {
         // .then((result) => {
         if (status === 'Yes') {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -312,6 +326,7 @@ export function Thermal5() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     thermalstatus[form] = status
+                    thermaltime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -361,6 +376,7 @@ export function Thermal6() {
         // .then((result) => {
         if (status === 'Yes') {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -371,6 +387,7 @@ export function Thermal6() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     thermalstatus[form] = status
+                    thermaltime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -423,7 +440,7 @@ export function Thermal7() {
         // .then((result) => {
         if (pressureValue === "") {
             SweetAlert.fire({
-                title: "Please enter the pressure guage value",
+                title: "Please enter the pressure gauge value",
                 icon: "warning",
             })
             setError("true")
@@ -434,6 +451,7 @@ export function Thermal7() {
                 icon: "warning",
             }).then((result) => {
                 if (result.isConfirmed) {
+                    thermaltime[`${form}time`] = timer
                     thermalstatus[form] = status
                     history.push(nextPath)
                 }
@@ -453,6 +471,7 @@ export function Thermal7() {
         // if (status === 'No' && Number(pressureValue) < 400 && Number(pressureValue) > 600)
         if (status === 'Yes' && pressureValue !== "") {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -463,6 +482,7 @@ export function Thermal7() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     thermalstatus[form] = status
+                    thermaltime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -518,6 +538,7 @@ export function Thermal8() {
         // .then((result) => {
         if (status === 'Yes') {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -528,6 +549,7 @@ export function Thermal8() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     thermalstatus[form] = status
+                    thermaltime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -577,6 +599,7 @@ export function Thermal9() {
         // .then((result) => {
         if (status === 'Yes') {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -587,6 +610,7 @@ export function Thermal9() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     thermalstatus[form] = status
+                    thermaltime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -636,6 +660,7 @@ export function Thermal10() {
         // .then((result) => {
         if (status === 'Yes') {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -646,6 +671,7 @@ export function Thermal10() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     thermalstatus[form] = status
+                    thermaltime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -694,7 +720,8 @@ export function Thermal11() {
         //     })
         // .then((result) => {
         if (status === 'Yes') {
-            thermalstatus[form] = status
+            thermalstatus[form] = 
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -705,6 +732,7 @@ export function Thermal11() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     thermalstatus[form] = status
+                    thermaltime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -754,6 +782,7 @@ export function Thermal12() {
         // .then((result) => {
         if (status === 'Yes') {
             thermalstatus[form] = status
+            thermaltime[`${form}time`] = timer
             history.push(nextPath)
         }
         // })
@@ -765,6 +794,7 @@ export function Thermal12() {
                 .then((result) => {
                     if (result.isConfirmed) {
                         thermalstatus[form] = status
+                        thermaltime[`${form}time`] = timer
                         history.push(nextPath)
                     }
                 })
@@ -814,6 +844,7 @@ export function Thermal13() {
             confirmButtonText: `Save`,
         }).then((result) => {
             if (result.isConfirmed) {
+                thermaltime[`${form}time`] = timer
                 var finalstatus;
                 if (Object.values(thermalstatus).includes("No")) {
                     finalstatus = "In Complete"
@@ -837,6 +868,19 @@ export function Thermal13() {
                     thermal10: thermalstatus.thermal10,
                     thermal11: thermalstatus.thermal11,
                     thermal12: thermalstatus.thermal12,
+                    thermaltime1: thermaltime.thermaltime,
+                    thermaltime2: thermaltime.thermal2time,
+                    thermaltime3: thermaltime.thermal3time,
+                    thermaltime4: thermaltime.thermal4time,
+                    thermaltime5: thermaltime.thermal5time,
+                    thermaltime6: thermaltime.thermal6time,
+                    thermaltime7: thermaltime.thermal7time,
+                    thermaltime8: thermaltime.thermal8time,
+                    thermaltime9: thermaltime.thermal9time,
+                    thermaltime10: thermaltime.thermal10time,
+                    thermaltime11: thermaltime.thermal11time,
+                    thermaltime12: thermaltime.thermal12time,
+                    thermaltime13: timer,
                     thermal13: status,
                     status: finalstatus
                 }
