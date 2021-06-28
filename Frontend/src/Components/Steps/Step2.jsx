@@ -35,6 +35,8 @@ export default class Step2 extends Component {
         const buttonStatus = this.state.counterTime > 5 ? false : true;
         const { sliderenable } = this.context
         const Displayalert = (name, results) => {
+            const { operator_name } = this.context
+            if (operator_name === null) return window.location.replace("/VacuumForm") 
             // if (name === "alertSuccess")
             //     SweetAlert.fire({
             //         title: "Data Submitted",
@@ -42,7 +44,7 @@ export default class Step2 extends Component {
             //     }).then((result) => {
             if (name === "alertSuccess") {
                 const { updatestaus } = this.context
-                updatestaus("prosses2_result", results)
+                updatestaus("prosses2_result", results,this.state.counterTime)
                 localStorage.setItem("step2", "okay")
                 sliderenable(this, "step3")
                 this.props.history.push("/step3")
@@ -56,7 +58,7 @@ export default class Step2 extends Component {
                     .then((result) => {
                         if (result.isConfirmed) {
                             const { updatestaus } = this.context
-                            updatestaus("prosses2_result", results)
+                            updatestaus("prosses2_result", results,this.state.counterTime)
                             localStorage.setItem("step2", "okay")
                             sliderenable(this, "step3")
                             this.props.history.push("/step3")

@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 import MasterCheckList from '../../../Pages/MasterCheckList/MasterCheckList'
-import { useHistory } from 'react-router'
+import { useHistory, Redirect } from 'react-router'
 import SweetAlert from "sweetalert2";
 import axios from 'axios';
 const uwastatus = {}
+const uwatime = {}
 var uwaform;
 function Uwa(props) {
+    const testerName = localStorage.getItem("testerName")
+    const stationId = localStorage.getItem("stationId")
+
     const history = useHistory()
     const [timer, setTimer] = useState(0)
     function useInterval(callback, delay) {
@@ -26,6 +30,8 @@ function Uwa(props) {
     useInterval(() => { setTimer(timer + 1); }, 1000);
     const buttonStatus = timer > 5 ? false : true;
     const onClick = (form, status, nextPath) => {
+        localStorage.removeItem("testerName")
+        localStorage.removeItem("stationId")
         const { state } = props.location
         uwaform = state
         if (uwaform === undefined) {
@@ -38,6 +44,7 @@ function Uwa(props) {
         //     }).then((result) => {
         if (status === "Yes") {
             uwastatus[form] = status
+            uwatime[`${form}time`] = timer
             history.push(nextPath)
         }
         //     })
@@ -49,6 +56,7 @@ function Uwa(props) {
             }).then((result) => {
                 if (result.isConfirmed) {
                     uwastatus[form] = status
+                    uwatime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -63,6 +71,8 @@ function Uwa(props) {
                 progressText="1 0f 10"
                 TypeOfMedia="Video"
                 videosrc="./Images/Uwa/1.mp4"
+                name={testerName}
+                machineID={stationId}
                 alt="Uwa"
                 onClick={onClick}
                 buttonName="Next"
@@ -101,6 +111,7 @@ function Uwa2() {
         //     }).then((result) => {
         if (status === "Yes") {
             uwastatus[form] = status
+            uwatime[`${form}time`] = timer
             history.push(nextPath)
         }
         //     })
@@ -112,6 +123,7 @@ function Uwa2() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     uwastatus[form] = status
+                    uwatime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -119,7 +131,7 @@ function Uwa2() {
     }
     const data = uwaform
     if (uwaform === undefined) {
-        return history.push("/uwaform")
+        return <Redirect to="/uwaform" />
     }
     return (
         <>
@@ -173,6 +185,7 @@ function Uwa3() {
         //     }).then((result) => {
         if (status === "Yes") {
             uwastatus[form] = status
+            uwatime[`${form}time`] = timer
             history.push(nextPath)
         }
         //     })
@@ -184,13 +197,14 @@ function Uwa3() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     uwastatus[form] = status
+                    uwatime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
     }
     const data = uwaform
     if (uwaform === undefined) {
-        return history.push("/uwaform")
+        return <Redirect to="/uwaform" />
     }
     return (
 
@@ -244,6 +258,7 @@ function Uwa4() {
         //     }).then((result) => {
         if (status === "Yes") {
             uwastatus[form] = status
+            uwatime[`${form}time`] = timer
             history.push(nextPath)
         }
         //     })
@@ -255,6 +270,7 @@ function Uwa4() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     uwastatus[form] = status
+                    uwatime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -262,7 +278,7 @@ function Uwa4() {
     }
     const data = uwaform
     if (uwaform === undefined) {
-        return history.push("/uwaform")
+        return <Redirect to="/uwaform" />
     }
     return (
         <>
@@ -316,6 +332,7 @@ function Uwa5() {
         //     }).then((result) => {
         if (status === "Yes") {
             uwastatus[form] = status
+            uwatime[`${form}time`] = timer
             history.push(nextPath)
         }
         //     })
@@ -327,6 +344,7 @@ function Uwa5() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     uwastatus[form] = status
+                    uwatime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -334,7 +352,7 @@ function Uwa5() {
     }
     const data = uwaform
     if (uwaform === undefined) {
-        return history.push("/uwaform")
+        return <Redirect to="/uwaform" />
     }
     return (
         <>
@@ -387,6 +405,7 @@ function Uwa6() {
         //     }).then((result) => {
         if (status === "Yes") {
             uwastatus[form] = status
+            uwatime[`${form}time`] = timer
             history.push(nextPath)
         }
         //     })
@@ -398,13 +417,14 @@ function Uwa6() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     uwastatus[form] = status
+                    uwatime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
     }
     const data = uwaform
     if (uwaform === undefined) {
-        return history.push("/uwaform")
+        return <Redirect to="/uwaform" />
     }
     return (
         <>
@@ -457,6 +477,7 @@ function Uwa7() {
         //     }).then((result) => {
         if (status === "Yes") {
             uwastatus[form] = status
+            uwatime[`${form}time`] = timer
             history.push(nextPath)
         }
         //     })
@@ -468,6 +489,7 @@ function Uwa7() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     uwastatus[form] = status
+                    uwatime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
@@ -475,7 +497,7 @@ function Uwa7() {
     }
     const data = uwaform
     if (uwaform === undefined) {
-        return history.push("/uwaform")
+        return <Redirect to="/uwaform" />
     }
     return (
         <>
@@ -528,6 +550,7 @@ function Uwa8() {
         //     }).then((result) => {
         if (status === "Yes") {
             uwastatus[form] = status
+            uwatime[`${form}time`] = timer
             history.push(nextPath)
         }
         //     })
@@ -539,13 +562,14 @@ function Uwa8() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     uwastatus[form] = status
+                    uwatime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
     }
     const data = uwaform
     if (uwaform === undefined) {
-        return history.push("/uwaform")
+        return <Redirect to="/uwaform" />
     }
     return (
         <>
@@ -598,6 +622,7 @@ function Uwa9() {
         //     }).then((result) => {
         if (status === "Yes") {
             uwastatus[form] = status
+            uwatime[`${form}time`] = timer
             history.push(nextPath)
         }
         //     })
@@ -609,13 +634,14 @@ function Uwa9() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     uwastatus[form] = status
+                    uwatime[`${form}time`] = timer
                     history.push(nextPath)
                 }
             })
     }
     const data = uwaform
     if (uwaform === undefined) {
-        return history.push("/uwaform")
+        return <Redirect to="/uwaform" />
     }
     return (
         <>
@@ -662,58 +688,77 @@ function Uwa10(props) {
             return history.push("/uwaform")
         }
         SweetAlert.fire({
-            title: 'Provide Following Details',
-            html: "<textarea style='margin-top:10px;border-radius: 0px !important;width: 100%; ' id='des' type='text' className='form-control' placeholder='Remarks'></textarea>",
-            showDenyButton: false,
-            showCancelButton: false,
+            title: 'AM for UWA Completed - Succesfully',
+            // html: "<textarea style='margin-top:10px;border-radius: 0px !important;width: 100%; ' id='des' type='text' className='form-control' placeholder='Remarks'></textarea>",
+            // showDenyButton: false,
+            // showCancelButton: false,
             confirmButtonText: `Save`,
         }).then((result) => {
             if (result.isConfirmed) {
-                const description = document.getElementById("des").value
-                if (description.length === 0) {
-                    SweetAlert.fire('Enter description', '', 'error')
-                    return false
+                uwastatus["uwa10"] = status
+                const newotastatus = Object.values(uwastatus)
+                var finalstatus;
+                if (newotastatus.includes("No")) {
+                    finalstatus = "In Complete"
                 } else {
-
-                    var finalstatus;
-                    if (Object.values(uwastatus).includes("No")) {
-                        finalstatus = "In Complete"
-                    } else {
-                        finalstatus = "Complete"
-                    }
-                    const datas = {
-                        date: uwaform.date,
-                        station: uwaform.Station,
-                        operator_name: uwaform.operator_name,
-                        shift: uwaform.shift,
-                        uwa1: uwastatus.Uwa,
-                        uwa2: uwastatus.Uwa2,
-                        uwa3: uwastatus.Uwa3,
-                        uwa4: uwastatus.Uwa4,
-                        uwa5: uwastatus.Uwa5,
-                        uwa6: uwastatus.Uwa6,
-                        uwa7: uwastatus.Uwa7,
-                        uwa8: uwastatus.Uwa8,
-                        uwa9: uwastatus.Uwa9,
-                        uwa10: status,
-                        description: description,
-                        status: finalstatus
-                    }
-                    axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/uwa/send`, datas).then((res) => {
-                        if (res.data === true) {
-                            history.push(nextPath)
-                        }
-                    }).catch((error) => {
-                        console.log(error)
-                    })
-
+                    finalstatus = "Complete"
                 }
+                const avg = newotastatus.filter(status => { return status === "No" })
+                var finalavg
+                if (avg.length === 0) {
+                    finalavg = '10 / 10'
+                } else {
+                    finalavg = `${Number(10) - Number(avg.length)}/10`
+                }
+                const statuslists = []
+                for (var i = 0; i < Object.keys(uwastatus).length; i++) {
+                    if (Object.values(uwastatus)[i] === "No") {
+                        statuslists.push(Object.keys(uwastatus)[i])
+                    }
+                }
+                const datas = {
+                    date: uwaform.date,
+                    station: uwaform.Station,
+                    operator_name: uwaform.operator_name,
+                    shift: uwaform.shift,
+                    uwa1: uwastatus.Uwa,
+                    uwa2: uwastatus.Uwa2,
+                    uwa3: uwastatus.Uwa3,
+                    uwa4: uwastatus.Uwa4,
+                    uwa5: uwastatus.Uwa5,
+                    uwa6: uwastatus.Uwa6,
+                    uwa7: uwastatus.Uwa7,
+                    uwa8: uwastatus.Uwa8,
+                    uwa9: uwastatus.Uwa9,
+                    uwa10: status,
+                    uwatime1: uwatime.Uwatime,
+                    uwatime2: uwatime.Uwa2time,
+                    uwatime3: uwatime.Uwa3time,
+                    uwatime4: uwatime.Uwa4time,
+                    uwatime5: uwatime.Uwa5time,
+                    uwatime6: uwatime.Uwa6time,
+                    uwatime7: uwatime.Uwa7time,
+                    uwatime8: uwatime.Uwa8time,
+                    uwatime9: uwatime.Uwa9time,
+                    uwatime10: timer,
+                    status: finalstatus,
+                    avg: finalavg,
+                    statuslists: statuslists
+                }
+                axios.post(`${process.env.REACT_APP_SERVER_ORIGIN}/uwa/send`, datas).then((res) => {
+                    if (res.data === true) {
+                        history.push(nextPath)
+                    }
+                }).catch((error) => {
+                    console.log(error)
+                })
+
             }
         })
     }
     const data = uwaform
     if (uwaform === undefined) {
-        return history.push("/uwaform")
+        return <Redirect to="/uwaform" />
     }
     return (
         <>
